@@ -259,7 +259,7 @@
 
         .topic-categories {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
                 margin-bottom: 60px;
             }
@@ -1150,47 +1150,19 @@
             <section class="content-section">
                 <h2 class="section-title">VIP Subteams & Research Areas</h2>
                 <div class="topic-categories">
-                    <!-- Understanding Users -->
-                    <div class="topic-category">
-                        <div class="category-header" onclick="showTopicPage('understanding-users')" style="cursor: pointer;">
-                            <i class="fas fa-users category-icon"></i>
-                            <h3>Understanding Users</h3>
-                        </div>
-                        <div class="subtopics-list">
-                            <button class="subtopic-button" onclick="showSubtopicPage('understanding-users', 'student-attitudes')">
-                                Student Attitudes & Behaviors
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('understanding-users', 'faculty-perspectives')">
-                                Faculty Perspectives
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('understanding-users', 'administrator-views')">
-                                Administrator Views
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('understanding-users', 'ai-competencies')">
-                                AI Competencies & Literacy
-                            </button>
-                        </div>
-                    </div>
-
                     <!-- Evaluating Tools -->
                     <div class="topic-category">
                         <div class="category-header" onclick="showTopicPage('evaluating-tools')" style="cursor: pointer;">
                             <i class="fas fa-tools category-icon"></i>
                             <h3>Evaluating Tools</h3>
                         </div>
-                        <div class="subtopics-list">
-                            <button class="subtopic-button" onclick="showSubtopicPage('evaluating-tools', 'ai-detection')">
-                                AI Detection Tools
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('evaluating-tools', 'genai-capabilities')">
-                                GenAI Tool Capabilities
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('evaluating-tools', 'tool-limitations')">
-                                Tool Limitations & Biases
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('evaluating-tools', 'comparative-analysis')">
-                                Comparative Tool Analysis
-                            </button>
+                    </div>
+
+                    <!-- Understanding Users -->
+                    <div class="topic-category">
+                        <div class="category-header" onclick="showTopicPage('understanding-users')" style="cursor: pointer;">
+                            <i class="fas fa-users category-icon"></i>
+                            <h3>Understanding Users</h3>
                         </div>
                     </div>
 
@@ -1200,23 +1172,6 @@
                             <i class="fas fa-chart-line category-icon"></i>
                             <h3>Assessing Impacts</h3>
                         </div>
-                        <div class="subtopics-list">
-                            <button class="subtopic-button" onclick="showSubtopicPage('assessing-impacts', 'learning-outcomes')">
-                                Learning Outcomes
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('assessing-impacts', 'academic-integrity')">
-                                Academic Integrity
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('assessing-impacts', 'assessment-validity')">
-                                Assessment Validity
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('assessing-impacts', 'student-wellbeing')">
-                                Student Experience + Wellbeing
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('assessing-impacts', 'equity-access')">
-                                Equity + Access
-                            </button>
-                        </div>
                     </div>
 
                     <!-- Innovating EdTech -->
@@ -1225,107 +1180,22 @@
                             <i class="fas fa-lightbulb category-icon"></i>
                             <h3>Innovating EdTech</h3>
                         </div>
-                        <div class="subtopics-list">
-                            <button class="subtopic-button" onclick="showSubtopicPage('innovating-edtech', 'prototype-development')">
-                                Prototype Development
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('innovating-edtech', 'user-testing')">
-                                User Testing & Feedback
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('innovating-edtech', 'integration-strategies')">
-                                Integration Strategies
-                            </button>
-                            <button class="subtopic-button" onclick="showSubtopicPage('innovating-edtech', 'scalability-assessment')">
-                                Scalability Assessment
-                            </button>
-                        </div>
                     </div>
-                </div>
-            </section>
 
-            <section class="entry-pathways">
-                <div class="container">
-                    <h2 class="section-title">Research Methods & Resources</h2>                    
-                    <div class="pathway-nav prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </div>
-                    
-                    <div class="pathways-container">
-                        <div class="pathway-card">
-                            <div class="pathway-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h3 class="pathway-title">Literature Review Methods</h3>
-                            <p>Systematic approaches to finding, evaluating, and synthesizing existing research in AI education.</p>
-                            <a href="#" class="view-more">Learn More →</a>                
-                        </div>
-                        
-                        <div class="pathway-card">
-                            <div class="pathway-icon">
-                                <i class="fas fa-poll"></i>
-                            </div>
-                            <h3 class="pathway-title">Survey Design & Analysis</h3>
-                            <p>Best practices for creating effective surveys and analyzing quantitative data in educational research.</p>
-                            <a href="#" class="view-more">Learn More →</a>
-                        </div> 
-                        
-                        <div class="pathway-card">
-                            <div class="pathway-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <h3 class="pathway-title">Interview & Focus Group Methods</h3>
-                            <p>Techniques for conducting qualitative interviews and focus groups with students, faculty, and administrators.</p>
-                            <a href="#" class="view-more">Learn More →</a>
-                        </div>
-                        
-                        <div class="pathway-card">
-                            <div class="pathway-icon">
-                                <i class="fas fa-flask"></i>
-                            </div>
-                            <h3 class="pathway-title">Experimental Design</h3>
-                            <p>Methods for designing controlled studies to test AI tool effectiveness and educational interventions.</p>
-                            <a href="#" class="view-more">Learn More →</a>
-                        </div>
-                        
-                        <div class="pathway-card">
-                            <div class="pathway-icon">
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
-                            <h3 class="pathway-title">Data Analysis Techniques</h3>
-                            <p>Statistical and qualitative analysis methods for educational research data and findings interpretation.</p>
-                            <a href="#" class="view-more">Learn More →</a>
-                        </div>
-                        
-                        <div class="pathway-card">
-                            <div class="pathway-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3 class="pathway-title">Research Ethics & IRB</h3>
-                            <p>Ethical considerations and IRB approval processes for educational research involving human subjects.</p>
-                            <a href="#" class="view-more">Learn More →</a>
-                        </div>
-                        
-                        <div class="pathway-card">
-                            <div class="pathway-icon">
-                                <i class="fas fa-pen-alt"></i>
-                            </div>
-                            <h3 class="pathway-title">Academic Writing & Publication</h3>
-                            <p>Guidelines for writing research papers, conference presentations, and academic publications.</p>
-                            <a href="#" class="view-more">Learn More →</a>
-                        </div>
-                        
-                        <div class="pathway-card">
-                            <div class="pathway-icon">
-                                <i class="fas fa-users-cog"></i>
-                            </div>
-                            <h3 class="pathway-title">Collaborative Research</h3>
-                            <p>Best practices for team-based research, project management, and interdisciplinary collaboration.</p>
-                            <a href="#" class="view-more">Learn More →</a>
+                    <!-- Learning Science -->
+                    <div class="topic-category">
+                        <div class="category-header" onclick="showTopicPage('learning-science')" style="cursor: pointer;">
+                            <i class="fas fa-brain category-icon"></i>
+                            <h3>Learning Science</h3>
                         </div>
                     </div>
-                    
-                    <div class="pathway-nav next">
-                        <i class="fas fa-chevron-right"></i>
+
+                    <!-- Research Methods & Resources -->
+                    <div class="topic-category">
+                        <div class="category-header" onclick="showTopicPage('research-methods')" style="cursor: pointer;">
+                            <i class="fas fa-book category-icon"></i>
+                            <h3>Research Methods & Resources</h3>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1335,26 +1205,22 @@
             <!-- Understanding Users -->
             <div id="understanding-users" style="display: none;">
                 <div class="topic-page-header">
-                    <h1>Understanding Users</h1>
-                    <p>Research on attitudes, behaviors, and competencies of students, faculty, and administrators regarding AI tools in education.</p>
+                    <h1>Understanding Users Attitudes & Behaviors</h1>
+                    <p>These resources help us to answer questions like: How, and how much, are students and teachers using AI tools? What values, principles, and assumptions shape their engagement with AI tools?</p>
                 </div>
                 <div class="topic-content">
                     <div class="subtopic-cards">
-                        <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'student-attitudes')">
-                            <h3>Student Attitudes & Behaviors</h3>
-                            <p>Understanding how students perceive and use AI tools in their learning processes.</p>
-                        </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'faculty-perspectives')">
-                            <h3>Faculty Perspectives</h3>
-                            <p>Faculty attitudes toward AI integration and their teaching practice adaptations.</p>
-                        </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'administrator-views')">
-                            <h3>Administrator Views</h3>
+                        <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'administrators')">
+                            <h3>Administrators</h3>
                             <p>Administrative perspectives on AI policy, implementation, and institutional change.</p>
                         </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'ai-competencies')">
-                            <h3>AI Competencies & Literacy</h3>
-                            <p>Assessment of AI literacy levels and competency development across user groups.</p>
+                        <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'students')">
+                            <h3>Students</h3>
+                            <p>Understanding how students perceive and use AI tools in their learning processes.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'faculty')">
+                            <h3>Faculty</h3>
+                            <p>Faculty attitudes toward AI integration and their teaching practice adaptations.</p>
                         </div>
                     </div>
                 </div>
@@ -1395,44 +1261,175 @@
             <!-- Evaluating Tools -->
             <div id="evaluating-tools" style="display: none;">
                 <div class="topic-page-header">
-                    <h1>Evaluating Tools</h1>
-                    <p>Research on capabilities and limitations of generative AI tools for educational purposes, including detection technologies.</p>
+                    <h1>Evaluating AI Tools</h1>
+                    <p>These resources help us to answer questions about the capabilities of generative AI tools, which tools perform better on certain tasks, and how well AI-detection works.</p>
                 </div>
                 <div class="topic-content">
                     <div class="subtopic-cards">
-                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'ai-detection')">
-                            <h3>AI Detection Tools</h3>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'coding')">
+                            <h3>Coding</h3>
+                            <p>Evaluating AI tools' capabilities in programming, code generation, and debugging tasks.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'creativity')">
+                            <h3>Creativity</h3>
+                            <p>Assessing AI's ability to generate creative content and support creative thinking processes.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'detection-tools')">
+                            <h3>Detection Tools</h3>
                             <p>Evaluation of AI detection technologies and their effectiveness in educational contexts.</p>
                         </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'genai-capabilities')">
-                            <h3>GenAI Tool Capabilities</h3>
-                            <p>Assessment of what current generative AI tools can and cannot do for education.</p>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'ethics-safety')">
+                            <h3>Ethics / Safety</h3>
+                            <p>Examining ethical considerations and safety concerns in AI tool deployment.</p>
                         </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'tool-limitations')">
-                            <h3>Tool Limitations & Biases</h3>
-                            <p>Understanding the constraints, biases, and failure modes of AI educational tools.</p>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'equity-social-justice')">
+                            <h3>Equity / Social Justice</h3>
+                            <p>Analyzing how AI tools impact educational equity and social justice issues.</p>
                         </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'comparative-analysis')">
-                            <h3>Comparative Tool Analysis</h3>
-                            <p>Side-by-side comparisons of different AI tools for specific educational tasks.</p>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'error-hallucination')">
+                            <h3>Error / Hallucination</h3>
+                            <p>Understanding AI errors, hallucinations, and accuracy limitations.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'reasoning')">
+                            <h3>Reasoning</h3>
+                            <p>Testing AI's logical reasoning, problem-solving, and critical thinking capabilities.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'usability')">
+                            <h3>Usability</h3>
+                            <p>Assessing user experience, interface design, and ease of use in AI tools.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('evaluating-tools', 'translation')">
+                            <h3>Translation</h3>
+                            <p>Evaluating AI translation capabilities and multilingual support quality.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- AI Detection subtopic -->
-            <div id="ai-detection" style="display: none;">
+            <!-- Detection Tools subtopic -->
+            <div id="detection-tools" style="display: none;">
                 <div class="topic-page-header">
-                    <h1>AI Detection Tools</h1>
+                    <h1>Detection Tools</h1>
                     <p>Evaluation of AI detection technologies and their effectiveness in educational contexts.</p>
                 </div>
                 <div class="topic-content">
                     <div class="bibliography-container">
-                        <div class="bib-entry" data-tags="tool-evaluation,partnerships">
+                        <div class="bib-entry" data-tags="detection,impostor-bias">
                             <div class="bib-citation"
-                                data-source-url="https://doi.org/10.1080/23735082.2023.2254787"
+                                data-source-url="https://scholar.google.com/"
+                                data-source-title="GenAI Mirage: The Impostor Bias and the Deepfake Detection Challenge">
+                                Casu, M.; Guarnera, L.; Caponnetto, P.; Battiato, S. "GenAI Mirage: The Impostor Bias and the Deepfake Detection Challenge in the Era of Artificial Illusions." <em>Forensic Sci. Int. Digit. Investig.</em> 2024, <em>50</em>, 301795.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('casu2024')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="casu2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper considers the impacts of "imposter bias," an emerging cognitive bias arising from the rapid proliferation of AI-generated media. Imposter bias describes the tendency to misidentify human-generated media as AI-generated. Implicitly, the essay asks us to recognize distrust of factual evidence as a problem as serious as the unquestioned acceptance of false evidence. The problem isn't (only) that we may be fooled by doctored photos or texts, but that we'll increasingly mistrust the genuine.
+                                        <div class="annotation-author">Alexander Landfair 12/2/2024</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,perplexity">
+                            <div class="bib-citation"
+                                data-source-url="https://medium.com/"
+                                data-source-title="Two minutes NLP: Perplexity explained with simple probabilities">
+                                Chiusano, F. "Two minutes NLP: Perplexity explained with simple probabilities." <em>Medium dot com</em>. 2022.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('chiusano2022')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="chiusano2022-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        A popular blogger explains "perplexity," one of the core concepts underlying most AI-detection tools. In short, perplexity describes a system's ability to predict the next word in a string of words. Underlying most AI-detection tools is the assumption that human-generated writing is somewhat less predictable than AI-generated writing. It's important to note that the concept of perplexity arose as a way to measure the quality of large-language models (because humans write with low-perplexity). (In my opinion, this necessarily disqualifies perplexity as a useful measure for detecting AI-writing).
+                                        <div class="annotation-author">Alexander Landfair 12/2/2024</div>
+                                    </div>
+                                    <div class="bib-annotation">
+                                        <div class="annotation-text">
+                                            The way this is written may be slightly misleading. Perplexity measures the model's literal "top predicted words" and checks how likely the actual next word is to be generated by the model. Lower perplexity means the text has lower "generation entropy". That is, the model has a high probability of generating that sequence. Humans inject noise that models don't naturally predict well, so they get higher perplexity. Modern models may deliberately raise entropy via RLHF. The current implementations of perplexity are miscalibrated, since they likely rely on GPT-2 perplexity. A differential perplexity test, such as a pure comparison of a non-chatbot transformer's perplexity and a modern chatbot's perplexity, is probably one of the strongest detection models possible.
+                                            <div class="annotation-author">Srinivas Harish 9/19/2025</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,ALBERT,transformer">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/"
+                                data-source-title="ALBERT: A Lite BERT for Self-supervised Learning of Language Representations">
+                                Lan Z. et al. "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations" <em>ArXiv</em>. 2019.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('lan2019')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="lan2019-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        Transformer models like BERT and RoBERTa, used for AI text detection, achieve SOTA results by stacking dozens of "attention" layers together. However, prior work (ALBERT) has shown significant redundancy across these layers. Many parameters do not contribute meaningfully to representation or expressivity of the model. Furthermore, information flows strictly forward with no mechanism for later layers to talk to earlier layers or revisit information from earlier representations. The team should aim to fix this "weakness" with an improved architecture.
+                                        <div class="annotation-author">Srinivas Harish 9/19/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,false-positives">
+                            <div class="bib-citation"
+                                data-source-url="https://www.sciencedirect.com/"
+                                data-source-title="The false positives and false negatives of generative AI detection tools">
+                                Dalalh, D. "The false positives and false negatives of generative AI detection tools in education and academic research: The case of ChatGPT." <em>The International Journal of Management Education</em>. 2023, Volume 21 Issue 2.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('dalalh2023')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="dalalh2023-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The study investigates false positives (human-written text incorrectly flagged as AI-generated) and false negatives (AI-generated text missed by detectors) in AI Detection, with a particular focus on its impact on academic research and education, where integrity is crucial. Running tests on the abstract and literature parts of research papers before 2022 (before the release of ChatGPT), researchers found that the literature section of papers was more likely to be flagged as AI-generated compared to abstracts. This shows that the "formulaic" style of literature reviews resembles AI writing more closely. Beyond the results of the experiment, this paper argues that the current definitions of plagiarism and authorship are outdated in the AI era, calling for combining plagiarism detection with AI-detection tools.
+                                        <div class="annotation-author">Nasrin Alanna 9/25/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,bias,fairness">
+                            <div class="bib-citation"
+                                data-source-url="https://peerj.com/"
+                                data-source-title="The accuracy-bias trade-offs in AI text detection tools">
+                                Pratama, A. R. "The accuracy-bias trade-offs in AI text detection tools and their impact on fairness in scholarly publication." <em>PeerJ Comput. Sci.</em> 2025, e2953.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('pratama2025')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="pratama2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study evaluates three AI text detection tools (GPTZero, ZeroGPT, and DetectGPT) and finds a significant trade-off between accuracy and bias. The tools flag text from non-native English speakers and certain academic disciplines as AI-generated, raising concerns about fairness in scholarly publication. All tools struggled with AI-assisted text and showed systemic bias. Abstracts from social sciences and those written by non-native English speakers had a significantly higher false positive rate, meaning that they were more likely to be incorrectly identified as AI-generated.
+                                        <div class="annotation-author">Josephine Li 10/09/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,evaluation">
+                            <div class="bib-citation"
+                                data-source-url="https://link.springer.com/"
                                 data-source-title="Evaluating the efficacy of AI content detection tools">
-                                Elkhatat, A. M., Elsaid, K., & Almeer, S. (2023). "Evaluating the efficacy of AI content detection tools in differentiating between human and AI-generated text." <em>International Journal for Educational Integrity</em>, 19(1), 17.
+                                Elkhatat, A.M.; Elsaid, K.; Almeer, S. "Evaluating the efficacy of AI content detection tools in differentiating between human and AI‑generated text." <em>International Journal for Educational Integrity</em>. 2023, pp. 1-17.
                                 <div class="bib-buttons">
                                     <button class="bib-button" onclick="viewSource(this)">View Source</button>
                                     <button class="bib-button" onclick="toggleAnnotation('elkhatat2023')">View Annotations</button>
@@ -1441,12 +1438,302 @@
                             <div class="bib-annotation-container" id="elkhatat2023-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
-                                        This comprehensive evaluation tested multiple AI detection tools against various AI-generated texts. Key findings show significant variability in detection accuracy, high false positive rates, and particular challenges with detecting advanced models like GPT-4. The study provides crucial data for institutions considering AI detection policies.
-                                        <div class="annotation-author">VIP Evaluating Tools Team, January 2025</div>
+                                        This study evaluates how the top 5 used AI content detection tools (OpenAI, Writer, Copyleaks, GPTZero, and CrossPlag) distinguish between human-authored and AI-generated contents. The tools were evaluated on both paragraphs produced by ChatGPT models 3.5 and 4, as well as on human-written controls. Results shows that all the detection tools were better at predicting GPT 3.5 than GPT 4.0 and with inconsistent performance on human-written samples, which includes false positives too. This concludes ongoing challenges in AI Detection reliability with the advancement of text generation technology. The authors recommend combining AI-detection tools with Manual Review to keep the Academic Integrity intact.
+                                        <div class="annotation-author">Unmesh Achar 10/15/2025</div>
                                     </div>
                                 </div>
                                 <button class="add-perspective-btn">Add Your Perspective</button>
                             </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,DetectGPT">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/"
+                                data-source-title="DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature">
+                                Mitchell, E.; Lee, Y.; Khazatsky, A.; Manning, C. D.; Finn, C. (2023). "DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature."
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('mitchell2023')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="mitchell2023-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper proposes DetectGPT, a detector that flags AI-generated text by checking whether a passage sits in a negative curvature region of a language model's log-probability function. Unlike classifier-based detectors, DetectGPT needs no extra training data—it uses only the target model's log-probs plus small perturbations from a secondary model. In evaluations (e.g., fake-news detection with GPT-NeoX-20B), the method improves zero-shot AUROC over prior baselines and provides a model-agnostic way to test text authenticity.
+                                        <div class="annotation-author">Yanze Wu 10/15/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,perplexity">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/"
+                                data-source-title="AI or Human? Detecting Machine-Generated Text Through Perplexity">
+                                Rylander, A. "AI or Human? Detecting Machine-Generated Text Through Perplexity."
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('rylander2024')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="rylander2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper investigates the effectiveness of using perplexity (a metric for how predictable text is to an AI model) as a method for detecting whether a piece of writing was generated by AI or a human. The core idea is that AI-generated text should be highly predictable (low perplexity) to its own model, while human writing is more varied and less predictable (high perplexity). The findings show this evaluation method is only reliable in highly controlled scenarios. For example, when the same AI model is used to both generate and evaluate the text. The paper notes that the separation between AI and human writing "becomes less clear" as soon as more varied sources are introduced, revealing the method's limitations.
+                                        <div class="annotation-author">Josephine Li 10/22/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,prompt-engineering">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/"
+                                data-source-title="Detection Undermining via Prompt Engineering for Deepfake Text">
+                                Weichert, J.; Dimobi, C. "Detection Undermining via Prompt Engineering for Deepfake Text." <em>arXiv</em>. 2024.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('weichert2024')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="weichert2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article rigorously evaluates three AI text detectors (Watermarking, ZeroGPT, and GPTZero) on their ability to distinguish human-written from AI-generated essays. Results show that paraphrasing attacks, including prompts designed to mimic "college student" style or intentionally increase perplexity, can dramatically raise the false negative rates of all detectors, making AI-generated writing much more likely to evade detection. For instance, ZeroGPT's false negative rate rose to nearly 90% with targeted paraphrasing. The paper warns educators against relying solely on AI detectors for plagiarism judgments, highlighting the ease with which detection can be bypassed and the risk of harm from false accusations.
+                                        <div class="annotation-author">Josephine Li 10/22/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equity / Social Justice subtopic -->
+            <div id="equity-social-justice" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Equity / Social Justice</h1>
+                    <p>Analyzing how AI tools impact educational equity and social justice issues.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="equity,bias,non-native-speakers">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/abs/2304.02819"
+                                data-source-title="GPT detectors are biased against non-native English writers">
+                                Liang, W.; Yuksekgonul, M.; Mao, Y.; Wu, E.; Zou, J. "GPT detectors are biased against non-native English writers." <em>arXiv:2304.02819</em>. 2023.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('liang2023')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="liang2023-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study evaluates the fairness of seven widely used GPT detectors by testing their performance on writing samples from both native and non-native English writers. The researchers' core finding is that these detectors are significantly biased against non-native English speakers. While the detectors are nearly perfect at identifying essays written by native speakers, they consistently misclassify the writing of non-native speakers as AI-generated. For instance, over half of the TOEFL essays written by non-native speakers were incorrectly flagged as AI-generated. The study suggests this bias occurs because detectors often rely on a metric called "perplexity," which measures linguistic complexity. Non-native writers tend to use less varied vocabulary and sentence structures, resulting in lower perplexity text that the detectors mistake for AI-generated content. The authors caution against using these tools in educational settings, as they risk unfairly penalizing non-native English speakers for academic misconduct.
+                                        <div class="annotation-author">Josephine Li 10/13/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reasoning subtopic -->
+            <div id="reasoning" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Reasoning</h1>
+                    <p>Testing AI's logical reasoning, problem-solving, and critical thinking capabilities.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="reasoning,comparative-analysis,finance">
+                            <div class="bib-citation"
+                                data-source-url="https://journals.sagepub.com/"
+                                data-source-title="ChatGPT vs. Students: A Comparative Analysis of Performance in Corporate Finance Exams">
+                                Hussain, S. M.; Malik, A.; Ahmad, N.; Ahmed, S. "ChatGPT vs. Students: A Comparative Analysis of Performance in Corporate Finance Exams." <em>Journal of Educational Technology Systems</em>. 2025.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('hussain2025')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="hussain2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article focuses on a direct performance comparison between ChatGPT-4 and university students on corporate finance exams. One of the most striking findings was the stark contrast in performance based on question type. ChatGPT significantly outperformed students in descriptive questions (87.1% vs. 74.6%), demonstrating a clear strength in processing and summarizing conceptual, text-based information. However, this advantage completely reversed in numerical questions, where students vastly outperformed ChatGPT (81.6% vs. 31.9%). The authors conclude that ChatGPT relies on predicting likely answers from language patterns rather than performing actual calculations, leading to a fundamental failure in quantitative reasoning.
+                                        <div class="annotation-author">Meiling Zhang 10/9/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ethics / Safety subtopic -->
+            <div id="ethics-safety" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Ethics / Safety</h1>
+                    <p>Examining ethical considerations and safety concerns in AI tool deployment.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="ethics,guardrails,learning-harm">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/"
+                                data-source-title="Generative AI (GPT-4) Without Guardrails Can Harm Learning">
+                                "Generative AI (GPT-4) Without Guardrails Can Harm Learning."
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('guardrails2024')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="guardrails2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        A large field experiment in U.S. high-school math classes deployed two GPT-4 tutors for ~1,000 students: a general "GPT Base" chat interface and a guardrailed "GPT Tutor" designed with prompts to encourage learning behaviors. Results show a tradeoff: unguided assistance can boost practice performance yet undermine actual learning/retention, while structured guardrails can mitigate harms and better support learning objectives—evidence that design choices (not just model quality) matter in education.
+                                        <div class="annotation-author">Yanze Wu 10/15/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usability subtopic -->
+            <div id="usability" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Usability</h1>
+                    <p>Assessing user experience, interface design, and ease of use in AI tools.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="usability,feedback,writing">
+                            <div class="bib-citation"
+                                data-source-url="https://www.sciencedirect.com/"
+                                data-source-title="Comparing the quality of human and ChatGPT feedback of students' writing">
+                                Steiss, J.; Tate, T.; Graham, S.; Cruz, J.; Hebert, M.; Wang, J.; Moon Y.; Tseng, W.; Warschauer, M.; Olson, C. B. "Comparing the quality of human and ChatGPT feedback of students' writing." <em>Learning and Instruction</em>. 2024. 101894.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('steiss2024')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="steiss2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study investigates the question of whether AI can serve as a viable tool for providing formative feedback on students' essays by comparing ChatGPT-3.5 feedback with teacher feedback. They evaluated the feedback based on five key criteria: being criteria-based, offering clear directions, accuracy, prioritization of essential features, and using a supportive tone. The key findings are that teacher feedback outperformed ChatGPT in four of the five categories. The only area where AI was stronger was "criteria-based," meaning that it was good at explicitly referencing writing rubrics and standards. Importantly, the study also found that the quality of ChatGPT's feedback varied depending on the quality of the essay; for example, ChatGPT struggled with accuracy on high-quality essays and a supportive tone on low-quality ones.
+                                        <div class="annotation-author">Meiling Zhang 9/24/2025</div>
+                                    </div>
+                                    <div class="bib-annotation">
+                                        <div class="annotation-text">
+                                            It is always important to consider AI as a convenient, free resource, not a replacement for human feedback. Its instantaneous feedback at any stage of the writing process can help overcome writing barriers and take students through their mental journey or barrier. However, the journey you take in writing is all about inconvenience; you tear up your writing, starting from the argument, so you can explore your options, you write multiple drafts, and you write consecutively. To be an experienced writer, we need to shift perspectives about writing, no longer pursuing quick, instantaneous writing and perfect form from the beginning, but writing that develops over a roller coaster with feedback, drafts, and time.
+                                            <div class="annotation-author">Ethan Lu 10/01/2025</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="usability,assessment,measurement">
+                            <div class="bib-citation"
+                                data-source-url="https://www.ejmste.com/"
+                                data-source-title="Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment">
+                                Owan, V. J., Abang, K. B., Idika, D. O., Etta, E. O., Bassey, B. A. "Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment." <em>EURASIA Journal of Mathematics, Science and Technology Education</em>. 2023, em2307.
+                                <div class="bib-buttons">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="bib-button" onclick="toggleAnnotation('owan2023')">View Annotations</button>
+                                </div>
+                            </div>
+                            <div class="bib-annotation-container" id="owan2023-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study evaluates how artificial intelligence tools are being integrated into educational measurement and assessment which revolutionizes the traditional practices. AI supports personalized learning, intelligent tutoring and automated grading which improves the speed and feedback quality. The authors noted down that the predictive analytics and natural language processing tools further gives individualized support and expand the assessment possibilities. Importantly, while AI streamlines many tasks, they emphasize the need for ethical safeguards, transparency and ongoing teacher involvement to counter the risks around privacy, fairness and overdependency on technology. The authors recommend Teacher training and a blend of human and AI analysis are recommended for best practices.
+                                        <div class="annotation-author">Unmesh Achar 10/15/2025</div>
+                                    </div>
+                                </div>
+                                <button class="add-perspective-btn">Add Your Perspective</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coding subtopic (placeholder) -->
+            <div id="coding" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Coding</h1>
+                    <p>Evaluating AI tools' capabilities in programming, code generation, and debugging tasks.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="empty-content-placeholder">
+                        <div class="placeholder-message">
+                            <i class="fas fa-code" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
+                            <h3>Content in Development</h3>
+                            <p>VIP Evaluating Tools subteam is currently curating resources on AI coding capabilities. We welcome your contributions and findings.</p>
+                            <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creativity subtopic (placeholder) -->
+            <div id="creativity" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Creativity</h1>
+                    <p>Assessing AI's ability to generate creative content and support creative thinking processes.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="empty-content-placeholder">
+                        <div class="placeholder-message">
+                            <i class="fas fa-palette" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
+                            <h3>Content in Development</h3>
+                            <p>VIP Evaluating Tools subteam is currently curating resources on AI creativity and creative content generation. We welcome your contributions and findings.</p>
+                            <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error / Hallucination subtopic (placeholder) -->
+            <div id="error-hallucination" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Error / Hallucination</h1>
+                    <p>Understanding AI errors, hallucinations, and accuracy limitations.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="empty-content-placeholder">
+                        <div class="placeholder-message">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
+                            <h3>Content in Development</h3>
+                            <p>VIP Evaluating Tools subteam is currently curating resources on AI errors and hallucinations. We welcome your contributions and findings.</p>
+                            <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Translation subtopic (placeholder) -->
+            <div id="translation" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Translation</h1>
+                    <p>Evaluating AI translation capabilities and multilingual support quality.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="empty-content-placeholder">
+                        <div class="placeholder-message">
+                            <i class="fas fa-language" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
+                            <h3>Content in Development</h3>
+                            <p>VIP Evaluating Tools subteam is currently curating resources on AI translation capabilities. We welcome your contributions and findings.</p>
+                            <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
                         </div>
                     </div>
                 </div>
@@ -1520,25 +1807,41 @@
             <div id="innovating-edtech" style="display: none;">
                 <div class="topic-page-header">
                     <h1>Innovating EdTech</h1>
-                    <p>Development of new educational technologies to maximize benefits and mitigate risks of generative AI in education.</p>
+                    <p>These resources help us to answer questions like: What gaps exist in the education marketplace? What teaching and learning tools are absent, inadequate, or insufficient? How might we innovate to fill those gaps?</p>
                 </div>
                 <div class="topic-content">
                     <div class="subtopic-cards">
-                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'prototype-development')">
-                            <h3>Prototype Development</h3>
-                            <p>Creating and iterating on educational technology prototypes that leverage AI.</p>
+                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'ai-tutoring')">
+                            <h3>AI Tutoring & Learning Support</h3>
+                            <p>Tools that act as instructors, mentors, or study aids including tutorbots, homework helpers, and adaptive learning systems.</p>
                         </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'user-testing')">
-                            <h3>User Testing & Feedback</h3>
-                            <p>Methods for testing educational prototypes with real users and gathering feedback.</p>
+                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'writing-content-generation')">
+                            <h3>Writing & Content Generation Tools</h3>
+                            <p>Tools that help students create or refine text and media, including writing assistants and translation tools.</p>
                         </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'integration-strategies')">
-                            <h3>Integration Strategies</h3>
-                            <p>Approaches for integrating new AI technologies into existing educational systems.</p>
+                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'detection-integrity')">
+                            <h3>Detection & Academic Integrity Tools</h3>
+                            <p>Tools that monitor or verify the authenticity of work, including AI-writing detectors and plagiarism checkers.</p>
                         </div>
-                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'scalability-assessment')">
-                            <h3>Scalability Assessment</h3>
-                            <p>Evaluating the potential for scaling educational technology innovations.</p>
+                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'organizational-productivity')">
+                            <h3>Organizational & Productivity Tools</h3>
+                            <p>Tools that structure learning and manage large projects, such as note-taking and research assistants.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'feedback-assessment')">
+                            <h3>Feedback & Assessment Tools</h3>
+                            <p>AI that evaluates or comments on student work, including automated grading and feedback generators.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'accessibility-inclusion')">
+                            <h3>Accessibility & Inclusion Tools</h3>
+                            <p>AI that expands educational access through speech-to-text, captioning, and assistive technologies.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'learning-analytics')">
+                            <h3>Classroom & Learning Analytics</h3>
+                            <p>AI systems that track and interpret educational activity, including analytics dashboards and early warning systems.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('innovating-edtech', 'scheduling')">
+                            <h3>Scheduling</h3>
+                            <p>Tools that facilitate appointment and meeting scheduling for educational contexts.</p>
                         </div>
                     </div>
                 </div>
@@ -1901,6 +2204,68 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Research Methods & Resources -->
+            <div id="research-methods" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Research Methods & Resources</h1>
+                    <p>These sources will help you identify a research gap, design appropriate research methodologies, interpret your findings, and find publication in a peer-reviewed journal.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="subtopic-cards">
+                        <div class="subtopic-card" onclick="showSubtopicPage('research-methods', 'literature-review')">
+                            <h3>Literature Review Methods</h3>
+                            <p>Systematic approaches to finding, evaluating, and synthesizing existing research in AI education.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('research-methods', 'collaborative-research')">
+                            <h3>Collaborative Research</h3>
+                            <p>Best practices for team-based research, project management, and interdisciplinary collaboration.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('research-methods', 'experimental-design')">
+                            <h3>Experimental Design</h3>
+                            <p>Methods for designing controlled studies to test AI tool effectiveness and educational interventions.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('research-methods', 'survey-design')">
+                            <h3>Survey Design & Analysis</h3>
+                            <p>Best practices for creating effective surveys and analyzing quantitative data in educational research.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('research-methods', 'interview-focus-groups')">
+                            <h3>Interview & Focus Group Methods</h3>
+                            <p>Techniques for conducting qualitative interviews and focus groups with students, faculty, and administrators.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('research-methods', 'data-analysis')">
+                            <h3>Data Analysis Techniques</h3>
+                            <p>Statistical and qualitative analysis methods for educational research data and findings interpretation.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('research-methods', 'research-ethics')">
+                            <h3>Research Ethics & IRB</h3>
+                            <p>Ethical considerations and IRB approval processes for educational research involving human subjects.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('research-methods', 'academic-writing')">
+                            <h3>Academic Writing & Publication</h3>
+                            <p>Guidelines for writing research papers, conference presentations, and academic publications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Science -->
+            <div id="learning-science" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Learning Science</h1>
+                    <p>Research on the cognitive, psychological, and pedagogical foundations of learning with AI tools.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="empty-content-placeholder">
+                        <div class="placeholder-message">
+                            <i class="fas fa-brain" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
+                            <h3>Content in Development</h3>
+                            <p>This research area is currently being developed. We welcome contributions on learning science foundations and their applications to AI in education.</p>
+                            <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -1983,41 +2348,110 @@
         };
 
         const knownTopics = [
-            'understanding-users',
             'evaluating-tools',
+            'understanding-users',
             'assessing-impacts',
-            'innovating-edtech'
+            'innovating-edtech',
+            'learning-science',
+            'research-methods'
         ];
 
         const knownSubtopics = [
-            // Understanding Users subtopics
-            'student-attitudes',
-            'faculty-perspectives',
-            'administrator-views',
-            'ai-competencies',
-            
             // Evaluating Tools subtopics
-            'ai-detection',
-            'genai-capabilities',
-            'tool-limitations',
-            'comparative-analysis',
-            
-           // Assessing Impacts subtopics
+            'coding',
+            'creativity',
+            'detection-tools',
+            'ethics-safety',
+            'equity-social-justice',
+            'error-hallucination',
+            'reasoning',
+            'usability',
+            'translation',
+
+            // Understanding Users subtopics
+            'administrators',
+            'students',
+            'faculty',
+
+            // Assessing Impacts subtopics
             'learning-outcomes',
             'academic-integrity',
             'assessment-validity',
             'student-wellbeing',
             'equity-access',
-            
+
             // Innovating EdTech subtopics
+            'ai-tutoring',
+            'writing-content-generation',
+            'detection-integrity',
+            'organizational-productivity',
+            'feedback-assessment',
+            'accessibility-inclusion',
+            'learning-analytics',
+            'scheduling',
+
+            // Research Methods & Resources subtopics
+            'literature-review',
+            'collaborative-research',
+            'experimental-design',
+            'survey-design',
+            'interview-focus-groups',
+            'data-analysis',
+            'research-ethics',
+            'academic-writing',
+
+            // Legacy subtopics (for backward compatibility)
+            'student-attitudes',
+            'faculty-perspectives',
+            'administrator-views',
+            'ai-competencies',
+            'ai-detection',
+            'genai-capabilities',
+            'tool-limitations',
+            'comparative-analysis',
             'prototype-development',
             'user-testing',
             'integration-strategies',
             'scalability-assessment'
         ];
 
+        function parseURLAndNavigate() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const topic = urlParams.get('topic');
+            const subtopic = urlParams.get('subtopic');
+
+            if (subtopic && topic) {
+                // Show subtopic page
+                showSubtopicPage(topic, subtopic, true);
+            } else if (topic) {
+                // Show topic page
+                showTopicPage(topic, true);
+            } else {
+                // Show landing page
+                showLandingPage(true);
+            }
+        }
+
         function initializeNavigationState() {
-            showLandingPage();
+            // Parse URL on initial load
+            parseURLAndNavigate();
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function(event) {
+                if (event.state) {
+                    // Navigate based on stored state
+                    if (event.state.currentView === 'subtopic') {
+                        showSubtopicPage(event.state.topicId, event.state.subtopicId, true);
+                    } else if (event.state.currentView === 'topic') {
+                        showTopicPage(event.state.topicId, true);
+                    } else {
+                        showLandingPage(true);
+                    }
+                } else {
+                    // If no state, parse URL
+                    parseURLAndNavigate();
+                }
+            });
         }
 
         function initializeHeaderEffects() {
@@ -2044,13 +2478,13 @@
         function updateBreadcrumbs() {
             const breadcrumbs = document.querySelector('.breadcrumbs');
             if (!breadcrumbs) return;
-            
-            let breadcrumbsHTML = `<a href="#" onclick="showLandingPage(); return false;">Home</a>`;
-            
+
+            let breadcrumbsHTML = `<a href="${window.location.pathname}" data-nav="home">Home</a>`;
+
             switch (navigationState.currentView) {
                 case 'landing':
                     break;
-                    
+
                 case 'topic':
                     const topicElement = document.getElementById(navigationState.topicId);
                     const topicName = topicElement ? topicElement.querySelector('.topic-page-header h1').textContent : 'Topic';
@@ -2059,29 +2493,29 @@
                         <span class="current">${topicName}</span>
                     `;
                     break;
-                    
+
                 case 'subtopic':
                     const topicElem = document.getElementById(navigationState.topicId);
                     const subtopicElem = document.getElementById(navigationState.subtopicId);
-                    
+
                     const topicTitle = topicElem ? topicElem.querySelector('.topic-page-header h1').textContent : 'Topic';
                     const subtopicTitle = subtopicElem ? subtopicElem.querySelector('.topic-page-header h1').textContent : 'Subtopic';
-                    
+
                     breadcrumbsHTML += `
                         <span class="separator">›</span>
-                        <a href="#" onclick="showTopicPage('${navigationState.topicId}'); return false;">${topicTitle}</a>
+                        <a href="${window.location.pathname}?topic=${navigationState.topicId}" data-nav="topic" data-topic="${navigationState.topicId}">${topicTitle}</a>
                         <span class="separator">›</span>
                         <span class="current">${subtopicTitle}</span>
                     `;
                     break;
-                    
+
                 case 'pathway':
                     breadcrumbsHTML += `
                         <span class="separator">›</span>
                         <span class="current">Research Path: ${navigationState.pathwayName}</span>
                     `;
                     break;
-                    
+
                 case 'filtered':
                     breadcrumbsHTML += `
                         <span class="separator">›</span>
@@ -2089,8 +2523,22 @@
                     `;
                     break;
             }
-            
+
             breadcrumbs.innerHTML = breadcrumbsHTML;
+
+            // Add click handlers to breadcrumb links
+            breadcrumbs.querySelectorAll('a[data-nav]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const navType = this.getAttribute('data-nav');
+                    if (navType === 'home') {
+                        showLandingPage();
+                    } else if (navType === 'topic') {
+                        const topicId = this.getAttribute('data-topic');
+                        showTopicPage(topicId);
+                    }
+                });
+            });
         }
 
         function setupImprovedPathwayNavigation() {
@@ -2352,7 +2800,7 @@
             resultsContainer.style.display = 'block';
         }
 
-        function showLandingPage() {
+        function showLandingPage(skipHistory) {
             navigationState = {
                 currentView: 'landing',
                 topicId: null,
@@ -2361,28 +2809,34 @@
                 pathwayName: null,
                 filterTag: null
             };
-            
+
             document.querySelectorAll('.topic-pages > div').forEach(page => {
                 page.style.display = 'none';
             });
-            
+
             document.querySelector('.topic-pages').style.display = 'none';
             document.querySelector('.landing-page').style.display = 'block';
-            
+
             document.body.classList.remove('show-topics', 'show-breadcrumbs');
-            
+
             document.querySelector('.header-title').classList.remove('visible');
-            
+
             const filteredResults = document.getElementById('filtered-results');
             if (filteredResults) {
                 filteredResults.style.display = 'none';
             }
-            
+
+            // Update browser URL using History API
+            if (!skipHistory) {
+                const url = window.location.pathname;
+                history.pushState(navigationState, 'AI in Education VIP Research Exchange', url);
+            }
+
             window.scrollTo(0, 0);
             updateEntryCounter();
         }
 
-        function showTopicPage(topicId) {
+        function showTopicPage(topicId, skipHistory) {
             navigationState = {
                 currentView: 'topic',
                 topicId: topicId,
@@ -2391,28 +2845,36 @@
                 pathwayName: null,
                 filterTag: null
             };
-            
+
             document.body.classList.add('show-topics');
             document.body.classList.add('show-breadcrumbs');
-            
+
             document.querySelectorAll('.topic-pages > div').forEach(div => {
                 div.style.display = 'none';
             });
-            
+
             document.getElementById(topicId).style.display = 'block';
-            
+
             document.querySelector('.landing-page').style.display = 'none';
             document.querySelector('.topic-pages').style.display = 'block';
-            
+
             const headerTitle = document.querySelector('.header-title');
             headerTitle.textContent = 'AI in Education VIP Research Exchange';
             headerTitle.classList.add('visible');
-            
+
+            // Update browser URL using History API
+            if (!skipHistory) {
+                const url = `${window.location.pathname}?topic=${topicId}`;
+                const topicElement = document.getElementById(topicId);
+                const pageTitle = topicElement ? topicElement.querySelector('.topic-page-header h1').textContent : 'Topic';
+                history.pushState(navigationState, pageTitle, url);
+            }
+
             updateBreadcrumbs();
             window.scrollTo(0, 0);
         }
 
-        function showSubtopicPage(topicId, subtopicId) {
+        function showSubtopicPage(topicId, subtopicId, skipHistory) {
             navigationState = {
                 currentView: 'subtopic',
                 topicId: topicId,
@@ -2421,23 +2883,31 @@
                 pathwayName: null,
                 filterTag: null
             };
-            
+
             document.body.classList.add('show-topics');
             document.body.classList.add('show-breadcrumbs');
-            
+
             document.querySelectorAll('.topic-pages > div').forEach(div => {
                 div.style.display = 'none';
             });
-            
+
             document.getElementById(subtopicId).style.display = 'block';
-            
+
             document.querySelector('.landing-page').style.display = 'none';
             document.querySelector('.topic-pages').style.display = 'block';
-            
+
             const headerTitle = document.querySelector('.header-title');
             headerTitle.textContent = 'AI in Education VIP Research Exchange';
             headerTitle.classList.add('visible');
-            
+
+            // Update browser URL using History API
+            if (!skipHistory) {
+                const url = `${window.location.pathname}?topic=${topicId}&subtopic=${subtopicId}`;
+                const subtopicElement = document.getElementById(subtopicId);
+                const pageTitle = subtopicElement ? subtopicElement.querySelector('.topic-page-header h1').textContent : 'Subtopic';
+                history.pushState(navigationState, pageTitle, url);
+            }
+
             updateBreadcrumbs();
             window.scrollTo(0, 0);
         }
@@ -2831,4 +3301,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
