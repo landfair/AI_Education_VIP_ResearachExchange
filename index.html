@@ -662,33 +662,41 @@
             line-height: 1.6;
             position: relative;
             padding: 20px;
-            padding-right: 310px;
+            padding-right: 50px;
             background-color: #f0e6ff;
             border-radius: 8px 8px 0 0;
             margin-bottom: 0;
         }
-    
+
         .bib-citation:hover {
             background-color: #e9ddf5;
         }
 
-        .citation-text {
-            flex: 1 1 auto;
-            padding-right: 10px; 
-            min-width: 0;
-        }
-    
-        .bib-buttons {
+        .collapse-indicator {
             position: absolute;
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            display: flex;
-            gap: 15px;
-            justify-content: flex-end;
-            width: 280px;
+            width: 12px;
+            height: 12px;
+            border-left: 2px solid #8900e1;
+            border-bottom: 2px solid #8900e1;
+            transform: translateY(-60%) rotate(-45deg);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            user-select: none;
         }
-    
+
+        .collapse-indicator.expanded {
+            transform: translateY(-40%) rotate(135deg);
+        }
+
+        .citation-text {
+            flex: 1 1 auto;
+            padding-right: 10px;
+            min-width: 0;
+        }
+
         .bib-button {
             padding: 8px 16px;
             background-color: white;
@@ -699,16 +707,11 @@
             color: #8900e1;
             cursor: pointer;
             transition: all 0.25s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 120px;
             white-space: nowrap;
             box-shadow: 0 1px 3px rgba(137, 0, 225, 0.1);
-        }
-    
-        .bib-button:nth-child(2) {
-            min-width: 130px;
         }
 
         .bib-button:hover {
@@ -723,16 +726,8 @@
             box-shadow: 0 1px 2px rgba(137, 0, 225, 0.1);
         }
     
-        .bib-button:first-child::before {
+        .annotation-actions .bib-button::before {
             content: "\f06e";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            margin-right: 6px;
-            font-size: 12px;
-        }
-    
-        .bib-button:nth-child(2)::before {
-            content: "\f075";
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             margin-right: 6px;
@@ -741,25 +736,18 @@
     
         @media (max-width: 768px) {
             .bib-citation {
-                padding-right: 20px;
-                padding-bottom: 70px;
+                padding-right: 50px;
             }
-    
-            .bib-buttons {
-                top: auto;
-                bottom: 15px;
-                right: 20px;
-                transform: none;
-                width: auto;
+
+            .annotation-actions {
+                flex-direction: column;
+                gap: 10px;
             }
-    
-            .bib-button {
-                padding: 8px 12px;
-                min-width: 100px;
-            }
-    
-            .bib-button:nth-child(2) {
-                min-width: 110px;
+
+            .bib-button,
+            .add-perspective-btn {
+                width: 100%;
+                text-align: center;
             }
         }
     
@@ -799,6 +787,16 @@
             color: #444;
         }
     
+        .annotation-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #e6d0f0;
+        }
+
         .add-perspective-btn {
             background-color: white;
             border: 2px solid #8900e1;
@@ -808,11 +806,11 @@
             color: #8900e1;
             cursor: pointer;
             transition: all 0.2s ease;
-            display: block;
+            display: inline-block;
             width: fit-content;
-            margin: 15px auto 0;
+            margin: 0;
         }
-    
+
         .add-perspective-btn:hover {
             background-color: #f0e6ff;
         }
@@ -1210,6 +1208,10 @@
                 </div>
                 <div class="topic-content">
                     <div class="subtopic-cards">
+                        <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'general')">
+                            <h3>General</h3>
+                            <p>General perspectives on how people perceive and interact with AI systems.</p>
+                        </div>
                         <div class="subtopic-card" onclick="showSubtopicPage('understanding-users', 'administrators')">
                             <h3>Administrators</h3>
                             <p>Administrative perspectives on AI policy, implementation, and institutional change.</p>
@@ -1225,7 +1227,160 @@
                     </div>
                 </div>
             </div>
-            
+
+            <!-- General subtopic -->
+            <div id="general" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>General Perspectives on AI</h1>
+                    <p>General perspectives on how people perceive and interact with AI systems.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="general,psychology,human-AI-interaction">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1093/jcmc/zmz026"
+                                data-source-title="Rise of Machine Agency: A Framework for Studying the Psychology of Human–AI Interaction (HAII)">
+                                Sundar, S. S. "Rise of Machine Agency: A Framework for Studying the Psychology of Human–AI Interaction (HAII)." <em>J. Comput.-Mediat. Commun.</em> 2020, <em>25</em>, 74–88.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="sundar2020-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper is useful for framing the psychological impact of increasingly powerful AI agents. The paper proposes a framework that measures two dimensions of agency in human AI interaction: "cognizance", or the perceived sentience and consciousness of the AI agent, and "autonomy", or the extend to which the agent can carry out tasks without prompts from a human user.
+                                        <div class="annotation-author">Alexander Landfair 12/2/2024</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty subtopic -->
+            <div id="faculty" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Faculty Perspectives on AI</h1>
+                    <p>Faculty attitudes toward AI integration and their teaching practice adaptations.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="faculty,TPACK,teacher-knowledge">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1016/j.chb.2022.107468"
+                                data-source-title="Towards Intelligent-TPACK: An empirical study on teachers' professional knowledge to ethically integrate artificial intelligence (AI)-based tools into education">
+                                Celik, I. "Towards Intelligent-TPACK: An empirical study on teachers' professional knowledge to ethically integrate artificial intelligence (AI)-based tools into education." <em>Comput. Hum. Behav.</em> 2023, <em>138</em>, 107468.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="celik2023-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper applies the well-established TPACK framework to the problem of AI integration in education. TPACK is a framework to describe teachers' knowledge needs in terms of their content knowledge (CK), their pedagogical knowledge (PK) and their technological knowledge (TK). This paper proposes a new AI-TPACK framework, and surveys 327 teachers to establish baseline measurements.
+                                        <div class="annotation-author">Alexander Landfair 12/2/2024</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="faculty,HCI,human-centered-AI">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/abs/2105.05424"
+                                data-source-title="From Human-Computer Interaction to Human-AI Interaction: New Challenges and Opportunities for Enabling Human-Centered AI">
+                                Xu, W.; Dainoff, M. J.; Ge, L.; Gao, Z. "From Human-Computer Interaction to Human-AI Interaction: New Challenges and Opportunities for Enabling Human-Centered AI." <em>ArXiv</em> 2021, abs/2105.05424.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="xu2021-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper summarizes what HCI professionals can contribute to human-AI interaction (HAII) including research, design, practice and policy. The authors argue that HCI professionals should act as advocates for human-centered values in the development and deployment of AI, particularly concerning data privacy and algorithmic equity.
+                                        <div class="annotation-author">Alexander Landfair 12/2/2024</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Students subtopic -->
+            <div id="students" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Student Perspectives on AI</h1>
+                    <p>Understanding how students perceive and use AI tools in their learning processes.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="students,K-12,engagement,UTAUT2">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1007/s10639-024-12950-2"
+                                data-source-title="An explanatory study of factors influencing engagement in AI education at the K-12 Level: from the perspective of students">
+                                Li, M.; Hu, Y.; Hu, W.; et al. "An explanatory study of factors influencing engagement in AI education at the K-12 Level: from the perspective of students." <em>Educ. Inf. Technol.</em> 2024.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="li2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper aims to understand what external and internal factors might influence a K-12 student's engagement with AI. To do so, the researchers surveyed 1,022 K-12 students across more than 100 different Chinese schools using the UTAUT2 model, and complemented these surveys with interviews of 15 K-12 students. The paper identifies 8 factors that significantly affect K-12 students' willingness to engage with AI.
+                                        <div class="annotation-author">Alexander Landfair 12/2/2024</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="students,engagement,AI-teaching-assistant,higher-education">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/abs/2408.08551"
+                                data-source-title="Enhancing Student Engagement Through Artificial Intelligence: A Case Study in Higher Education">
+                                Nguyen, S. "Enhancing Student Engagement Through Artificial Intelligence: A Case Study in Higher Education." <em>ArXiv</em> 2024, abs/2408.08551.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="nguyen2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper describes a case study of students using an AI Teaching Assistant (AITA) in the author's class on organizational behavior. The author notes that students found the AITA very helpful with some limitations. However, the paper does not control for the novelty effect, or provide much data on how or how much the students used the AITA.
+                                        <div class="annotation-author">Alexander Landfair 12/2/2024</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Administrators subtopic -->
+            <div id="administrators" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Administrator Perspectives on AI</h1>
+                    <p>Administrative perspectives on AI policy, implementation, and institutional change.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <p style="text-align: center; padding: 40px; color: #666; font-style: italic;">
+                            No bibliography entries yet. Check back soon for resources on administrative perspectives!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Student Attitudes subtopic -->
             <div id="student-attitudes" style="display: none;">
                 <div class="topic-page-header">
@@ -1239,19 +1394,19 @@
                                 data-source-url="https://doi.org/10.1016/j.chb.2024.108123"
                                 data-source-title="Student Perceptions of ChatGPT in Academic Settings">
                                 Cotton, D. R., Cotton, P. A., & Shipway, J. R. (2024). "Chatting and cheating: Ensuring academic integrity in the era of ChatGPT." <em>Innovations in Education and Teaching International</em>, 61(2), 228-241.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('cotton2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="cotton2024-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This study surveyed 2,500+ students across multiple universities to understand their perceptions and usage patterns of ChatGPT. Key findings include widespread adoption for academic tasks, concerns about academic integrity, and varying levels of AI literacy. The research reveals generational differences in AI comfort levels and highlights the need for institutional guidance.
-                                        <div class="annotation-author">VIP Understanding Users Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1319,10 +1474,7 @@
                                 data-source-url="https://scholar.google.com/"
                                 data-source-title="GenAI Mirage: The Impostor Bias and the Deepfake Detection Challenge">
                                 Casu, M.; Guarnera, L.; Caponnetto, P.; Battiato, S. "GenAI Mirage: The Impostor Bias and the Deepfake Detection Challenge in the Era of Artificial Illusions." <em>Forensic Sci. Int. Digit. Investig.</em> 2024, <em>50</em>, 301795.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('casu2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="casu2024-annotation">
                                 <div class="bib-annotation">
@@ -1331,7 +1483,10 @@
                                         <div class="annotation-author">Alexander Landfair 12/2/2024</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1340,10 +1495,7 @@
                                 data-source-url="https://medium.com/"
                                 data-source-title="Two minutes NLP: Perplexity explained with simple probabilities">
                                 Chiusano, F. "Two minutes NLP: Perplexity explained with simple probabilities." <em>Medium dot com</em>. 2022.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('chiusano2022')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="chiusano2022-annotation">
                                 <div class="bib-annotation">
@@ -1358,7 +1510,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1367,10 +1522,7 @@
                                 data-source-url="https://arxiv.org/"
                                 data-source-title="ALBERT: A Lite BERT for Self-supervised Learning of Language Representations">
                                 Lan Z. et al. "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations" <em>ArXiv</em>. 2019.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('lan2019')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="lan2019-annotation">
                                 <div class="bib-annotation">
@@ -1379,7 +1531,10 @@
                                         <div class="annotation-author">Srinivas Harish 9/19/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1388,10 +1543,7 @@
                                 data-source-url="https://www.sciencedirect.com/"
                                 data-source-title="The false positives and false negatives of generative AI detection tools">
                                 Dalalh, D. "The false positives and false negatives of generative AI detection tools in education and academic research: The case of ChatGPT." <em>The International Journal of Management Education</em>. 2023, Volume 21 Issue 2.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('dalalh2023')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="dalalh2023-annotation">
                                 <div class="bib-annotation">
@@ -1400,7 +1552,10 @@
                                         <div class="annotation-author">Nasrin Alanna 9/25/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1409,10 +1564,7 @@
                                 data-source-url="https://peerj.com/"
                                 data-source-title="The accuracy-bias trade-offs in AI text detection tools">
                                 Pratama, A. R. "The accuracy-bias trade-offs in AI text detection tools and their impact on fairness in scholarly publication." <em>PeerJ Comput. Sci.</em> 2025, e2953.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('pratama2025')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="pratama2025-annotation">
                                 <div class="bib-annotation">
@@ -1421,7 +1573,10 @@
                                         <div class="annotation-author">Josephine Li 10/09/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1430,10 +1585,7 @@
                                 data-source-url="https://link.springer.com/"
                                 data-source-title="Evaluating the efficacy of AI content detection tools">
                                 Elkhatat, A.M.; Elsaid, K.; Almeer, S. "Evaluating the efficacy of AI content detection tools in differentiating between human and AI‑generated text." <em>International Journal for Educational Integrity</em>. 2023, pp. 1-17.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('elkhatat2023')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="elkhatat2023-annotation">
                                 <div class="bib-annotation">
@@ -1442,7 +1594,10 @@
                                         <div class="annotation-author">Unmesh Achar 10/15/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1451,10 +1606,7 @@
                                 data-source-url="https://arxiv.org/"
                                 data-source-title="DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature">
                                 Mitchell, E.; Lee, Y.; Khazatsky, A.; Manning, C. D.; Finn, C. (2023). "DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature."
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('mitchell2023')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="mitchell2023-annotation">
                                 <div class="bib-annotation">
@@ -1463,7 +1615,10 @@
                                         <div class="annotation-author">Yanze Wu 10/15/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1472,10 +1627,7 @@
                                 data-source-url="https://doi.org/"
                                 data-source-title="AI or Human? Detecting Machine-Generated Text Through Perplexity">
                                 Rylander, A. "AI or Human? Detecting Machine-Generated Text Through Perplexity."
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('rylander2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="rylander2024-annotation">
                                 <div class="bib-annotation">
@@ -1484,7 +1636,10 @@
                                         <div class="annotation-author">Josephine Li 10/22/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1493,10 +1648,7 @@
                                 data-source-url="https://arxiv.org/"
                                 data-source-title="Detection Undermining via Prompt Engineering for Deepfake Text">
                                 Weichert, J.; Dimobi, C. "Detection Undermining via Prompt Engineering for Deepfake Text." <em>arXiv</em>. 2024.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('weichert2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="weichert2024-annotation">
                                 <div class="bib-annotation">
@@ -1505,7 +1657,10 @@
                                         <div class="annotation-author">Josephine Li 10/22/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1525,10 +1680,7 @@
                                 data-source-url="https://arxiv.org/abs/2304.02819"
                                 data-source-title="GPT detectors are biased against non-native English writers">
                                 Liang, W.; Yuksekgonul, M.; Mao, Y.; Wu, E.; Zou, J. "GPT detectors are biased against non-native English writers." <em>arXiv:2304.02819</em>. 2023.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('liang2023')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="liang2023-annotation">
                                 <div class="bib-annotation">
@@ -1537,7 +1689,10 @@
                                         <div class="annotation-author">Josephine Li 10/13/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1557,10 +1712,7 @@
                                 data-source-url="https://journals.sagepub.com/"
                                 data-source-title="ChatGPT vs. Students: A Comparative Analysis of Performance in Corporate Finance Exams">
                                 Hussain, S. M.; Malik, A.; Ahmad, N.; Ahmed, S. "ChatGPT vs. Students: A Comparative Analysis of Performance in Corporate Finance Exams." <em>Journal of Educational Technology Systems</em>. 2025.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('hussain2025')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="hussain2025-annotation">
                                 <div class="bib-annotation">
@@ -1569,7 +1721,10 @@
                                         <div class="annotation-author">Meiling Zhang 10/9/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1589,10 +1744,7 @@
                                 data-source-url="https://arxiv.org/"
                                 data-source-title="Generative AI (GPT-4) Without Guardrails Can Harm Learning">
                                 "Generative AI (GPT-4) Without Guardrails Can Harm Learning."
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('guardrails2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="guardrails2024-annotation">
                                 <div class="bib-annotation">
@@ -1601,7 +1753,10 @@
                                         <div class="annotation-author">Yanze Wu 10/15/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1621,10 +1776,7 @@
                                 data-source-url="https://www.sciencedirect.com/"
                                 data-source-title="Comparing the quality of human and ChatGPT feedback of students' writing">
                                 Steiss, J.; Tate, T.; Graham, S.; Cruz, J.; Hebert, M.; Wang, J.; Moon Y.; Tseng, W.; Warschauer, M.; Olson, C. B. "Comparing the quality of human and ChatGPT feedback of students' writing." <em>Learning and Instruction</em>. 2024. 101894.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('steiss2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="steiss2024-annotation">
                                 <div class="bib-annotation">
@@ -1639,7 +1791,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
 
@@ -1648,10 +1803,7 @@
                                 data-source-url="https://www.ejmste.com/"
                                 data-source-title="Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment">
                                 Owan, V. J., Abang, K. B., Idika, D. O., Etta, E. O., Bassey, B. A. "Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment." <em>EURASIA Journal of Mathematics, Science and Technology Education</em>. 2023, em2307.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('owan2023')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="owan2023-annotation">
                                 <div class="bib-annotation">
@@ -1660,7 +1812,10 @@
                                         <div class="annotation-author">Unmesh Achar 10/15/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1779,24 +1934,87 @@
                 </div>
                 <div class="topic-content">
                     <div class="bibliography-container">
-                        <div class="bib-entry" data-tags="impact-assessment,ethics-policy">
+                        <div class="bib-entry" data-tags="learning-outcomes,physics,problem-solving">
                             <div class="bib-citation"
-                                data-source-url="https://doi.org/10.1016/j.learninstruc.2024.101234"
-                                data-source-title="Impact of AI Writing Assistance on Student Learning">
-                                Zhang, L., & Martinez, R. (2024). "The double-edged sword: How AI writing assistance affects student learning outcomes in composition courses." <em>Learning and Instruction</em>, 89, 101234.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('zhang2024')">View Annotations</button>
-                                </div>
+                                data-source-url="https://www.compadre.org/per/items/detail.cfm?ID=16445"
+                                data-source-title="Help or Hype? Students' Engagement and Perception of Using AI to Solve Physics Problems">
+                                Qurat-ul-Ann Mirza, N. Sanjay Rebello. "Help or Hype? Students' Engagement and Perception of Using AI to Solve Physics Problems." <em>Physics Education Research Conference (PERC)</em>. 2025.
+                                <span class="collapse-indicator"></span>
                             </div>
-                            <div class="bib-annotation-container" id="zhang2024-annotation">
+                            <div class="bib-annotation-container" id="mirza2025-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
-                                        This controlled study examined learning outcomes in writing courses with and without AI assistance. Results show improved final product quality but concerning decreases in independent writing skills and critical thinking development. The research highlights the need for careful integration strategies that preserve educational benefits.
-                                        <div class="annotation-author">VIP Assessing Impacts Team, January 2025</div>
+                                        This study explores how students use ChatGPT during a physics problem-solving task embedded in a formal assessment. The findings indicated that students who engaged with ChatGPT generally performed better than those who did not. In particular, students who provided more complete and contextual prompts experienced greater benefits. There was also the presence of incorrect AI-generated responses, which calls for evaluating AI output. These results suggest that while AI can be a valuable aid in problem solving, its effectiveness depends significantly on how students use it, reinforcing the need to incorporate structured AI literacy into STEM education.
+                                        <div class="annotation-author">Dan Ahimbisibwe 10/08/2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="learning-outcomes,ChatGPT,engagement,review">
+                            <div class="bib-citation"
+                                data-source-url="https://www.frontiersin.org/articles/10.3389/feduc.2024.1378230"
+                                data-source-title="Exploring the impact of ChatGPT: conversational AI in education">
+                                Bettayeb, A. "Exploring the impact of ChatGPT: conversational AI in education." <em>Frontiers in Education</em>. 2024.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="bettayeb2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This journal provides a literary review of a research study conducted between 2022-2023 on the specific impacts of ChatGPT on educational environments. The findings showed that the adaptable nature of ChatGPT had a positive impact on student learning, allowing for tailored learning experiences and increased accessibility for students due to the conversational mode of information retrieval. The study overall showed positive outcomes on student learning, while citing a number of persisting concerns largely in regards to the ethics of models like ChatGPT. The main ethical and practical concerns the study raises are those of bias and authorship and misinformation.
+                                        <div class="annotation-author">Elan Hebert 10/9/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="learning-outcomes,PhD,achievement,higher-education">
+                            <div class="bib-citation"
+                                data-source-url="http://www.ijiet.org/vol14/IJIET-V14N3-2204.pdf"
+                                data-source-title="Examining the Impact of OpenAI's ChatGPT on PhD Student Achievement">
+                                Boubker, O.; Ben-Saghroune, H.; Bourassi, J.; Abdessadek, M.; Sabbahi, R.; Abdellah, M. "Examining the Impact of OpenAI's ChatGPT on PhD Student Achievement." <em>International Journal of Information and Education Technology</em>, 2024, <em>14</em>, 443–451.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="boubker2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article presents a study that explores the influence of ChatGPT on PhD students' performance and examines factors that motivate their usage as well as their level of satisfaction with the tool. They found that there was a direct positive effect of ChatGPT's perceived usefulness on ChatGPT use and PhD students' satisfaction. They found a significant positive relationship between students who use ChatGPT and satisfaction with the tool. Finally, they found that students who use ChatGPT and are satisfied with ChatGPT reported net benefits on their studies, like increasing productivity, enhancing performance, simplifying research tasks, and improving research quality.
+                                        <div class="annotation-author">Jesse Noppe-Brandon 10/15/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="learning-outcomes,creativity,divergent-thinking">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1016/j.jcreat.2024.100089"
+                                data-source-title="How does generative artificial intelligence impact student creativity?">
+                                Habib, S.; Vogel, T.; Anli, X.; Thorne, E. "How does generative artificial intelligence impact student creativity?" <em>Journal of Creativity</em>, 2024.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="habib2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper presents a mixed-methods study that explores how ChatGPT-3 influences students' creative thinking abilities and confidence in a college-level creativity course. The authors found that using ChatGPT-3 significantly improved scores in all four creativity dimensions (fluency, flexibility, elaboration, originality). However, qualitative findings revealed that while AI boosted idea generation speed and provided inspiration, it sometimes weakened originality and creative confidence. The study concluded that AI can enhance divergent thinking but may also lead to overreliance and cognitive fixation, where students depend too much on AI-generated ideas.
+                                        <div class="annotation-author">Dan Ahimbisibwe 10/16/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1860,19 +2078,164 @@
                                 data-source-url="https://doi.org/10.1145/3573051.3596191"
                                 data-source-title="Design Principles for AI-Enhanced Educational Tools">
                                 Kumar, S., Thompson, A., & Lee, J. (2024). "Human-centered design principles for AI-enhanced educational technologies." <em>Proceedings of the ACM Conference on Learning @ Scale</em>, 234-245.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('kumar2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="kumar2024-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This paper outlines key design principles for creating educational technologies that effectively integrate AI while maintaining pedagogical integrity. The authors emphasize transparency, user agency, and educational effectiveness over technological novelty. Essential reading for the Innovating EdTech subteam's prototype development work.
-                                        <div class="annotation-author">VIP Innovating EdTech Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Tutoring & Learning Support subtopic -->
+            <div id="ai-tutoring" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>AI Tutoring & Learning Support</h1>
+                    <p>Tools that act as instructors, mentors, or study aids including tutorbots, homework helpers, and adaptive learning systems.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="edtech-innovation,ai-tutoring,stem-education">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1145/3392063.3394400"
+                                data-source-title="Using a Mixed-Reality AI System for STEM Education">
+                                Yannier, N., Hudson, S. E., & Koedinger, K. R. (2020). "Active Learning is About More Than Hands-On: A Mixed-Reality AI System to Support STEM Education." <em>International Journal of Artificial Intelligence in Education</em>, 30(1), 74-96.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="yannier2020-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The study's most effective approach, the Combined condition, interleaves hands-on construction with guided discovery to let students "learn the theory" and then "apply the theory". The AI acts as an intelligent tutor, orchestrating a structured predict-explain-observe-explain cycle to provide real-time, personalized feedback. This approach, enabled by AI, ensures that children don't just tinker; they actively engage with scientific principles. It led to a more than 10-fold improvement in tower-building skills compared to the minimally-guided hands-on condition alone, proving that adding interactive guidance to hands-on experiences makes them more effective for learning. Guidance for hands-on activities is often inconsistent in learning environments like museums or even in schools. Not all parents, museum staff, or teachers have the necessary scientific background to provide knowledgeable and consistent support to students. This variability in support creates an unequal learning experience for children.
+                                        <div class="annotation-author">Muhammad Farhan 09/25/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bib-entry" data-tags="edtech-innovation,ai-tutoring,assessment">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1016/j.heliyon.2023.e13782"
+                                data-source-title="Artificial Intelligence in Educational Measurement and Assessment">
+                                Owan, V. J., Abang, K. B., Idika, D. O., Etta, E. O., & Bassey, B. A. (2023). "Exploring the potential of artificial intelligence tools in educational measurement and assessment." <em>Heliyon</em>, 9(2), e13782.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="owan2023-tutoring-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper explores a surface level approach to using AI Tools to support educational measurement and assessment. It explores the application of AI tools, specifically the ability of Large Language Models (LLM's) to interpret data using Natural Language Processing(NLP) and machine learning, and how AI tools can assist in test item generation, preparation of test instruction, test administration and scoring, and interpreting and analyzing test results. It also touches upon some challenges in using AI tools, such as lack of stakeholder participation, bias in AI, and a strong resistance to change. The paper explored how AI can assist in creating a Test Blueprint, a two-dimensional framework that maps key content areas and instructional objectives for examinations. By leveraging LLMs, instructors can determine which instructional objectives are most critical.
+                                        A couple key challenges this paper brought up on the shift to AI tools from traditional is the lack of human interaction, limited scope, resistance to change, lack of student motivation, and technical difficulties. I feel these are the biggest problems with AI today and addressing them is key. The biggest problem would be student motivation. The shift towards almost fully screen-based learning with minimal human interaction hinders the development of social skills and sustaining engagement. Additionally, with the inaccuracies in AI today, such as false information and bias, it's important to keep teacher's intervention and engagement as much as possible to ensure a fair and meaningful learning experience.
+                                        <div class="annotation-author">Rohan Kapur 09/25/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback & Assessment Tools subtopic -->
+            <div id="feedback-assessment" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Feedback & Assessment Tools</h1>
+                    <p>AI that evaluates or comments on student work, including automated grading and feedback generators.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="edtech-innovation,assessment,feedback">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1016/j.heliyon.2023.e13782"
+                                data-source-title="Artificial Intelligence in Educational Measurement and Assessment">
+                                Owan, V. J., Abang, K. B., Idika, D. O., Etta, E. O., & Bassey, B. A. (2023). "Exploring the potential of artificial intelligence tools in educational measurement and assessment." <em>Heliyon</em>, 9(2), e13782.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="owan2023-feedback-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper explores a surface level approach to using AI Tools to support educational measurement and assessment. It explores the application of AI tools, specifically the ability of Large Language Models (LLM's) to interpret data using Natural Language Processing(NLP) and machine learning, and how AI tools can assist in test item generation, preparation of test instruction, test administration and scoring, and interpreting and analyzing test results. It also touches upon some challenges in using AI tools, such as lack of stakeholder participation, bias in AI, and a strong resistance to change. The paper explored how AI can assist in creating a Test Blueprint, a two-dimensional framework that maps key content areas and instructional objectives for examinations. By leveraging LLMs, instructors can determine which instructional objectives are most critical.
+                                        A couple key challenges this paper brought up on the shift to AI tools from traditional is the lack of human interaction, limited scope, resistance to change, lack of student motivation, and technical difficulties. I feel these are the biggest problems with AI today and addressing them is key. The biggest problem would be student motivation. The shift towards almost fully screen-based learning with minimal human interaction hinders the development of social skills and sustaining engagement. Additionally, with the inaccuracies in AI today, such as false information and bias, it's important to keep teacher's intervention and engagement as much as possible to ensure a fair and meaningful learning experience.
+                                        <div class="annotation-author">Rohan Kapur 09/25/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organizational & Productivity Tools subtopic -->
+            <div id="organizational-productivity" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Organizational & Productivity Tools</h1>
+                    <p>Tools that structure learning and manage large projects, such as note-taking and research assistants.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="edtech-innovation,productivity,teaching-tools">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.33394/jollt.v9i4.4205"
+                                data-source-title="AI-Assisted Tools for Teaching and Learning">
+                                Fitria, T. N. (2021). "Artificial intelligence (AI) in education: Using AI tools for teaching and learning process." <em>Prosiding Seminar Nasional Pendidikan</em>, 3, 67-76.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="fitria2021-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This text came right before / at the forefront of AI being widely adopted and in populous common use in educational settings. It begins by outlining several use cases and existing technologies that are seen as 'innovations' that help save time and are efficient. The argument and clarity gained surrounds the philosophy that human teacher skills - delivering new knowledge and creativity is what should be valued, protected and continuously harped on. While systematic procedures that have historically been manual and necessary to do, might be what is significantly automated.
+                                        The research ultimately takes a deeper dive/ inspection into the various forms of currently emerging edutech, to create philosophical commentary on its advantages and disadvantages, especially in its form / medium. Fitria offers commentary especially under the lens of, again, helpfulness in systematic procedure, vs what might create a distance from interacting with lucrative human teacher value. It mentions several somewhat niche technologies too for educational settings like voice assistants, and language translation between teachers and students that are intriguing.
+                                        Its method and materials are mostly concerned with library research. That's a limitation.
+                                        <div class="annotation-author">Cate Hackett 10/9/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bib-entry" data-tags="edtech-innovation,productivity,prompt-engineering">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1007/s10639-024-12842-8"
+                                data-source-title="Prompt Engineering for Educators">
+                                Park, Y., & Choo, S. (2025). "Prompt engineering strategies for educators: Optimizing AI-assisted teaching tools." <em>Education and Information Technologies</em>, 30(1), 145-168.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="park2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper explores different prompt engineering strategies designed to benefit educators and how they interact with Large Language Models (LLMs). It introduces a number of different frameworks designed for different steps of prompt engineering, with the most important being CLEAR, PARTS, and REFINE. Together, these provide a comprehensive approach for educators to engage with LLMs.
+                                        The PARTS framework stands for Persona, Aim, Recipients, and Theme. These terms are what you should follow when creating context for the LLM. Persona refers to setting the context of your prompt. Aim is setting the goal of the prompt and what you want the outcome to be. Recipients are who you want the outcome to be for as the AI can tailor its response for that audience. It's important to note to be very specific with this as the more specific it is, the more tailored the response can be. The next is Theme, where you describe the style, tone and any restrictions. These could include which voice to use, how the tone of the response should sound, and a word count. Finally, there's structure. This represents the desired format for the output. This can include, but not limited to, bullet points, a table, code, and a graph.
+                                        The next framework, CLEAR, stands for Concise, Logical, Explicit, Adaptive, and Reflective. This is how your prompts should be structured, as creating clear and concise prompts help the LLM follow precise instructions and allows it to follow a clear flow and order of ideas. While some of these overlap with PARTS, keeping prompts concise and explicit are definitely important to keep in mind.
+                                        The next framework is REFINE. This stands for Rephrase key words, Experiment with context and examples, Feedback loop, Inquiry questions, Navigate by iterations, and Evaluate and verify outputs. This comes after the initial prompt and output from the LLM. This framework is used to develop a new prompt to modify the output.
+                                        Together, these frameworks create IDEA, which stands for Include essential PARTS, Develop with CLEAR prompts, Evaluate outputs and REFINE prompts, and Apply with accountability. The last part refers to making sure you are aware of the potential limitations and to make sure to use LLMs with responsibility.
+                                        This research ultimately brings together different prompt engineering ideas to create an ultimate framework which I think should be taught to educators. Teaching these principles of prompt engineering can enable them to become designers of AI-Assisted learning, rather than regular consumers. By being able to adopt these frameworks, educators can develop somewhat of an AI literacy, the ability to understand and shape how AI produces information.
+                                        <div class="annotation-author">Rohan Kapur 10/23/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1927,19 +2290,19 @@
                                 data-source-url="https://doi.org/10.1016/j.caeai.2023.100162"
                                 data-source-title="AI Literacy Framework for Higher Education">
                                 Long, D., & Magerko, B. (2020). "What is AI literacy? Competencies and design considerations." <em>Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems</em>, 1-13.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('long2020')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="long2020-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This foundational paper defines AI literacy as a set of competencies enabling individuals to critically evaluate AI technologies, communicate effectively with AI, and use AI as a tool online, at home, and in the workplace. The framework includes understanding AI capabilities, limitations, and ethical implications.
-                                        <div class="annotation-author">VIP Understanding Users Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1959,19 +2322,19 @@
                                 data-source-url="https://doi.org/10.1016/j.chb.2024.108234"
                                 data-source-title="Capabilities and Limitations of Large Language Models">
                                 Bommasani, R., Hudson, D. A., Adeli, E., et al. (2021). "On the opportunities and risks of foundation models." <em>arXiv preprint</em> arXiv:2108.07258.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('bommasani2021')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="bommasani2021-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This comprehensive analysis examines foundation models (like GPT) across multiple dimensions including capabilities, limitations, and societal impacts. Essential reading for understanding what these models can and cannot do in educational contexts, including issues of bias, reliability, and appropriate use cases.
-                                        <div class="annotation-author">VIP Evaluating Tools Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1990,19 +2353,19 @@
                                 data-source-url="https://doi.org/10.1145/3442188.3445922"
                                 data-source-title="Bias in AI Systems: A Survey">
                                 Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., & Galstyan, A. (2021). "A survey on bias and fairness in machine learning." <em>ACM Computing Surveys</em>, 54(6), 1-35.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('mehrabi2021')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="mehrabi2021-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This survey provides a comprehensive overview of different types of bias in machine learning systems, sources of bias, and mitigation strategies. Particularly relevant for educational AI tools where bias can significantly impact student outcomes and educational equity.
-                                        <div class="annotation-author">VIP Evaluating Tools Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2039,19 +2402,47 @@
                                 data-source-url="https://doi.org/10.1007/s40979-023-00146-z"
                                 data-source-title="Academic Integrity in the Age of AI">
                                 Eaton, S. E. (2023). "Postplagiarism: Transdisciplinary ethics and integrity in the age of artificial intelligence and neurotechnology." <em>International Journal for Educational Integrity</em>, 19(1), 1-10.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('eaton2023')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="eaton2023-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         Eaton proposes a "postplagiarism" framework for academic integrity in the AI era, arguing that traditional notions of plagiarism are insufficient for addressing AI-assisted work. The paper calls for new ethical frameworks that focus on learning outcomes rather than detection of AI use.
-                                        <div class="annotation-author">VIP Assessing Impacts Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="academic-integrity,higher-education,dishonesty,cognitive-effects">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.54663/2182-9306.v11.n1.2025.pp156-175"
+                                data-source-title="Use of Generative Artificial Intelligence tools in higher education environments">
+                                Seco, D.; Grösser, S.; Pedrosa, A.M. "Use of Generative Artificial Intelligence tools in higher education environments." <em>Multidisciplinary Journal for Education, Social and Technological Sciences</em>. 2025, pages 156-175.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="seco2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper examines the integration of Gen AI into a university setting by analyzing its current applications and collecting perspectives from stakeholders like students and professors. The study finds that while AI is becoming increasingly common, its use remains somewhat limited. Students view AI as "valuable resource for personalized learning", while educators are focused on adapting their teaching methods to maintain quality in this new technological landscape. The research mentions a central tension between the significant potential of AI and its balance against major ethical concerns and risks. Key challenges include a rise in academic dishonesty, as AI provides new ways to cheat and plagiarize, and the risk of over-reliance on these tools, which can lead to negative cognitive effects like procrastination, memory decline, and decreased academic performance. The authors conclude that for AI to be integrated successfully, educators must evolve their assessment strategies to address these challenges, ensuring a student-centered approach that balances the technology's benefits and risks.
+                                        The concerns raised by Seco et al. parallel the arguments from the Veritasium video and the issues of bias detailed by Baker & Hawn (2022). While the former two focus on how AI threatens the process of learning by eliminating cognitive effort and undermining academic integrity, Baker & Hawn reveal how AI can corrupt the equity of learning outcomes. Together, they expose a potential double bind for students, especially those from marginalized groups. A student might use an AI tool that allows them to bypass the "desirable difficulties" essential for deep system 2 thinking, and lead to academic dishonesty. Then, the same AI system could evaluate their work through a biased lens, systematically disadvantaging them based on their race, gender, or socioeconomic background. This creates a scenario where AI not only fails to support genuine learning but also actively perpetuates systemic inequality. Thus, the solution should be two-pronged, where we need the pedagogical shifts that Seco et al. and the Veritasium video imply, such as redesigning assessments to focus on process, but we also desperately need the technical and policy-level interventions that Baker & Hawn advocate for to ensure the tools themselves are built on principles of fairness and equity.
+                                        <div class="annotation-author">Josephine Li 10/01/2025</div>
+                                    </div>
+                                </div>
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The paper's insights align with urging institutions and professors to balance rapid adaptation of generative AI. Not only it offers personalized learning but also deep understanding of concepts that's crucial for employability. Seco et al also recommends student centered approaches for conducting assessments to foster deep reflective thinking. The authors emphasize a central tension: AI enhances flexibility and accessibility but also introduces serious concerns, including the risk of academic dishonesty, overreliance, and negative cognitive impacts. The paper concludes that universities must strategically balance innovation with integrity, guiding the sector toward inclusive, process-oriented, and human-centered education in the AI era.
+                                        <div class="annotation-author">Debika Piriya D 10/9/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2065,12 +2456,26 @@
         <p>How AI tools impact the reliability and validity of educational assessments and grading practices.</p>
     </div>
     <div class="topic-content">
-        <div class="empty-content-placeholder">
-            <div class="placeholder-message">
-                <i class="fas fa-book-open" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
-                <h3>Content in Development</h3>
-                <p>VIP Assessing Impacts subteam is currently curating resources for this research area. We welcome your contributions and findings.</p>
-                <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
+        <div class="bibliography-container">
+            <div class="bib-entry" data-tags="assessment-validity,measurement,educational-assessment">
+                <div class="bib-citation"
+                    data-source-url="https://doi.org/10.29333/ejmste/13428"
+                    data-source-title="Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment">
+                    Owan, V. J., Abang, K. B., Idika, D. O., Etta, E. O., Bassey, B. A. "Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment." <em>EURASIA Journal of Mathematics, Science and Technology Education</em>. 2023, em2307.
+                    <span class="collapse-indicator"></span>
+                </div>
+                <div class="bib-annotation-container" id="owan2023-annotation">
+                    <div class="bib-annotation">
+                        <div class="annotation-text">
+                            This paper explores the potential of AI tools in educational measurement and assessment, examining how artificial intelligence can enhance the reliability, validity, and efficiency of assessment practices in educational settings.
+                            <div class="annotation-author">VIP Assessing Impacts Team</div>
+                        </div>
+                    </div>
+                    <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                </div>
             </div>
         </div>
     </div>
@@ -2083,12 +2488,26 @@
         <p>Impact of AI on student stress, motivation, confidence, and overall educational experience.</p>
     </div>
     <div class="topic-content">
-        <div class="empty-content-placeholder">
-            <div class="placeholder-message">
-                <i class="fas fa-book-open" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
-                <h3>Content in Development</h3>
-                <p>VIP Assessing Impacts subteam is currently curating resources for this research area. We welcome your contributions and findings.</p>
-                <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
+        <div class="bibliography-container">
+            <div class="bib-entry" data-tags="student-wellbeing,cognitive-offloading,critical-thinking">
+                <div class="bib-citation"
+                    data-source-url="https://doi.org/10.3390/soc15010006"
+                    data-source-title="AI Tools in Society; Impacts on Cognitive Offloading and the Future of Critical Thinking">
+                    Gerlich, M. "AI Tools in Society; Impacts on Cognitive Offloading and the Future of Critical Thinking." <em>Societies</em> 2025, <em>15</em>, 6.
+                    <span class="collapse-indicator"></span>
+                </div>
+                <div class="bib-annotation-container" id="gerlich2025-annotation">
+                    <div class="bib-annotation">
+                        <div class="annotation-text">
+                            This study looks at the implications of the overreliance on AI tools to users' critical thinking abilities. The study sought to explore two central claims: That high use of AI is correlated to decreased critical thinking abilities, and that cognitive offloading mediates the relationship between AI tool usage and critical thinking. The results of the study found that individuals who self-identified as having high reliance on AI tools consistently scored lower on the critical thinking tests than those who did not declare such a reliance. The study urged that as a result of the tested linkage between AI usage and decreased critical thinking, that precautionary protocols should be implemented to avoid overall degradation of individuals cognitive functions.
+                            <div class="annotation-author">Elan Hebert 10/16/2025</div>
+                        </div>
+                    </div>
+                    <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                </div>
             </div>
         </div>
     </div>
@@ -2106,19 +2525,67 @@
                                 data-source-url="https://doi.org/10.1016/j.compedu.2024.105112"
                                 data-source-title="Digital Divide in AI Education">
                                 Rahimi, S., & Chen, L. (2024). "The AI divide: How socioeconomic factors influence access to and benefits from educational AI tools." <em>Computers & Education</em>, 205, 105112.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('rahimi2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="rahimi2024-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This research examines how socioeconomic factors create disparities in AI tool access and effectiveness. The study finds that while AI tools promise to democratize education, they may actually exacerbate existing inequalities without intentional equity-focused implementation strategies.
-                                        <div class="annotation-author">VIP Assessing Impacts Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="equity-access,algorithmic-bias,fairness">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1007/s40593-021-00285-9"
+                                data-source-title="Algorithmic Bias in Education">
+                                Baker, R.S.; Hawn, A. "Algorithmic Bias in Education." <em>Int J Artif Intell Educ</em> 2022, <em>32</em>, 1052–1092.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="baker2022-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        It is clear that algorithmic bias can be harmful; from racial bias in sentencing decisions to gender bias in assigning credit limits. Bias can arise in the data collection, data preparation, model development, model evaluation, model post-processing, and model deployment stages. Having under-sampled groups in training data can result in representational bias. This follows in education, requiring modifying algorithms to be fair and reducing bias when predicting GPAs or dropout rates. Additionally, omitting data like socioeconomic background can result in fairer models. A current challenge in machine learning is determining how many members of an underrepresented group must be included in a combined model so that it is fair and reliable. Additionally, some underrepresented groups have yet to be studied, like children of immigrants or religious minorities. Ultimately, Groups of learners should not be oversimplified in educational datasets where feasible and can improve labeling. Although we cannot optimize for all definitions of fairness, there is still opportunity to improve significantly, as many algorithms do not even consider fairness. Unfortunately, there is "disincentive for the developers of learning systems to reveal the algorithmic biases in their systems" due to privacy and critique. Some solutions going forward are to include the use of reference data and avoiding bias in the labeling process by allowing the group being studied to conduct the data labeling.
+                                        <div class="annotation-author">Karen Maza Delgado 9/24/2025</div>
+                                    </div>
+                                </div>
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article emphasizes higher education institutions' responsibilities in promoting ethical AI usage in classrooms. One key point the authors made was that penalizing students for using AI is less effective than raising awareness around the implications of overreliance on AI to prevent academic dishonesty from happening in the first place. On the flip side, previous research has shown that AI can assist educators as well, in tasks such as lesson planning and trend-mapping. The article suggests four main ways that AI can be used in the classroom as a tool, including creating role-play scenarios to prepare students for stressful workplace environments. Although this was not mentioned in the article, I would also argue that AI can be especially helpful in language learning classes, as it would reduce stress on the professor to simulate conversational exams, since an AI tool can be used to do so. A pattern I am seeing in both the real world and the article is that AI has the biggest comparative advantage when it comes to personalizing a student's learning plan. Whether it be conversations in a different language or degree mapping, AI is a powerful tool that is at every student's hands.
+                                        <div class="annotation-author">Yufei Huang 10/03/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="equity-access,privatization,EdTech,critical-pedagogy">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.14324/LRE.18.2.04"
+                                data-source-title="Artificial intelligence and the technological turn of public education privatization: In defence of democratic education">
+                                Saltman, K.J. "Artificial intelligence and the technological turn of public education privatization: In defence of democratic education." <em>London Review of Education</em>, 2020, <em>18</em> (2): 196–208.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="saltman2020-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article highlights what the EdTech sphere does wrong. The author claims adaptive technology doesn't have as strong positive standardized tests results that we expect it to. He mentions that young students are not very interested in 2d digital learning, and also makes claims about how biometric pedagogies (using webcams to see if students are paying attention/responding well to lessons) are problematic. The root of what he is saying is that the increasing investment towards private EdTech is only to the detriment of true learning. His current qualms with the current integration of AI in Education sheds light on ways we can work around the detrimental, for-profit, neoliberal frameworks regarding tech in the education system.
+                                        <div class="annotation-author">Sabria Islam 10/16/25</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2138,19 +2605,19 @@
                                 data-source-url="https://doi.org/10.1145/3573051.3596234"
                                 data-source-title="User-Centered Design for Educational AI">
                                 Nielsen, J., & Gilutz, S. (2024). "Usability testing methods for educational AI applications." <em>Proceedings of the CHI Conference on Human Factors in Computing Systems</em>, 456-467.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('nielsen2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="nielsen2024-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This paper presents adapted usability testing methods specifically for educational AI applications. The authors emphasize the importance of testing with actual students and educators rather than general users, and provide frameworks for evaluating both usability and educational effectiveness.
-                                        <div class="annotation-author">VIP Innovating EdTech Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2186,19 +2653,19 @@
                                 data-source-url="https://doi.org/10.1016/j.compedu.2024.105234"
                                 data-source-title="Scaling Educational Innovations">
                                 Clarke, J., & Dede, C. (2024). "Factors influencing the scalability of educational technology innovations." <em>Computers & Education</em>, 210, 105234.
-                                <div class="bib-buttons">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="bib-button" onclick="toggleAnnotation('clarke2024')">View Annotations</button>
-                                </div>
+                                <span class="collapse-indicator"></span>
                             </div>
                             <div class="bib-annotation-container" id="clarke2024-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This research identifies key factors that determine whether educational technology innovations can be successfully scaled. The authors present a framework for assessing technical, pedagogical, organizational, and financial scalability dimensions, with specific attention to AI-enhanced tools.
-                                        <div class="annotation-author">VIP Innovating EdTech Team, January 2025</div>
+                                        <div class="annotation-author">Alexander Landfair, January 2025</div>
                                     </div>
                                 </div>
-                                <button class="add-perspective-btn">Add Your Perspective</button>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2256,12 +2723,409 @@
                     <p>Research on the cognitive, psychological, and pedagogical foundations of learning with AI tools.</p>
                 </div>
                 <div class="topic-content">
-                    <div class="empty-content-placeholder">
-                        <div class="placeholder-message">
-                            <i class="fas fa-brain" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
-                            <h3>Content in Development</h3>
-                            <p>This research area is currently being developed. We welcome contributions on learning science foundations and their applications to AI in education.</p>
-                            <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
+                    <div class="subtopic-cards">
+                        <div class="subtopic-card" onclick="showSubtopicPage('learning-science', 'writing-composition')">
+                            <h3>Writing & Composition</h3>
+                            <p>Cognitive and developmental theories of writing processes and instruction.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('learning-science', 'cognitive-science')">
+                            <h3>Cognitive Science</h3>
+                            <p>Research on cognitive load, memory, creativity, and learning processes.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('learning-science', 'reading-literacy')">
+                            <h3>Reading & Literacy</h3>
+                            <p>Deep reading, textual interpretation, and the ethics of literary engagement.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('learning-science', 'educational-philosophy')">
+                            <h3>Educational Philosophy</h3>
+                            <p>Philosophical foundations of education, purpose, measurement, and teacher agency.</p>
+                        </div>
+                        <div class="subtopic-card" onclick="showSubtopicPage('learning-science', 'ai-ml-foundations')">
+                            <h3>AI/ML Foundations</h3>
+                            <p>Technical foundations of AI and machine learning relevant to education.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Writing & Composition subtopic -->
+            <div id="writing-composition" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Writing & Composition</h1>
+                    <p>Cognitive and developmental theories of writing processes and instruction.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="writing,cognitive-psychology,composition">
+                            <div class="bib-citation"
+                                data-source-url="https://www.jstor.org/stable/376357"
+                                data-source-title="Writer-based prose: A cognitive basis for problems in writing">
+                                Flower, L. (1979). "Writer-based prose: A cognitive basis for problems in writing." <em>College English</em>, <em>41</em>(1), 19-37.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="flower1979-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        In this seminal paper, Flower describes the core challenge of writing from a cognitive psychological perspective. In doing so, she challenges the dominant theories of writing development practiced by expressionists like Peter Elbow. It begins with a deceptively simple question, "If writing is simply the act of 'expressing what you think' or 'saying what you mean, why is writing often such a difficult thing to do?" Along with Janet Emig's work, Flower's early articles marked the beginning of composition's cognitive turn in the late 70s.
+                                        <div class="annotation-author">Alexander Landfair July 27, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        Flower explains that the difficulty in writing isn't a lack of ideas, but in "orchestrating" a cognitive transformation. Writing operates through networks, personal narratives, and words that are full of stories and meanings only we know. Many students, including myself, would input a raw, writer-based draft, and the AI can generate a more reader-oriented revision. However, this is the dangerous part. The real writing happens within the struggle of transforming internal monologue to words on paper.
+                                        <div class="annotation-author">Meiling Zhang 9/24/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="writing,working-memory,automated-feedback">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.3758/BF03194058"
+                                data-source-title="Improving the writing skills of college students">
+                                Kellogg, R. T., & Raulerson III, B. A. (2007). "Improving the writing skills of college students." <em>Psychonomic Bulletin & Review</em>, <em>14</em>(2), 237-242.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="kellogg2007-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        Advanced writing skills are an important aspect of academic performance as well as of subsequent work-related performance. In order to achieve higher levels of writing performance, the working memory demands of writing processes should be reduced so that executive attention is free to coordinate interactions among them. This can in theory be achieved through deliberate practice that trains writers to develop executive control through repeated opportunities to write and through timely and relevant feedback. Automated essay scoring software may offer a way to alleviate the intensive grading demands placed on instructors and, thereby, substantially increase the amount of writing practice that students receive.
+                                        <div class="annotation-author">Author abstract</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="writing,metacognition,fluency,children">
+                            <div class="bib-citation"
+                                data-source-url="https://drive.google.com/file/d/example"
+                                data-source-title="Functional Automaticity in Children's Writing: A Problem of Metacognitive Control">
+                                McCutchen, D. (1988). "Functional Automaticity in Children's Writing: A Problem of Metacognitive Control." <em>Written Communication</em>. Vol. 5. No. 3. July 1988. P. 306-324.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="mccutchen1988-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        McCutchen argues that the challenges inherent to writing are importantly different from most other cognitive tasks. In most domains, mastery happens when subtasks become automated, able to be performed subconsciously. The key point here is that the subtasks of writing are not really eligible for automaticity, because writing subtasks are not routine or generalizable in the same ways. She proposes, therefore, that writing mastery stems from fluency rather than automaticity. The difference is that fluency involves maintaining metacognitive control.
+                                        <div class="annotation-author">Alexander Landfair, August 5, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="writing,working-memory,long-term-memory,expertise">
+                            <div class="bib-citation"
+                                data-source-url="https://doi-org.proxy.library.nyu.edu/10.1207/S15326985EP3501_3"
+                                data-source-title="Knowledge, Processing, and Working Memory: Implications for a Theory of Writing">
+                                McCutchen, D. (2000). "Knowledge, Processing, and Working Memory: Implications for a Theory of Writing." <em>Educational Psychologist</em>, <em>35</em>:1, 13-23.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="mccutchen2000-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article surveys writing research and attempts to sketch a principled account of how multiple sources of knowledge, stored in long-term memory, are coordinated during writing within the constraints of working memory. The concept of long-term working memory is applied to the development of writing expertise. Based on research reviewed, it is speculated that lack of fluent language generation processes constrains novice writers within short-term working memory capacity, whereas fluent encoding and extensive knowledge allow skilled writers to take advantage of long-term memory resources via long-term working memory.
+                                        <div class="annotation-author">Author abstract</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="writing,college,novice-expert,longitudinal">
+                            <div class="bib-citation"
+                                data-source-url="http://links.jstor.org/sici?sici=0010-096X%28200409%2956%3A1%3C124%3ATNAEWT%3E2.0.CO%3B2-W"
+                                data-source-title="The Novice as Expert: Writing the Freshman Year">
+                                Sommers, N., & Saltz, L. (2004). "The Novice as Expert: Writing the Freshman Year." <em>College Composition and Communication</em>, <em>56</em>(1), 124-149.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="sommers2004-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        In this longitudinal study, Sommers and Saltz identify the key characteristics of the most successful college writing students. "We argue that students who make the greatest gains as writers throughout college (1) initially accept their status as novices and (2) see in writing a larger purpose than fulfilling an assignment." The paper explains how first-year writing classes foster these mindsets that promote the growth of writing skills.
+                                        <div class="annotation-author">Alexander Landfair, Jul 27, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cognitive Science subtopic -->
+            <div id="cognitive-science" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Cognitive Science</h1>
+                    <p>Research on cognitive load, memory, creativity, and learning processes.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="cognitive-load,educational-technology,instructional-design">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1007/s11423-019-09701-3"
+                                data-source-title="Cognitive load theory and educational technology">
+                                Sweller, J. (2020). "Cognitive load theory and educational technology." <em>Educational Technology Research and Development</em>, <em>68</em>(1), 1-16.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="sweller2020-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        Here, Sweller argues for cognitive load theory (which describes the limitations of our working memory) as a central concern in classroom design. "Technology-based instruction used without reference to the instructional design principles that flow from human cognition," he says, "is likely to be random in its effectiveness." What a mic drop!
+                                        <div class="annotation-author">Alexander Landfair, Jul 27, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="creativity,AI,student-perspectives,secondary-education">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.3390/jintelligence10030065"
+                                data-source-title="Creativity and Artificial Intelligence—A Student Perspective">
+                                Marrone, R., Taddeo, V., & Hill, G. (2022). "Creativity and Artificial Intelligence—A Student Perspective." <em>Journal of Intelligence</em>, <em>10</em>(3), 65.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="marrone2022-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article explores how AI is involved with education by looking at focus groups of secondary school children. Their findings are similar to our current class discussions about AI, but it is especially insightful because these focus on younger students. The results point to 4 buckets: technological, social, affective, and learning. Students believed that AI could harm social skills, making people less capable of real-world communication, while others saw potential for AI as connection if used collaboratively. Their affective responses varied, students who understood AI felt comfortable and trusting toward it, whereas those unfamiliar with it felt anxious or fearful. They often equated AI with robots and futuristic machines, showing a limited understanding of its everyday uses. Overall, they viewed AI as technically advanced but not truly creative, though it could inspire or "spark" human creativity. The researchers also proposed a 4AI model that mirrors the 4C models of learning: Mini-AI (personal use), Little AI (creative collaboration with AI), Big-AI (Advanced AI in professional use), and Legendary-AI (transformative), which students often appreciated the applications of Big/Legendary (describing them as "futuristic robots"), but undervalued everyday AI. The researchers point to educators teaching with AI in mind.
+                                        <div class="annotation-author">Sabria Islam Oct 9th</div>
+                                    </div>
+                                </div>
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This qualitative grounded theory study explored secondary students' perceptions of artificial intelligence (AI) and creativity following an eight-week hands-on curriculum involving both domains. The analysis, based on 12 focus groups and 8 interviews, classified into four central dimensions of student thinking: social, affective, technological, and learning factors. Most students considered AI a useful augmentative tool, not a replacement for human creativity—yet their conception of AI was often limited to "robotic" or extraordinary systems, with little awareness of everyday AI.
+                                        To frame the findings, the researchers mapped student conceptions of AI to a new "4AI Model," closely paralleling Kaufman and Beghetto's established 4C model of creativity (mini-c, little-c, Pro-c, Big-C). The 4C model describes creativity along a developmental spectrum, from personal insight (mini-c) to world-changing innovation (Big-C); similarly, the 4AI approach recognizes that students engage with AI at multiple levels, ranging from everyday feedback tools (Mini-AI) to legendary, society-transforming systems (Legendary-AI). Interpreting the results through this model shows that while students readily appreciate the marvels of advanced AI (e.g., AlphaGo or GPT), they undervalue—or simply overlook—the creative potential in routine, embedded AI applications that scaffold daily learning. Thus, the study provides empirical support for AI literacy curricula that not only demystify AI technology, but also teach students to recognize and leverage the full spectrum of AI–creativity interplay across classroom and professional contexts.
+                                        <div class="annotation-author">Debika piriya Dharmalingam, 10/15/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reading & Literacy subtopic -->
+            <div id="reading-literacy" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Reading & Literacy</h1>
+                    <p>Deep reading, textual interpretation, and the ethics of literary engagement.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="reading,ethics,deep-reading,social-media">
+                            <div class="bib-citation"
+                                data-source-url="https://carlhendrick.substack.com/p/the-humility-of-the-page-the-lost?utm_source=share&utm_medium=android&r=1qe5uc&triedRedirect=true"
+                                data-source-title="The Humility of the Page: The Lost Ethics of Deep Reading">
+                                Hendrick, C. (2025). "The Humility of the Page: The Lost Ethics of Deep Reading." <em>The Learning Dispatch</em>.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="hendrick2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        In this anecdotal article learning scientist Carl Hendrick laments the lost art of deep reading. He argues that reading is a moral and ethical duty in that it is the practice of paying attention to the general other while it also transforms the participator into a more conscientious citizen. He argues that the nature of 'soulless' social media algorithms are at least one huge contributor to the problem of making us more like machines - shallower, and less compassionate - and therefore less human. The article connects to Mikhail Bakhtin's theories of Dialogism, Heteroglossia, and Polyphony, and to Pierre Hadot's philosophy: 'Only he who is capable of a genuine encounter with the other is capable of an authentic encounter with himself.'
+                                        <div class="annotation-author">Paul Marinos, Sep 26, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="Russian-literature,epistemology,communication,Dostoevsky">
+                            <div class="bib-citation"
+                                data-source-url="https://muse.jhu.edu/pub/427/article/816082/summary"
+                                data-source-title="Dostoevskii, the Feuilleton and the Confession">
+                                Zhernokleyev, D. (2021). "Dostoevskii, the Feuilleton and the Confession." <em>Slavonic and East European Review</em>, pp 71-97.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="zhernokleyev2021-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        Zhernokleyev analyzes communication, formalism, and epistemology in the work of Fyodor Dostoevsky. He argues that, from an epistemological level, communication itself is inherently violent, and that 'reality strives towards fragmentation'. He argues that there is an 'epistemic fallenness' inherent in our language and imagination, and he cites our givenness to fascination - deliberately taken advantage of with the genre of the Feuilleton - as being the primary reason for distraction, miscommunication, and fragmentation. This paper, like Dostoevsky, is a deep, and often dark, read, and if you argue that the depth is out of scope for our research into AI in Education and Learning Science, then perhaps you'd be right, but I would argue that such psychological depth is not only relevant but also necessary for an adequate exploration of these topics.
+                                        <div class="annotation-author">Paul Marinos, Sep 26, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational Philosophy subtopic -->
+            <div id="educational-philosophy" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Educational Philosophy</h1>
+                    <p>Philosophical foundations of education, purpose, measurement, and teacher agency.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="educational-philosophy,risk,pedagogy,creativity">
+                            <div class="bib-citation"
+                                data-source-url="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=auiOrHcAAAAJ&citation_for_view=auiOrHcAAAAJ:ldfaerwXgEUC"
+                                data-source-title="Beautiful risk of Education">
+                                Biesta, G. (2015). "Beautiful risk of Education."
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="biesta2015a-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This is a book about what many teachers know but are increasingly being prevented from talking about: that real education always involves a risk. The risk is there because, as WB Yeats has put it, education is not about filling a bucket but about lighting a fire. It is there because students are not to be seen as objects to be moulded and disciplined, but as subjects of action and responsibility. The Beautiful Risk of Education is organised around a critical discussion of seven key educational concepts: creativity, communication, teaching, learning, emancipation, democracy, and virtuosity. By opposing the risk aversion that characterises many contemporary educational policies and practices, Gert JJ Biesta makes a strong argument for giving risk a central place in our educational endeavours and brings risk taking to the forefront of a critical pedagogical practice.
+                                        <div class="annotation-author">Paul Marinos 10/18/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="educational-philosophy,measurement,purpose,democracy">
+                            <div class="bib-citation"
+                                data-source-url="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=auiOrHcAAAAJ&citation_for_view=auiOrHcAAAAJ:IjCSPb-OGe4C"
+                                data-source-title="Good education in an age of measurement: Ethics, politics, democracy">
+                                Biesta, G. (2015). "Good education in an age of measurement: Ethics, politics, democracy."
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="biesta2015b-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The widespread use of the measurement of educational outcomes in order to compare the performance of education within and across countries seems to express a real concern for the quality of education. This book argues that the focus on the measurement of educational outcomes has actually displaced questions about educational purpose. Biesta explores why the question as to what constitutes good education has become so much more difficult to ask and shows why this has been detrimental for the quality of education and for the level of democratic control over education. He provides concrete suggestions for engaging with the question of purpose in education in a new, more precise and more encompassing way, with explicit attention to the ethical, political and democratic dimensions of education.
+                                        <div class="annotation-author">Paul Marinos 10/18/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="teacher-agency,beliefs,educational-reform,professionalism">
+                            <div class="bib-citation"
+                                data-source-url="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=auiOrHcAAAAJ&citation_for_view=auiOrHcAAAAJ:rHJHxKgnXwkC"
+                                data-source-title="The role of beliefs in teacher agency">
+                                Biesta, G., Priestley, M., & Robinson, S. (2015). "The role of beliefs in teacher agency."
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="biesta2015c-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        There is an ongoing tension within educational policy worldwide between countries that seek to reduce the opportunities for teachers to exert judgement and control over their own work, and those who seek to promote it. Some see teacher agency as a weakness within the operation of schools and seek to replace it with evidence-based and data-driven approaches, whereas others argue that because of the complexities of situated educational practices, teacher agency is an indispensable element of good and meaningful education. In this paper, the authors draw from a two-year study into teacher agency against the backdrop of large-scale educational reform – the implementation of Scotland's Curriculum for Excellence.
+                                        <div class="annotation-author">Paul Marinos 10/18/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="philosophy,Kant,enlightenment,critical-thinking,AI-education">
+                            <div class="bib-citation"
+                                data-source-url="https://jceps.com/index.php/jceps/article/view/638"
+                                data-source-title="Have Courage to Use your Own Mind, with or without AI: The Relevance of Kant's Enlightenment to Higher Education in the Age of Artificial Intelligence">
+                                Watanabe, A. (2024). "Have Courage to Use your Own Mind, with or without AI: The Relevance of Kant's Enlightenment to Higher Education in the Age of Artificial Intelligence." <em>Journal of Critical Education Policy Studies</em>. Vol. 22 No. 2 (2024): Special Issue: Artificial Intelligence (AI) in Education Part 1. 2024, 46-58.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="watanabe2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article explores the relevance of Kant's concept of Enlightenment to higher education in the age of AI, arguing that students must have the courage to use their own minds critically, with or without AI assistance.
+                                        <div class="annotation-author">Elan Hebert</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI/ML Foundations subtopic -->
+            <div id="ai-ml-foundations" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>AI/ML Foundations</h1>
+                    <p>Technical foundations of AI and machine learning relevant to education.</p>
+                </div>
+                <div class="topic-content">
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="GPT,language-models,pre-training,transformers,OpenAI">
+                            <div class="bib-citation"
+                                data-source-url="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf"
+                                data-source-title="Improving language understanding by generative pre-training">
+                                Radford, A., Narasimhan, K., Salimans, T., & Sutskever, I. (2018). "Improving language understanding by generative pre-training." <em>OpenAI</em>.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="radford2018-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The paper addresses key challenges in natural language understanding. The study demonstrates that significant improvements can be achieved by first pre-training a language model on a large, diverse corpus of unlabeled text, then fine-tuning it discriminatively for each specific task. The Transformer architecture is chosen for its ability to handle long-term dependencies more effectively than recurrent networks. For unsupervised pre-training, the model uses the BooksCorpus dataset, consisting of 700 unpublished books across genres such as adventure, romance, and fantasy (about 1 billion words in total), enabling the model to capture long-range context. The study highlights that generative pre-training combined with discriminative fine-tuning is a powerful method for advancing natural language understanding, setting the foundation for modern pre-trained language models.
+                                        <div class="annotation-author">Dan Ahimbisibwe 10/09/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="AI-policy,ethics,education-policy,AIED">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.1007/s40593-020-00216-z"
+                                data-source-title="Education for AI, not AI for Education: The Role of Education and Ethics in National AI Policy Strategies">
+                                Schiff, D. (2025). "Education for AI, not AI for Education: The Role of Education and Ethics in National AI Policy Strategies."
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="schiff2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The paper analyzes 24 national AI policy strategies to explore the role education plays in policymaking, stating that the strategies focus more on "education for AI" rather than "AI for education" (AIED). This means that the strategies mainly emphasize on preparing a workforce skilled in AI technologies through training AI experts, reskilling workers, and promoting public AI literacy, but lack discussions about the ethical and social implications of AI applied within educational settings. The author argues for bridging the current policy gap by encouraging policymakers to integrate ethical considerations explicitly into the design, deployment, and governance of AI in education. This article pushes for a dual approach of investing in human capital for AI and harnessing AI responsively to improve education itself.
+                                        <div class="annotation-author">Nasrin Alanna 10/23/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2369,6 +3233,7 @@
             'translation',
 
             // Understanding Users subtopics
+            'general',
             'administrators',
             'students',
             'faculty',
@@ -2389,6 +3254,13 @@
             'accessibility-inclusion',
             'learning-analytics',
             'scheduling',
+
+            // Learning Science subtopics
+            'writing-composition',
+            'cognitive-science',
+            'reading-literacy',
+            'educational-philosophy',
+            'ai-ml-foundations',
 
             // Research Methods & Resources subtopics
             'literature-review',
@@ -2742,7 +3614,57 @@
                     }
                 }
             });
-            
+
+            // Search in annotation authors (contributors)
+            document.querySelectorAll('.annotation-author').forEach(authorDiv => {
+                const authorText = authorDiv.textContent.trim();
+
+                if (authorText.toLowerCase().includes(query)) {
+                    const annotation = authorDiv.closest('.bib-annotation');
+                    if (!annotation) return;
+
+                    const bibEntry = annotation.closest('.bib-entry');
+                    if (!bibEntry) return;
+
+                    const citation = bibEntry.querySelector('.bib-citation');
+                    if (!citation) return;
+
+                    const citationText = citation.textContent.trim();
+
+                    let currentNode = annotation;
+                    let containerId = null;
+
+                    while (currentNode && !containerId) {
+                        currentNode = currentNode.parentElement;
+                        if (!currentNode) break;
+
+                        if (currentNode.id) {
+                            if (knownTopics.includes(currentNode.id) ||
+                                knownSubtopics.includes(currentNode.id)) {
+                                containerId = currentNode.id;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (containerId) {
+                        const containerElement = document.getElementById(containerId);
+                        const headerText = containerElement ?
+                            containerElement.querySelector('.topic-page-header h1')?.textContent || 'Topic' :
+                            'Topic';
+
+                        results.push({
+                            type: 'contributor',
+                            element: citation,
+                            bibEntry: bibEntry,
+                            topicId: containerId,
+                            title: citationText.length > 60 ? citationText.substring(0, 60) + '...' : citationText,
+                            context: `Annotated by ${authorText} in ${headerText}`
+                        });
+                    }
+                }
+            });
+
             return results;
         }
 
@@ -2772,16 +3694,16 @@
                 
                 resultItem.addEventListener('click', () => {
                     resultsContainer.style.display = 'none';
-                    
+
                     if (result.type === 'topic') {
                         showTopicPage(result.id);
-                    } 
+                    }
                     else if (result.type === 'subtopic') {
                         showSubtopicPage(result.topicId, result.subtopicId);
-                    } 
-                    else if (result.type === 'citation') {
+                    }
+                    else if (result.type === 'citation' || result.type === 'contributor') {
                         showTopicPage(result.topicId);
-                        
+
                         setTimeout(() => {
                             if (result.element) {
                                 result.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -3050,39 +3972,70 @@
         }
 
         function initializeAnnotations() {
-            document.querySelectorAll('.bib-button').forEach(button => {
-                if (button.textContent.includes('View Annotations')) {
-                    // Event handlers are attached via inline onclick
-                }
-                
-                if (button.textContent.includes('View Source')) {
-                    // Event handlers are attached via inline onclick
+            // Make bibliography entries clickable to toggle annotations
+            document.querySelectorAll('.bib-entry').forEach(entry => {
+                // Find the annotation container for this entry
+                const annotationContainer = entry.querySelector('.bib-annotation-container');
+                if (!annotationContainer) return;
+
+                // Extract the entry ID from the annotation container ID (e.g., "sundar2020-annotation" -> "sundar2020")
+                const entryId = annotationContainer.id.replace('-annotation', '');
+
+                // Add click handler to the citation area
+                const citation = entry.querySelector('.bib-citation');
+                if (citation) {
+                    citation.addEventListener('click', function(event) {
+                        // Don't toggle if clicking on links
+                        if (event.target.closest('a')) {
+                            return;
+                        }
+
+                        toggleAnnotation(entryId);
+                    });
+
+                    // Add pointer cursor to indicate clickability
+                    citation.style.cursor = 'pointer';
                 }
             });
         }
 
         function toggleAnnotation(entryId) {
             const annotationContainer = document.getElementById(entryId + '-annotation');
-            
+
             if (!annotationContainer) {
                 console.error(`Annotation container not found for ID: ${entryId}-annotation`);
                 return;
             }
-            
+
             const isCurrentlyVisible = annotationContainer.style.display === 'block';
-            
+
+            // Close all annotations and reset all indicators
             document.querySelectorAll('.bib-annotation-container').forEach(container => {
                 container.style.display = 'none';
             });
-            
+            document.querySelectorAll('.collapse-indicator').forEach(indicator => {
+                indicator.classList.remove('expanded');
+            });
+
+            // Open this annotation if it wasn't already open
             if (!isCurrentlyVisible) {
                 annotationContainer.style.display = 'block';
                 annotationContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                // Find and rotate the indicator for this entry
+                const entry = annotationContainer.closest('.bib-entry');
+                if (entry) {
+                    const indicator = entry.querySelector('.collapse-indicator');
+                    if (indicator) {
+                        indicator.classList.add('expanded');
+                    }
+                }
             }
         }
 
         function viewSource(button) {
-            const citation = button.closest('.bib-citation');
+            const entry = button.closest('.bib-entry');
+            const citation = entry.querySelector('.bib-citation');
             const sourceUrl = citation.getAttribute('data-source-url');
             window.open(sourceUrl, '_blank');
         }
