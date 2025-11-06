@@ -1096,6 +1096,556 @@
         .header-right {
             gap: 12px;
         }
+
+        /* ============================================ */
+        /* MOBILE RESPONSIVE STYLES FOR IPHONE/MOBILE  */
+        /* ============================================ */
+
+        /* Tablet and smaller screens */
+        @media (max-width: 768px) {
+            /* Fixed Header Optimization */
+            .fixed-header {
+                height: 60px;
+                padding: 0 15px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .header-title {
+                font-size: 1.1rem;
+            }
+
+            .header-right {
+                gap: 10px;
+            }
+
+            .header-search-wrapper {
+                max-width: 180px;
+            }
+
+            .contribute-btn,
+            .report-bug-btn {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+                min-height: 44px;
+            }
+
+            /* Main content adjustment for smaller header */
+            main {
+                margin-top: 60px;
+            }
+
+            body.show-breadcrumbs main {
+                margin-top: 100px;
+            }
+
+            /* Hero Banner - Reduce padding and font sizes */
+            .hero-banner {
+                padding: 50px 20px;
+            }
+
+            .hero-banner h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .hero-banner p {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+
+            /* Ensure search inputs are at least 16px to prevent iOS zoom */
+            .hero-search-field,
+            #header-search {
+                font-size: 16px;
+            }
+
+            /* Content sections - reduce padding */
+            .content-section {
+                padding: 40px 15px;
+            }
+
+            /* Section titles */
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 35px;
+            }
+
+            /* Topic page header */
+            .topic-page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .topic-page-header p {
+                font-size: 1rem;
+            }
+
+            /* Pathway navigation - reduce size and adjust positioning */
+            .pathways-container {
+                margin: 0 50px;
+            }
+
+            .pathway-nav {
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
+            }
+
+            .pathway-nav.prev {
+                left: 15px;
+            }
+
+            .pathway-nav.next {
+                right: 15px;
+            }
+
+            .pathway-card {
+                flex: 0 0 280px;
+                padding: 20px;
+            }
+
+            /* Touch-friendly buttons - minimum 44x44px */
+            button {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .subtopic-button {
+                padding: 12px 15px;
+                font-size: 16px;
+            }
+
+            .bib-button {
+                min-height: 44px;
+                padding: 10px 18px;
+            }
+
+            /* Modals - increase width on tablet */
+            .source-modal-content {
+                width: 90%;
+                height: 85%;
+            }
+
+            .popup-content {
+                width: 95%;
+                height: 85%;
+            }
+
+            /* Footer - reduce padding */
+            .site-footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+
+        /* Mobile phones (iPhone and similar) */
+        @media (max-width: 480px) {
+            /* Header - make more compact */
+            .fixed-header {
+                height: 56px;
+                padding: 0 10px;
+            }
+
+            .logo img {
+                height: 45px;
+            }
+
+            .header-title {
+                font-size: 1rem;
+                max-width: 120px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .header-right {
+                gap: 8px;
+            }
+
+            .header-search-wrapper {
+                max-width: 150px;
+            }
+
+            .header-search-wrapper:hover,
+            .header-search-wrapper:focus-within {
+                width: 150px;
+            }
+
+            .contribute-btn,
+            .report-bug-btn {
+                padding: 10px 12px;
+                font-size: 0.8rem;
+            }
+
+            .report-bug-btn span {
+                display: none;
+            }
+
+            .contribute-btn {
+                white-space: nowrap;
+            }
+
+            /* Adjust main margin */
+            main {
+                margin-top: 56px;
+            }
+
+            body.show-breadcrumbs main {
+                margin-top: 96px;
+            }
+
+            /* Hero Banner - significantly reduce padding */
+            .hero-banner {
+                padding: 30px 15px;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .hero-banner p {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-search-field {
+                padding: 12px 15px;
+                font-size: 16px;
+            }
+
+            .entry-count {
+                font-size: 0.85rem;
+                margin-top: 8px;
+            }
+
+            /* Content sections */
+            .content-section {
+                padding: 30px 12px;
+            }
+
+            /* Section titles */
+            .section-title {
+                font-size: 1.4rem;
+                margin-bottom: 25px;
+            }
+
+            .section-title::after {
+                width: 60px;
+                height: 2px;
+            }
+
+            /* Topic categories - single column with adjusted spacing */
+            .topic-categories {
+                gap: 15px;
+            }
+
+            .category-header {
+                padding: 15px;
+            }
+
+            .category-header h3 {
+                font-size: 1.1rem;
+                padding-left: 28px;
+            }
+
+            .category-icon {
+                font-size: 1.1rem;
+                left: 15px;
+            }
+
+            .subtopics-list {
+                padding: 12px;
+            }
+
+            .subtopic-button {
+                padding: 10px 12px;
+                margin-bottom: 6px;
+                font-size: 15px;
+            }
+
+            .subtopic-button:hover {
+                font-size: 15.1px;
+            }
+
+            /* Topic page header */
+            .topic-page-header {
+                margin-bottom: 25px;
+            }
+
+            .topic-page-header h1 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+
+            .topic-page-header p {
+                font-size: 0.95rem;
+            }
+
+            /* Subtopic cards */
+            .subtopic-cards {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .subtopic-card {
+                padding: 15px;
+            }
+
+            .subtopic-card h3 {
+                font-size: 1rem;
+            }
+
+            .subtopic-card p {
+                font-size: 0.85rem;
+            }
+
+            /* Pathway navigation - further reduce */
+            .entry-pathways {
+                padding: 40px 0;
+            }
+
+            .pathways-container {
+                margin: 0 40px;
+                gap: 15px;
+            }
+
+            .pathway-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+
+            .pathway-nav.prev {
+                left: 8px;
+            }
+
+            .pathway-nav.next {
+                right: 8px;
+            }
+
+            .pathway-card {
+                flex: 0 0 260px;
+                padding: 18px;
+            }
+
+            .pathway-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .pathway-icon i {
+                font-size: 20px;
+            }
+
+            .pathway-title {
+                font-size: 1.1rem;
+            }
+
+            .pathway-card p {
+                font-size: 0.85rem;
+            }
+
+            /* Bibliography */
+            .bibliography-container {
+                padding: 15px 10px;
+            }
+
+            .bib-entry {
+                margin-bottom: 20px;
+            }
+
+            .bib-citation {
+                font-size: 14px;
+                padding: 15px;
+                padding-right: 45px;
+            }
+
+            .collapse-indicator {
+                right: 15px;
+                width: 10px;
+                height: 10px;
+            }
+
+            .bib-annotation-container {
+                padding: 15px;
+            }
+
+            .bib-annotation {
+                font-size: 14px;
+            }
+
+            .annotation-text {
+                font-size: 14px;
+            }
+
+            .annotation-author {
+                font-size: 13px;
+            }
+
+            .annotation-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .bib-button,
+            .add-perspective-btn {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            /* Modals - full screen on mobile */
+            .source-modal-content,
+            .popup-content {
+                width: 95%;
+                height: 92%;
+                border-radius: 8px;
+            }
+
+            .source-modal-header {
+                padding: 12px 15px;
+            }
+
+            .source-modal-title {
+                font-size: 1rem;
+            }
+
+            .close-modal {
+                font-size: 1.3rem;
+            }
+
+            /* Search results */
+            .search-result-item {
+                padding: 10px 12px;
+            }
+
+            .result-title {
+                font-size: 0.9rem;
+            }
+
+            .result-context {
+                font-size: 0.8rem;
+            }
+
+            #header-search-results {
+                width: 200px;
+            }
+
+            /* Footer */
+            .site-footer {
+                padding: 30px 0 15px;
+                margin-top: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .footer-column h3 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+
+            .footer-bottom {
+                padding-top: 20px;
+                font-size: 0.85rem;
+            }
+
+            /* Breadcrumbs */
+            .breadcrumb-subheader {
+                height: 36px;
+                padding: 0 10px;
+            }
+
+            .breadcrumbs {
+                font-size: 12px;
+            }
+
+            .breadcrumbs .separator {
+                margin: 0 4px;
+            }
+        }
+
+        /* Extra small phones (iPhone SE, etc.) */
+        @media (max-width: 375px) {
+            .hero-banner h1 {
+                font-size: 1.4rem;
+            }
+
+            .topic-page-header h1 {
+                font-size: 1.35rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .pathway-card {
+                flex: 0 0 240px;
+            }
+
+            .pathways-container {
+                margin: 0 35px;
+            }
+        }
+
+        /* Landscape orientation on mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero-banner {
+                padding: 25px 15px;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .hero-banner p {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+
+            .content-section {
+                padding: 30px 15px;
+            }
+        }
+
+        /* iOS Safari specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            /* Prevent iOS zoom on input focus when font-size < 16px */
+            input[type="text"],
+            input[type="search"],
+            textarea {
+                font-size: 16px;
+            }
+
+            /* Fix iOS button styling */
+            button {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            /* Better tap highlight */
+            * {
+                -webkit-tap-highlight-color: rgba(137, 0, 225, 0.1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1113,7 +1663,7 @@
                 <div class="search-results-container" id="header-search-results"></div>
             </div>
             <button class="report-bug-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjcCOxnbbpWjvfhBAvo_5EXCoa7DY5ePUzjYa1UgXcqjy9hQ/viewform?usp=sharing', '_blank')">
-                <i class="fas fa-bug"></i> Report Bug
+                <i class="fas fa-bug"></i> <span>Report Bug</span>
             </button>
             <button class="contribute-btn">Contribute</button>
         </div>
