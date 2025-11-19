@@ -766,11 +766,27 @@
             line-height: 1.6;
             color: #444;
         }
-    
+
         .bib-annotation:last-of-type {
             margin-bottom: 15px;
             padding-bottom: 15px;
             border-bottom: 1px dashed #e6d0f0;
+        }
+
+        /* Nested annotations (replies/responses in a thread) */
+        .bib-annotation .bib-annotation {
+            margin-top: 15px;
+            margin-left: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #e6d0f0;
+            background-color: #fafafa;
+        }
+
+        /* Sibling annotations (multiple perspectives on same source) */
+        .bib-annotation-container > .bib-annotation + .bib-annotation {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #e6d0f0;
         }
     
         .annotation-author {
@@ -1096,556 +1112,6 @@
         .header-right {
             gap: 12px;
         }
-
-        /* ============================================ */
-        /* MOBILE RESPONSIVE STYLES FOR IPHONE/MOBILE  */
-        /* ============================================ */
-
-        /* Tablet and smaller screens */
-        @media (max-width: 768px) {
-            /* Fixed Header Optimization */
-            .fixed-header {
-                height: 60px;
-                padding: 0 15px;
-            }
-
-            .logo img {
-                height: 50px;
-            }
-
-            .header-title {
-                font-size: 1.1rem;
-            }
-
-            .header-right {
-                gap: 10px;
-            }
-
-            .header-search-wrapper {
-                max-width: 180px;
-            }
-
-            .contribute-btn,
-            .report-bug-btn {
-                padding: 10px 16px;
-                font-size: 0.85rem;
-                min-height: 44px;
-            }
-
-            /* Main content adjustment for smaller header */
-            main {
-                margin-top: 60px;
-            }
-
-            body.show-breadcrumbs main {
-                margin-top: 100px;
-            }
-
-            /* Hero Banner - Reduce padding and font sizes */
-            .hero-banner {
-                padding: 50px 20px;
-            }
-
-            .hero-banner h1 {
-                font-size: 2rem;
-                margin-bottom: 15px;
-            }
-
-            .hero-banner p {
-                font-size: 1rem;
-                margin-bottom: 25px;
-            }
-
-            /* Ensure search inputs are at least 16px to prevent iOS zoom */
-            .hero-search-field,
-            #header-search {
-                font-size: 16px;
-            }
-
-            /* Content sections - reduce padding */
-            .content-section {
-                padding: 40px 15px;
-            }
-
-            /* Section titles */
-            .section-title {
-                font-size: 1.6rem;
-                margin-bottom: 35px;
-            }
-
-            /* Topic page header */
-            .topic-page-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .topic-page-header p {
-                font-size: 1rem;
-            }
-
-            /* Pathway navigation - reduce size and adjust positioning */
-            .pathways-container {
-                margin: 0 50px;
-            }
-
-            .pathway-nav {
-                width: 44px;
-                height: 44px;
-                font-size: 1rem;
-            }
-
-            .pathway-nav.prev {
-                left: 15px;
-            }
-
-            .pathway-nav.next {
-                right: 15px;
-            }
-
-            .pathway-card {
-                flex: 0 0 280px;
-                padding: 20px;
-            }
-
-            /* Touch-friendly buttons - minimum 44x44px */
-            button {
-                min-height: 44px;
-                min-width: 44px;
-            }
-
-            .subtopic-button {
-                padding: 12px 15px;
-                font-size: 16px;
-            }
-
-            .bib-button {
-                min-height: 44px;
-                padding: 10px 18px;
-            }
-
-            /* Modals - increase width on tablet */
-            .source-modal-content {
-                width: 90%;
-                height: 85%;
-            }
-
-            .popup-content {
-                width: 95%;
-                height: 85%;
-            }
-
-            /* Footer - reduce padding */
-            .site-footer {
-                padding: 40px 0 20px;
-            }
-
-            .footer-grid {
-                gap: 30px;
-            }
-        }
-
-        /* Mobile phones (iPhone and similar) */
-        @media (max-width: 480px) {
-            /* Header - make more compact */
-            .fixed-header {
-                height: 56px;
-                padding: 0 10px;
-            }
-
-            .logo img {
-                height: 45px;
-            }
-
-            .header-title {
-                font-size: 1rem;
-                max-width: 120px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .header-right {
-                gap: 8px;
-            }
-
-            .header-search-wrapper {
-                max-width: 150px;
-            }
-
-            .header-search-wrapper:hover,
-            .header-search-wrapper:focus-within {
-                width: 150px;
-            }
-
-            .contribute-btn,
-            .report-bug-btn {
-                padding: 10px 12px;
-                font-size: 0.8rem;
-            }
-
-            .report-bug-btn span {
-                display: none;
-            }
-
-            .contribute-btn {
-                white-space: nowrap;
-            }
-
-            /* Adjust main margin */
-            main {
-                margin-top: 56px;
-            }
-
-            body.show-breadcrumbs main {
-                margin-top: 96px;
-            }
-
-            /* Hero Banner - significantly reduce padding */
-            .hero-banner {
-                padding: 30px 15px;
-            }
-
-            .hero-banner h1 {
-                font-size: 1.6rem;
-                line-height: 1.3;
-            }
-
-            .hero-banner p {
-                font-size: 0.95rem;
-                margin-bottom: 20px;
-            }
-
-            .hero-search-field {
-                padding: 12px 15px;
-                font-size: 16px;
-            }
-
-            .entry-count {
-                font-size: 0.85rem;
-                margin-top: 8px;
-            }
-
-            /* Content sections */
-            .content-section {
-                padding: 30px 12px;
-            }
-
-            /* Section titles */
-            .section-title {
-                font-size: 1.4rem;
-                margin-bottom: 25px;
-            }
-
-            .section-title::after {
-                width: 60px;
-                height: 2px;
-            }
-
-            /* Topic categories - single column with adjusted spacing */
-            .topic-categories {
-                gap: 15px;
-            }
-
-            .category-header {
-                padding: 15px;
-            }
-
-            .category-header h3 {
-                font-size: 1.1rem;
-                padding-left: 28px;
-            }
-
-            .category-icon {
-                font-size: 1.1rem;
-                left: 15px;
-            }
-
-            .subtopics-list {
-                padding: 12px;
-            }
-
-            .subtopic-button {
-                padding: 10px 12px;
-                margin-bottom: 6px;
-                font-size: 15px;
-            }
-
-            .subtopic-button:hover {
-                font-size: 15.1px;
-            }
-
-            /* Topic page header */
-            .topic-page-header {
-                margin-bottom: 25px;
-            }
-
-            .topic-page-header h1 {
-                font-size: 1.5rem;
-                line-height: 1.3;
-            }
-
-            .topic-page-header p {
-                font-size: 0.95rem;
-            }
-
-            /* Subtopic cards */
-            .subtopic-cards {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                margin-top: 20px;
-            }
-
-            .subtopic-card {
-                padding: 15px;
-            }
-
-            .subtopic-card h3 {
-                font-size: 1rem;
-            }
-
-            .subtopic-card p {
-                font-size: 0.85rem;
-            }
-
-            /* Pathway navigation - further reduce */
-            .entry-pathways {
-                padding: 40px 0;
-            }
-
-            .pathways-container {
-                margin: 0 40px;
-                gap: 15px;
-            }
-
-            .pathway-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 0.9rem;
-            }
-
-            .pathway-nav.prev {
-                left: 8px;
-            }
-
-            .pathway-nav.next {
-                right: 8px;
-            }
-
-            .pathway-card {
-                flex: 0 0 260px;
-                padding: 18px;
-            }
-
-            .pathway-icon {
-                width: 50px;
-                height: 50px;
-            }
-
-            .pathway-icon i {
-                font-size: 20px;
-            }
-
-            .pathway-title {
-                font-size: 1.1rem;
-            }
-
-            .pathway-card p {
-                font-size: 0.85rem;
-            }
-
-            /* Bibliography */
-            .bibliography-container {
-                padding: 15px 10px;
-            }
-
-            .bib-entry {
-                margin-bottom: 20px;
-            }
-
-            .bib-citation {
-                font-size: 14px;
-                padding: 15px;
-                padding-right: 45px;
-            }
-
-            .collapse-indicator {
-                right: 15px;
-                width: 10px;
-                height: 10px;
-            }
-
-            .bib-annotation-container {
-                padding: 15px;
-            }
-
-            .bib-annotation {
-                font-size: 14px;
-            }
-
-            .annotation-text {
-                font-size: 14px;
-            }
-
-            .annotation-author {
-                font-size: 13px;
-            }
-
-            .annotation-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .bib-button,
-            .add-perspective-btn {
-                width: 100%;
-                text-align: center;
-                justify-content: center;
-            }
-
-            /* Modals - full screen on mobile */
-            .source-modal-content,
-            .popup-content {
-                width: 95%;
-                height: 92%;
-                border-radius: 8px;
-            }
-
-            .source-modal-header {
-                padding: 12px 15px;
-            }
-
-            .source-modal-title {
-                font-size: 1rem;
-            }
-
-            .close-modal {
-                font-size: 1.3rem;
-            }
-
-            /* Search results */
-            .search-result-item {
-                padding: 10px 12px;
-            }
-
-            .result-title {
-                font-size: 0.9rem;
-            }
-
-            .result-context {
-                font-size: 0.8rem;
-            }
-
-            #header-search-results {
-                width: 200px;
-            }
-
-            /* Footer */
-            .site-footer {
-                padding: 30px 0 15px;
-                margin-top: 40px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .footer-column h3 {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-            }
-
-            .footer-links li {
-                margin-bottom: 10px;
-            }
-
-            .footer-links a {
-                font-size: 0.9rem;
-            }
-
-            .footer-bottom {
-                padding-top: 20px;
-                font-size: 0.85rem;
-            }
-
-            /* Breadcrumbs */
-            .breadcrumb-subheader {
-                height: 36px;
-                padding: 0 10px;
-            }
-
-            .breadcrumbs {
-                font-size: 12px;
-            }
-
-            .breadcrumbs .separator {
-                margin: 0 4px;
-            }
-        }
-
-        /* Extra small phones (iPhone SE, etc.) */
-        @media (max-width: 375px) {
-            .hero-banner h1 {
-                font-size: 1.4rem;
-            }
-
-            .topic-page-header h1 {
-                font-size: 1.35rem;
-            }
-
-            .section-title {
-                font-size: 1.3rem;
-            }
-
-            .pathway-card {
-                flex: 0 0 240px;
-            }
-
-            .pathways-container {
-                margin: 0 35px;
-            }
-        }
-
-        /* Landscape orientation on mobile */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .hero-banner {
-                padding: 25px 15px;
-            }
-
-            .hero-banner h1 {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-            }
-
-            .hero-banner p {
-                font-size: 0.9rem;
-                margin-bottom: 15px;
-            }
-
-            .content-section {
-                padding: 30px 15px;
-            }
-        }
-
-        /* iOS Safari specific fixes */
-        @supports (-webkit-touch-callout: none) {
-            /* Prevent iOS zoom on input focus when font-size < 16px */
-            input[type="text"],
-            input[type="search"],
-            textarea {
-                font-size: 16px;
-            }
-
-            /* Fix iOS button styling */
-            button {
-                -webkit-appearance: none;
-                appearance: none;
-            }
-
-            /* Better tap highlight */
-            * {
-                -webkit-tap-highlight-color: rgba(137, 0, 225, 0.1);
-            }
-        }
     </style>
 </head>
 <body>
@@ -1663,7 +1129,7 @@
                 <div class="search-results-container" id="header-search-results"></div>
             </div>
             <button class="report-bug-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjcCOxnbbpWjvfhBAvo_5EXCoa7DY5ePUzjYa1UgXcqjy9hQ/viewform?usp=sharing', '_blank')">
-                <i class="fas fa-bug"></i> <span>Report Bug</span>
+                <i class="fas fa-bug"></i> Report Bug
             </button>
             <button class="contribute-btn">Contribute</button>
         </div>
@@ -2099,7 +1565,7 @@
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         The study investigates false positives (human-written text incorrectly flagged as AI-generated) and false negatives (AI-generated text missed by detectors) in AI Detection, with a particular focus on its impact on academic research and education, where integrity is crucial. Running tests on the abstract and literature parts of research papers before 2022 (before the release of ChatGPT), researchers found that the literature section of papers was more likely to be flagged as AI-generated compared to abstracts. This shows that the "formulaic" style of literature reviews resembles AI writing more closely. Beyond the results of the experiment, this paper argues that the current definitions of plagiarism and authorship are outdated in the AI era, calling for combining plagiarism detection with AI-detection tools.
-                                        <div class="annotation-author">Nasrin Alanna 9/25/2025</div>
+                                        <div class="annotation-author">Nasrin Alanna Aidi 9/25/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -2213,6 +1679,56 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="bib-entry" data-tags="detection,evasion,SICO,prompt-engineering">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/html/2305.10847v5/#S4"
+                                data-source-title="Large language models can be guided to evade AI-generated text detection">
+                                Lu, N., Liu, S., He, R., Ong, Y.-S., Wang, Q., & Tang, K. (2023). Large language models can be guided to evade AI-generated text detection [Preprint]. <em>arXiv</em>. https://doi.org/10.48550/arXiv.2305.10847
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="lu2023-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The paper introduces a concept named SICO (Substitution-based In-Context example Optimization). It is a novel and cost-efficient method for constructing prompts that guide large language models (LLMs) to evade AI-generated text detectors. The method automatically optimizes a few human-written examples to be less "AI-like", which are then used as in-context demonstrations for the LLM.
+<br><br>
+The research's strength is in demonstrating a significant vulnerability in existing detection systems. The study shows that prompts generated by SICO enabled GPT-3.5 to successfully bypass six different detectors, significantly outperforming baseline paraphrasing methods. A comprehensive human evaluation further confirmed that the SICO-generated text maintained human-level readability and task completion rates.
+<br><br>
+This work is valuable because it highlights that evasion can be achieved through simple prompt-guiding rather than external tools, and it provides a new, effective benchmark (SICO) for evaluating the robustness of future detectors.
+<br><br>
+It also connects well with several past papers I've found that looks into prompt engineering and using that to bypass AI-detection tools (through targeting perplexity and burstiness).
+                                        <div class="annotation-author">Jiawen Li 11/13/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,false-positives,assessment,watermarking">
+                            <div class="bib-citation"
+                                data-source-url="https://onlinelibrary.wiley.com/doi/epdf/10.1002/tl.20624"
+                                data-source-title="Generative AI detection in higher education assessments">
+                                Ardito, C. G. (2025). Generative AI detection in higher education assessments. <em>New Directions for Teaching and Learning</em>, <em>2025</em>, 11–28.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="ardito2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper explores the pitfalls of AI Detection software and offers remedies to the problem. It explains that AI Detection is both fragile and misaligned with how education is today. It states that detection with these softwares is unreliable, as students are able to avoid it by paraphrasing AI generated work, while non-fluent English writers are being flagged as their writing uses common English sentences. These inconsistencies make it almost impossible to prove whether AI is used or not, and often lead to false positives, and leave students anxious about their writing and left to deal with proving themselves to their professors that AI was not used. The author also disproves watermarking, a technique experts have suggested to help prove AI was used in writing by having GenAI tools leave a hidden signature in their writing. An example of a signature could be by first dividing a dictionary of words into 2 sets, and then alternating between the two when generating text. AI detection tools would then search for this signature and give a score based on that. However, watermarking isn't immune to paraphrasing, and additionally, there are already models released without watermarking, and implementing it would just lead to a new market of non-watermarked models, essentially making it hard to regulate.
+<br><br>
+This paper recommends shifting school work to in-person centered assessments, presentations, and having on-going check-ins for writing. This could limit the use of AI and lead to students writing on their own. Another approach to this issue, the paper suggests having transparent disclosures on the proper uses of AI. Having these set rules will help properly integrate AI into learning. As the paper mentions, AI mirrors the invention of the calculator, as like AI, it was at first looked down upon and considered cheating and banned in schools. However, a gradual shift in perception occurred where calculators were later accepted in schools and they began regulating its use and now see it as a tool to make mathematics more efficient. I think once we are past this period of AI slander and begin to see its potentials, creating clear and transparent guidelines for its use will bring down the uses for cheating and bring down our reliance on unreliable AI Detection tools.
+                                        <div class="annotation-author">Rohan Kapur 11/13/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2309,6 +1825,52 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="bib-entry" data-tags="ethics,Frankenstein,policy,pedagogy">
+                            <div class="bib-citation"
+                                data-source-url="https://www.tandfonline.com/doi/full/10.1080/02188791.2023.2300137#d1e500"
+                                data-source-title="Taming Frankenstein's monster: Ethical considerations relating to generative artificial intelligence in education">
+                                Yang, Z., Wu, J. G., & Xie, H. (2024). Taming Frankenstein's monster: Ethical considerations relating to generative artificial intelligence in education. <em>Asia Pacific Journal of Education</em>, <em>45</em>(4), 1330–1343.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="yang2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper provides an overview of the ethical concerns that arise with the increased use of Generative AI (GAI) in higher education, and outlines a specific set of guidelines for mitigating the unintended consequences of AI in learning environments. The introduction of the paper grounds the analysis in the history of Science Fiction, and utilizes Frankenstein's monster as an allegory for the consequences of unregulated innovation. Mary Shelly's monster is quoted: "Beware; for I am fearless, and therefore powerful" - as a means of further driving the notion that GAI is currently unbounded and unregulated. From this initial literary reference the paper goes on to first define consciousness and thought - and relate this back to our understandings of GAI. The paper notes that it is imperative to distinguish between human thought and GAI and that as tech continues to evolve the line can become increasingly blurred. Following this definition the varying ethical concerns that arise with GAI use, within and outside of educational environments, are discussed. The central concerns outlined relate to sourcing and informational bias that can arise with the use of GAI. The paper uses the example of corporations intentionally creating bias in AI to sway public opinion as a means of exploring possible malicious uses of GAI, while other primary concerns focus on the unintended consequences of GAI use. The paper then poses general questions about regulation in the face of ethical concerns - who's responsible for regulating AI? The paper responds to these questions by outlining a set of guidelines to be implemented by both students and educators as a means of combating the consequences of AI use:
+<br><br>
+<strong>Submodel for educators:</strong><br>
+- Equity concerns<br>
+- Digital literacy<br>
+- Enhance vigilance of bias<br>
+- Pedagogy and assessment concerns<br>
+- Encourage higher-order thinking<br>
+- Incentivize the learning process<br>
+- Strike a balance<br>
+- Optimizing potential of technology<br>
+- Establish a general policy<br>
+- Set specific boundaries<br>
+- Update policy regularly
+<br><br>
+<strong>Submodel for students:</strong><br>
+- Preparation for using GAI<br>
+- Improve awareness of limitations<br>
+- Carry-out critical evaluation<br>
+- Applying GAI<br>
+- Seek out additional resources<br>
+- Incorporate creativity and originality<br>
+- Disclosure<br>
+- Acknowledge and site sources properly
+<br><br>
+I found that the specific breakdown of responsibility for both educators and students to be well organized and thought out - I felt that the formatting gave a clear understanding of intention and a real attempt to find solutions and answers to questions which remain fairly open ended. I don't know if the literary introduction is as indicative of what the paper really seeks to argue - however I appreciate the reference and the greater thought framework it represents.
+                                        <div class="annotation-author">Elan Hebert 11/13/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2338,6 +1900,16 @@
                                         <div class="annotation-text">
                                             It is always important to consider AI as a convenient, free resource, not a replacement for human feedback. Its instantaneous feedback at any stage of the writing process can help overcome writing barriers and take students through their mental journey or barrier. However, the journey you take in writing is all about inconvenience; you tear up your writing, starting from the argument, so you can explore your options, you write multiple drafts, and you write consecutively. To be an experienced writer, we need to shift perspectives about writing, no longer pursuing quick, instantaneous writing and perfect form from the beginning, but writing that develops over a roller coaster with feedback, drafts, and time.
                                             <div class="annotation-author">Ethan Lu 10/01/2025</div>
+                                        </div>
+                                    </div>
+                                    <div class="bib-annotation">
+                                        <div class="annotation-text">
+                                            The goal of the research outlined in the article is to figure out if generative AI, such as ChatGPT, can be used as a tool to provide feedback on students' writing, thereby lessening the workload put on teachers. This would mean that teachers would be able to spend more time teaching writing, rather than providing specific feedback.
+<br><br>
+I enjoyed how clear the methodology was in this article. The authors outlined very successfully what characteristics of "good feedback" looked like to them. I did, however, find a weakness in their methodology. When rating the two different feedbacks, even the authors admitted that it was easy to tell which one was written by ChatGPT and which was written by a real human. This could've caused bias during the rating sessions. However, this was mentioned in the limitations section of the article, but I still felt that it was necessary to mention in any annotation for this source. Another aspect I found confusing is that ChatGPT did not leave inline comments, while human readers did. However, I'm not sure if ChatGPT was equipped to leave inline comments at all, which could be another reason that the raters could tell which feedback was AI generated.
+<br><br>
+The conclusions the authors gave were that ChatGPT cannot be used as a sole feedback provider, but it can be used to aide teachers in managing large classes, especially on assignments with clear criteria. The authors also suggest that ChatGPT be used mostly on first drafts or in the early stages of writing.
+                                            <div class="annotation-author">Yufei Huang 11/9/2025</div>
                                         </div>
                                     </div>
                                 </div>
@@ -2408,19 +1980,33 @@
                 </div>
             </div>
 
-            <!-- Error / Hallucination subtopic (placeholder) -->
+            <!-- Error / Hallucination subtopic -->
             <div id="error-hallucination" style="display: none;">
                 <div class="topic-page-header">
                     <h1>Error / Hallucination</h1>
                     <p>Understanding AI errors, hallucinations, and accuracy limitations.</p>
                 </div>
                 <div class="topic-content">
-                    <div class="empty-content-placeholder">
-                        <div class="placeholder-message">
-                            <i class="fas fa-exclamation-triangle" style="font-size: 2.5rem; color: #8900e1; margin-bottom: 15px;"></i>
-                            <h3>Content in Development</h3>
-                            <p>VIP Evaluating Tools subteam is currently curating resources on AI errors and hallucinations. We welcome your contributions and findings.</p>
-                            <button class="contribute-btn" style="margin-top: 15px;" onclick="openContributePopup()">Share Your Research</button>
+                    <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="hallucination,error,confabulation">
+                            <div class="bib-citation"
+                                data-source-url="https://pmc.ncbi.nlm.nih.gov/articles/PMC11681264/"
+                                data-source-title="Is Artificial Intelligence Hallucinating?">
+                                Özer, M. (2024). Is Artificial Intelligence Hallucinating? <em>National Library of Medicine</em>. Retrieved September 11, 2025.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="ozer2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article explores the causes and types of hallucinations that AI experiences. The article can be described as a literature review, although not super in depth. But I still think reading it is still extremely helpful to anyone who wants to understand the basics of AI hallucinations. Hallucinations are classified into intrinsic and extrinsic. Özer writes, "intrinsic hallucinations result in outputs that contradict the source content and the conversation history, while extrinsic hallucinations correspond to outputs whose accuracy cannot be verified based on the source content or conversation history." According to the author, conflicting information within the training data that is used on the AI is what can cause hallucinations. I feel like this point is quite obvious, since AI can be simplified to a mapping of relative probabilities of words. The author also suggests using a word other than "hallucination" to describe this phenomenon. They suggest "confabulation," since AI models don't have consciousness. In the conclusion, the author states that hallucinations can have varying degrees of impact on the user, based on what the user is using the AI for. The author brought up the example of using AI in the healthcare sector, but I found that confusing because, to my knowledge, generative AI isn't currently being in the diagnosis or treatment process.
+                                        <div class="annotation-author">Yufei Huang 11/9/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2559,6 +2145,104 @@
                                     <div class="annotation-text">
                                         This paper presents a mixed-methods study that explores how ChatGPT-3 influences students' creative thinking abilities and confidence in a college-level creativity course. The authors found that using ChatGPT-3 significantly improved scores in all four creativity dimensions (fluency, flexibility, elaboration, originality). However, qualitative findings revealed that while AI boosted idea generation speed and provided inspiration, it sometimes weakened originality and creative confidence. The study concluded that AI can enhance divergent thinking but may also lead to overreliance and cognitive fixation, where students depend too much on AI-generated ideas.
                                         <div class="annotation-author">Dan Ahimbisibwe 10/16/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="learning-outcomes,ITS,tutoring,GPT-4,pedagogy">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.3390/electronics13244876"
+                                data-source-title="Advancing Generative Intelligent Tutoring Systems with GPT-4">
+                                Liu, S., Guo, X., Hu, X., & Zhao, X. (2024). Advancing Generative Intelligent Tutoring Systems with GPT-4: Design, Evaluation, and a Modular Framework for Future Learning Platforms. <em>Electronics</em>, <em>13</em>(24), 4876.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="liu2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article presents a framework for designing an AI-assisted ITS using ChatGPT. It begins with a literature review of classical ITS, ChatGPT, and Intelligent ITS. It then breaks down the framework of how to design the system using ChatGPT. Four components are created: a content retriever which pulls information based on the topic the user is interested in; a data analyzer which monitors the user and generates a dynamic user profile; an instructional advisor, which adapts the difficulty and type of content based on the user's performance; a feedback assessor which generates reports based on the data analyzer and the instructional advisor. In order for the system to work, all data is generated as JSON files, where the prompts given to the models specify exactly what needs to be in the files, and they are iterated upon until they pass validation. This allows the different models to communicate with each other through lightweight JSON information.
+<br><br>
+The authors create an example ITS called the Socratic Playground for Learning (SPL), which implements this system. Through a user interface, students are able to interact with these models by defining, through a menu or a text box, what they are learning about or practicing. The student then engages in back-and-forth Socratic-style conversation. The questions presented to them dynamically scale in difficulty and complexity depending on their answers and responses.
+<br><br>
+To test this system, the authors involved 30 first-year students from the Faculty of Education at Central China Normal University, all majoring in Early Childhood Education. In order to measure the system's effectiveness quantitatively, all of these students were studying beginner English, and they were provided with a pre- and post-test before and after a week of using SPL for 30-40 minutes each day. The students were also provided with a survey asking questions grouped into effectiveness, engagement, adaptivity, satisfaction, and recommendation activity. By the end of the week, there was a significant improvement on the post-test. Effectiveness, engagement, and adaptivity were rated very high on the qualitative side, with recommendation accuracy just slightly below, and satisfaction received good but lower scores. The study showed the efficacy of the system, though there is no control group so it is hard to fully call it a causal relationship.
+<br><br>
+As the authors point out, it's interesting that the satisfaction scores were lower, and that highlights the importance of determining how to create systems that students actually want to use. It's unsurprising that they provided results, but figuring out how to design these systems in ways that can not just become tools for efficiency, but student-desired tools for better experiences in their education is paramount. My last review was about another ITS system that used text as an interface, and while one of the major issues of SPL is that the use of ChatGPT like this makes the system not applicable in lower resource environments, it's likely that a text-based system would score even lower on satisfaction. I will be interested in continuing to explore this idea of how to make these systems integrate into classrooms in ways that give students useful personalized attention, but don't detract from or change for the worse pedagogical practices that exist now.
+                                        <div class="annotation-author">Jesse Noppe-Brandon 11/10/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="learning-outcomes,mathematical-reasoning,LLM">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/abs/2402.00157"
+                                data-source-title="Large Language Models for Mathematical Reasoning: Progresses and Challenges">
+                                Ahn, J., Verma, R., Lou, R., Liu, D., Zhang, R., & Yin, W. (2024). Large Language Models for Mathematical Reasoning: Progresses and Challenges. In <em>Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: Student Research Workshop</em> (pp. 1-8). Association for Computational Linguistics.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="ahn2024-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This article not only examines the progress of LLM's in mathematical reasoning but also its implications in regards to education. Specifically looking at Math Word Problems (MWP). These problems may include tables and/or geometric figures. The article examines how tokenization, pre-training, prompting techniques, interpolation and extrapolation, scaling laws, Chain of Thought (COT), and In-Context Learning (ICL) impact the reasoning of LLM's. These factors play a direct role in how well a model does with MWP's. The article then evaluates the advantages and disadvantages of LLM's in math education. One disadvantage is that LLM's may not suit a student's learning style, especially if they learn from hands-on activities or visual aids. Though, LLM's also introduce a 'conversational style' in problem-solving which is important in mathematics and can offer further insight into subjects like Calculus. This research is unique in its assessment of LLM's in math education while also offering insight into LLM performance with MWP's. Something I'm curious about after reading this article is how well various models perform on more theoretical math courses like Discrete Math or Analysis. The MWP's assessed have concrete solutions involving equations or numbers, but in more advanced math courses answers can just be words and symbols.
+                                        <div class="annotation-author">Karen Maza Delgado 11/11/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="learning-outcomes,AI-integration,student-perceptions">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.3390/educsci15030343"
+                                data-source-title="The impact of artificial intelligence (AI) on students' academic development">
+                                Luckin, R. (2025). Nurturing human intelligence in the age of AI: Rethinking education for the future. <em>Development and Learning in Organizations: An International Journal</em>, <em>39</em>(1), 1-4.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="luckin2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        Artificial intelligence (AI) is rapidly transforming education by personalizing learning, supporting teachers, and automating administrative tasks. While AI tools can adapt lessons to fit individual student needs and give immediate feedback, they also free up teachers to focus more on creative teaching and student guidance, helping to build deeper relationships and individual support.
+<br><br>
+However, the paper stresses that education shouldn't just be about memorizing facts or passing standardized tests. Instead, schools need to cultivate "Learning Mastery"—helping students understand how they learn best, think critically, set goals, and reflect on their progress. Alongside this, "Knowledge Mastery" means achieving a deep, conceptual understanding of subjects, not merely recalling information, so students can transfer their knowledge to real-world challenges.
+<br><br>
+The article emphasizes the importance of ethical AI deployment, warning against issues like bias, privacy risks, and inequality. It calls for collaboration between educators, policymakers, and technologists to ensure AI benefits all students. Teachers need professional development focused on both using AI and nurturing the unique human qualities—creativity, empathy, independent thinking—that future societies and workplaces will need. In conclusion, schools must combine the best aspects of AI and human intelligence to prepare students for lifelong learning and success in an AI-driven world.
+                                        <div class="annotation-author">Debika Dharma Lingam 11/13/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="learning-outcomes,student-perceptions,higher-education">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.3390/educsci15030343"
+                                data-source-title="The impact of artificial intelligence (AI) on students' academic development">
+                                Vieriu, A. M., & Petrea, G. (2025). The impact of artificial intelligence (AI) on students' academic development. <em>Education Sciences</em>, <em>15</em>(3), 343.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="vieriu2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study was conducted on 85 students at the National University of Science and Technology POLITEHNICA Bucharest, Romania, focusing on second-year Aerospace and Medical Engineering students with direct experience in AI-integrated learning environments. The study uses purposive sampling and a structured questionnaire with both closed and open-ended questions to evaluate AI usage, perceptions, and its impact on learning. Data was collected through a structured questionnaire comprising 11 items: seven closed-ended questions assessing perceptions, usage, and the effectiveness of AI tools; and four open-ended questions exploring experiences, expectations, and concerns.
+<br><br>
+It finds that 95.6% of students use AI in academic activities through virtual assistants (88.2%) and educational platforms (42.4%). Most of the participants use these tools weekly or daily, making AI an integral part of the educational process for tasks like homework, projects, and knowledge enhancement. While 80% of respondents agree that AI enhances their educational experience and 82.4% believe it improves academic performance, some express uncertainty or skepticism about its ultimate effects, including concerns about reducing critical thinking and accuracy issues. When asked for suggestions on improvement, most students suggest proper integration of AI in education, focusing on guided use that doesn't limit critical thinking. Overall, the majority of participants highlight both the positive influence on collaboration and learning efficiency, as well as challenges such as the need for reliable information and ethical use.
+<br><br>
+This paper gives valuable insight into the real-time experiences and perceptions of students who have direct exposure to AI-integrated learning environments, rather than relying solely on expert or educator perspectives. By using mixed-methods analysis across both closed and open-ended survey questions, it provides a nuanced account of how students engage with artificial intelligence for academic activities, covering not just usage statistics but also the emotional, ethical, and cognitive challenges and benefits they encounter. The study emphasizes student-driven recommendations for balanced and effective AI integration, including calls for enhanced training, reliability, and critical engagement. This makes it a key resource for educators and policymakers aiming to understand and responsibly advance AI adoption in education, learning from the people who would be most affected by these policies.
+                                        <div class="annotation-author">Nasrin Alanna Aidi 11/13/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -2986,7 +2670,57 @@
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         The paper's insights align with urging institutions and professors to balance rapid adaptation of generative AI. Not only it offers personalized learning but also deep understanding of concepts that's crucial for employability. Seco et al also recommends student centered approaches for conducting assessments to foster deep reflective thinking. The authors emphasize a central tension: AI enhances flexibility and accessibility but also introduces serious concerns, including the risk of academic dishonesty, overreliance, and negative cognitive impacts. The paper concludes that universities must strategically balance innovation with integrity, guiding the sector toward inclusive, process-oriented, and human-centered education in the AI era.
-                                        <div class="annotation-author">Debika Piriya D 10/9/2025</div>
+                                        <div class="annotation-author">Debika Dharma Lingam 10/9/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="academic-integrity,detection,evasion,SICO">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/html/2305.10847v5/#S4"
+                                data-source-title="Large language models can be guided to evade AI-generated text detection">
+                                Lu, N., Liu, S., He, R., Ong, Y.-S., Wang, Q., & Tang, K. (2023). Large language models can be guided to evade AI-generated text detection [Preprint]. <em>arXiv</em>. https://doi.org/10.48550/arXiv.2305.10847
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="lu2023-academic-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The paper introduces a concept named SICO (Substitution-based In-Context example Optimization). It is a novel and cost-efficient method for constructing prompts that guide large language models (LLMs) to evade AI-generated text detectors. The method automatically optimizes a few human-written examples to be less "AI-like", which are then used as in-context demonstrations for the LLM.
+<br><br>
+The research's strength is in demonstrating a significant vulnerability in existing detection systems. The study shows that prompts generated by SICO enabled GPT-3.5 to successfully bypass six different detectors, significantly outperforming baseline paraphrasing methods. A comprehensive human evaluation further confirmed that the SICO-generated text maintained human-level readability and task completion rates.
+<br><br>
+This work is valuable because it highlights that evasion can be achieved through simple prompt-guiding rather than external tools, and it provides a new, effective benchmark (SICO) for evaluating the robustness of future detectors.
+<br><br>
+It also connects well with several past papers I've found that looks into prompt engineering and using that to bypass AI-detection tools (through targeting perplexity and burstiness).
+                                        <div class="annotation-author">Jiawen Li 11/13/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="academic-integrity,detection,false-positives,assessment">
+                            <div class="bib-citation"
+                                data-source-url="https://onlinelibrary.wiley.com/doi/epdf/10.1002/tl.20624"
+                                data-source-title="Generative AI detection in higher education assessments">
+                                Ardito, C. G. (2025). Generative AI detection in higher education assessments. <em>New Directions for Teaching and Learning</em>, <em>2025</em>, 11–28.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="ardito2025-academic-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper explores the pitfalls of AI Detection software and offers remedies to the problem. It explains that AI Detection is both fragile and misaligned with how education is today. It states that detection with these softwares is unreliable, as students are able to avoid it by paraphrasing AI generated work, while non-fluent English writers are being flagged as their writing uses common English sentences. These inconsistencies make it almost impossible to prove whether AI is used or not, and often lead to false positives, and leave students anxious about their writing and left to deal with proving themselves to their professors that AI was not used. The author also disproves watermarking, a technique experts have suggested to help prove AI was used in writing by having GenAI tools leave a hidden signature in their writing. An example of a signature could be by first dividing a dictionary of words into 2 sets, and then alternating between the two when generating text. AI detection tools would then search for this signature and give a score based on that. However, watermarking isn't immune to paraphrasing, and additionally, there are already models released without watermarking, and implementing it would just lead to a new market of non-watermarked models, essentially making it hard to regulate.
+<br><br>
+This paper recommends shifting school work to in-person centered assessments, presentations, and having on-going check-ins for writing. This could limit the use of AI and lead to students writing on their own. Another approach to this issue, the paper suggests having transparent disclosures on the proper uses of AI. Having these set rules will help properly integrate AI into learning. As the paper mentions, AI mirrors the invention of the calculator, as like AI, it was at first looked down upon and considered cheating and banned in schools. However, a gradual shift in perception occurred where calculators were later accepted in schools and they began regulating its use and now see it as a tool to make mathematics more efficient. I think once we are past this period of AI slander and begin to see its potentials, creating clear and transparent guidelines for its use will bring down the uses for cheating and bring down our reliance on unreliable AI Detection tools.
+                                        <div class="annotation-author">Rohan Kapur 11/13/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -3129,7 +2863,7 @@
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This article highlights what the EdTech sphere does wrong. The author claims adaptive technology doesn't have as strong positive standardized tests results that we expect it to. He mentions that young students are not very interested in 2d digital learning, and also makes claims about how biometric pedagogies (using webcams to see if students are paying attention/responding well to lessons) are problematic. The root of what he is saying is that the increasing investment towards private EdTech is only to the detriment of true learning. His current qualms with the current integration of AI in Education sheds light on ways we can work around the detrimental, for-profit, neoliberal frameworks regarding tech in the education system.
-                                        <div class="annotation-author">Sabria Islam 10/16/25</div>
+                                        <div class="annotation-author">Sabria Islam 10/16/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -3460,14 +3194,14 @@
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This article explores how AI is involved with education by looking at focus groups of secondary school children. Their findings are similar to our current class discussions about AI, but it is especially insightful because these focus on younger students. The results point to 4 buckets: technological, social, affective, and learning. Students believed that AI could harm social skills, making people less capable of real-world communication, while others saw potential for AI as connection if used collaboratively. Their affective responses varied, students who understood AI felt comfortable and trusting toward it, whereas those unfamiliar with it felt anxious or fearful. They often equated AI with robots and futuristic machines, showing a limited understanding of its everyday uses. Overall, they viewed AI as technically advanced but not truly creative, though it could inspire or "spark" human creativity. The researchers also proposed a 4AI model that mirrors the 4C models of learning: Mini-AI (personal use), Little AI (creative collaboration with AI), Big-AI (Advanced AI in professional use), and Legendary-AI (transformative), which students often appreciated the applications of Big/Legendary (describing them as "futuristic robots"), but undervalued everyday AI. The researchers point to educators teaching with AI in mind.
-                                        <div class="annotation-author">Sabria Islam Oct 9th</div>
+                                        <div class="annotation-author">Sabria Islam 10/9/2025</div>
                                     </div>
                                 </div>
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         This qualitative grounded theory study explored secondary students' perceptions of artificial intelligence (AI) and creativity following an eight-week hands-on curriculum involving both domains. The analysis, based on 12 focus groups and 8 interviews, classified into four central dimensions of student thinking: social, affective, technological, and learning factors. Most students considered AI a useful augmentative tool, not a replacement for human creativity—yet their conception of AI was often limited to "robotic" or extraordinary systems, with little awareness of everyday AI.
                                         To frame the findings, the researchers mapped student conceptions of AI to a new "4AI Model," closely paralleling Kaufman and Beghetto's established 4C model of creativity (mini-c, little-c, Pro-c, Big-C). The 4C model describes creativity along a developmental spectrum, from personal insight (mini-c) to world-changing innovation (Big-C); similarly, the 4AI approach recognizes that students engage with AI at multiple levels, ranging from everyday feedback tools (Mini-AI) to legendary, society-transforming systems (Legendary-AI). Interpreting the results through this model shows that while students readily appreciate the marvels of advanced AI (e.g., AlphaGo or GPT), they undervalue—or simply overlook—the creative potential in routine, embedded AI applications that scaffold daily learning. Thus, the study provides empirical support for AI literacy curricula that not only demystify AI technology, but also teach students to recognize and leverage the full spectrum of AI–creativity interplay across classroom and professional contexts.
-                                        <div class="annotation-author">Debika piriya Dharmalingam, 10/15/2025</div>
+                                        <div class="annotation-author">Debika Dharma Lingam 10/15/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -3668,7 +3402,7 @@
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
                                         The paper analyzes 24 national AI policy strategies to explore the role education plays in policymaking, stating that the strategies focus more on "education for AI" rather than "AI for education" (AIED). This means that the strategies mainly emphasize on preparing a workforce skilled in AI technologies through training AI experts, reskilling workers, and promoting public AI literacy, but lack discussions about the ethical and social implications of AI applied within educational settings. The author argues for bridging the current policy gap by encouraging policymakers to integrate ethical considerations explicitly into the design, deployment, and governance of AI in education. This article pushes for a dual approach of investing in human capital for AI and harnessing AI responsively to improve education itself.
-                                        <div class="annotation-author">Nasrin Alanna 10/23/2025</div>
+                                        <div class="annotation-author">Nasrin Alanna Aidi 10/23/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -3680,6 +3414,21 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Team Members Page -->
+            <div id="team-members" style="display: none;">
+                <div class="topic-page-header">
+                    <h1>Our Team</h1>
+                    <p>Our VIP team is composed of dedicated students and faculty contributing to AI in Education research.</p>
+                </div>
+                <div class="topic-content">
+                    <div id="team-members-list" style="max-width: 800px; margin: 0 auto;">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contributor Pages will be dynamically generated -->
         </div>
     </main>
 
@@ -3704,7 +3453,7 @@
                     <h3>About the Team</h3>
                     <ul class="footer-links">
                         <li><a href="https://as.nyu.edu/faculty/alexander-landfair.html" target="_blank">Faculty Advisor: Alexander Landfair</a></li>
-                        <li><a href="https://engineering.nyu.edu/vip-team/ai-education-1" target="_blank">Current Subteams</a></li>
+                        <li><a href="#" onclick="showTopicPage('team-members'); return false;">Our Team</a></li>
                         <li><a href="https://engineering.nyu.edu/vip-team/ai-education-1" target="_blank">Ongoing Projects</a></li>
                         <li><a href="https://engineering.nyu.edu/vip-team/ai-education-1" target="_blank">Application Process</a></li>
                     </ul>
@@ -3735,14 +3484,136 @@
 
     <script>
         // All the JavaScript functionality from the original site, adapted for AI in Education
+        function populateTeamMembersList() {
+            // Map contributor IDs to display names
+            const contributorNames = {
+                'alexander-landfair': 'Alexander Landfair',
+                'cate-hackett': 'Cate Hackett',
+                'dan-ahimbisibwe': 'Dan Ahimbisibwe',
+                'debika-dharma-lingam': 'Debika Dharma Lingam',
+                'elan-hebert': 'Elan Hebert',
+                'ethan-lu': 'Ethan Lu',
+                'jesse-noppe-brandon': 'Jesse Noppe-Brandon',
+                'jiawen-li': 'Jiawen Li',
+                'josephine-li': 'Josephine Li',
+                'karen-maza-delgado': 'Karen Maza Delgado',
+                'meiling-zhang': 'Meiling Zhang',
+                'muhammad-farhan': 'Muhammad Farhan',
+                'nasrin-alanna-aidi': 'Nasrin Alanna Aidi',
+                'paul-marinos': 'Paul Marinos',
+                'rohan-kapur': 'Rohan Kapur',
+                'sabria-islam': 'Sabria Islam',
+                'srinivas-harish': 'Srinivas Harish',
+                'unmesh-achar': 'Unmesh Achar',
+                'yanze-wu': 'Yanze Wu',
+                'yufei-huang': 'Yufei Huang'
+            };
+
+            // Count contributions for each team member
+            const contributionCounts = {};
+
+            // Initialize counts
+            Object.values(contributorNames).forEach(name => {
+                contributionCounts[name] = 0;
+            });
+
+            // Count unique citations for each contributor (matching what's displayed on their page)
+            Object.entries(contributorNames).forEach(([id, name]) => {
+                const allAnnotations = document.querySelectorAll('.bib-annotation');
+                const processedEntries = new Set();
+
+                allAnnotations.forEach(annotation => {
+                    const authorDiv = annotation.querySelector('.annotation-author');
+                    if (authorDiv && authorDiv.textContent.includes(name)) {
+                        const bibEntry = annotation.closest('.bib-entry');
+                        if (bibEntry) {
+                            // Use citation text to identify unique entries
+                            const citationText = bibEntry.querySelector('.bib-citation')?.textContent || '';
+                            const entryKey = citationText.substring(0, 100);
+
+                            // Only count each unique citation once
+                            if (!processedEntries.has(entryKey)) {
+                                processedEntries.add(entryKey);
+                                contributionCounts[name]++;
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Create array of contributors with their counts
+            const contributors = Object.entries(contributorNames).map(([id, name]) => ({
+                id: id,
+                name: name,
+                count: contributionCounts[name],
+                isFaculty: id === 'alexander-landfair'
+            }));
+
+            // Separate faculty and students, sort students by contribution count
+            const faculty = contributors.filter(c => c.isFaculty);
+            const students = contributors.filter(c => !c.isFaculty)
+                .sort((a, b) => b.count - a.count); // Sort descending by count
+
+            // Build the HTML
+            const container = document.getElementById('team-members-list');
+            if (!container) return;
+
+            let html = '';
+
+            // Faculty section
+            html += '<h2 style="color: #8900e1; margin-top: 30px; margin-bottom: 20px;">Faculty Advisor</h2>';
+            html += '<ul style="list-style: none; padding-left: 0; line-height: 2;">';
+            faculty.forEach(contributor => {
+                html += `
+                    <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                        <a href="#" onclick="showContributorPage('${contributor.id}'); return false;" style="color: #8900e1; text-decoration: none;">
+                            <strong>${contributor.name}</strong>
+                        </a>
+                        <span style="background-color: #e9ddf5; color: #8900e1; padding: 2px 8px; border-radius: 10px; font-size: 0.85em; font-weight: 600; margin-left: 8px; display: inline-block; min-width: 24px; text-align: center;">
+                            ${contributor.count}
+                        </span>
+                        <span style="color: #666;"> - Faculty Advisor, NYU Expository Writing Program</span>
+                    </li>
+                `;
+            });
+            html += '</ul>';
+
+            // Student section
+            html += '<h2 style="color: #8900e1; margin-top: 40px; margin-bottom: 20px;">Student Research Contributors</h2>';
+            html += '<ul style="list-style: none; padding-left: 0; line-height: 2;">';
+            students.forEach(contributor => {
+                html += `
+                    <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                        <a href="#" onclick="showContributorPage('${contributor.id}'); return false;" style="color: #333; text-decoration: none;">
+                            ${contributor.name}
+                        </a>
+                        <span style="background-color: #e9ddf5; color: #8900e1; padding: 2px 8px; border-radius: 10px; font-size: 0.85em; font-weight: 600; margin-left: 8px; display: inline-block; min-width: 24px; text-align: center;">
+                            ${contributor.count}
+                        </span>
+                    </li>
+                `;
+            });
+            html += '</ul>';
+
+            // Footer
+            html += `
+                <p style="margin-top: 30px; color: #666; font-style: italic;">
+                    Interested in joining our team? Visit our <a href="https://engineering.nyu.edu/vip-team/ai-education-1" target="_blank" style="color: #8900e1;">VIP program page</a> to learn about the application process.
+                </p>
+            `;
+
+            container.innerHTML = html;
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             initializeNavigationState();
             initializeSearch();
             initializePathwayNavigation();
             initializePopupSystem();
             initializeAnnotations();
-            initializeFilteringSystem(); 
+            initializeFilteringSystem();
             updateEntryCounter();
+            populateTeamMembersList();
             logDebugInfo();
         });
 
@@ -3841,8 +3712,12 @@
             const urlParams = new URLSearchParams(window.location.search);
             const topic = urlParams.get('topic');
             const subtopic = urlParams.get('subtopic');
+            const contributor = urlParams.get('contributor');
 
-            if (subtopic && topic) {
+            if (contributor) {
+                // Show contributor page
+                showContributorPage(contributor, true);
+            } else if (subtopic && topic) {
                 // Show subtopic page
                 showSubtopicPage(topic, subtopic, true);
             } else if (topic) {
@@ -3862,7 +3737,9 @@
             window.addEventListener('popstate', function(event) {
                 if (event.state) {
                     // Navigate based on stored state
-                    if (event.state.currentView === 'subtopic') {
+                    if (event.state.currentView === 'contributor') {
+                        showContributorPage(event.state.contributorId, true);
+                    } else if (event.state.currentView === 'subtopic') {
                         showSubtopicPage(event.state.topicId, event.state.subtopicId, true);
                     } else if (event.state.currentView === 'topic') {
                         showTopicPage(event.state.topicId, true);
@@ -3942,6 +3819,38 @@
                     breadcrumbsHTML += `
                         <span class="separator">›</span>
                         <span class="current">Research Path: ${navigationState.filterTag.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</span>
+                    `;
+                    break;
+
+                case 'contributor':
+                    const contributorNames = {
+                        'alexander-landfair': 'Alexander Landfair',
+                        'cate-hackett': 'Cate Hackett',
+                        'dan-ahimbisibwe': 'Dan Ahimbisibwe',
+                        'debika-dharma-lingam': 'Debika Dharma Lingam',
+                        'elan-hebert': 'Elan Hebert',
+                        'ethan-lu': 'Ethan Lu',
+                        'jesse-noppe-brandon': 'Jesse Noppe-Brandon',
+                        'jiawen-li': 'Jiawen Li',
+                        'josephine-li': 'Josephine Li',
+                        'karen-maza-delgado': 'Karen Maza Delgado',
+                        'meiling-zhang': 'Meiling Zhang',
+                        'muhammad-farhan': 'Muhammad Farhan',
+                        'nasrin-alanna-aidi': 'Nasrin Alanna Aidi',
+                        'paul-marinos': 'Paul Marinos',
+                        'rohan-kapur': 'Rohan Kapur',
+                        'sabria-islam': 'Sabria Islam',
+                        'srinivas-harish': 'Srinivas Harish',
+                        'unmesh-achar': 'Unmesh Achar',
+                        'yanze-wu': 'Yanze Wu',
+                        'yufei-huang': 'Yufei Huang'
+                    };
+                    const contributorName = contributorNames[navigationState.contributorId] || 'Contributor';
+                    breadcrumbsHTML += `
+                        <span class="separator">›</span>
+                        <a href="#" onclick="showTopicPage('team-members'); return false;" data-nav="team-members">Team Members</a>
+                        <span class="separator">›</span>
+                        <span class="current">${contributorName}</span>
                     `;
                     break;
             }
@@ -4378,6 +4287,204 @@
                 const subtopicElement = document.getElementById(subtopicId);
                 const pageTitle = subtopicElement ? subtopicElement.querySelector('.topic-page-header h1').textContent : 'Subtopic';
                 history.pushState(navigationState, pageTitle, url);
+            }
+
+            updateBreadcrumbs();
+            window.scrollTo(0, 0);
+        }
+
+        function showContributorPage(contributorId, skipHistory) {
+            // Map contributor IDs to display names
+            const contributorNames = {
+                'alexander-landfair': 'Alexander Landfair',
+                'cate-hackett': 'Cate Hackett',
+                'dan-ahimbisibwe': 'Dan Ahimbisibwe',
+                'debika-dharma-lingam': 'Debika Dharma Lingam',
+                'elan-hebert': 'Elan Hebert',
+                'ethan-lu': 'Ethan Lu',
+                'jesse-noppe-brandon': 'Jesse Noppe-Brandon',
+                'jiawen-li': 'Jiawen Li',
+                'josephine-li': 'Josephine Li',
+                'karen-maza-delgado': 'Karen Maza Delgado',
+                'meiling-zhang': 'Meiling Zhang',
+                'muhammad-farhan': 'Muhammad Farhan',
+                'nasrin-alanna-aidi': 'Nasrin Alanna Aidi',
+                'paul-marinos': 'Paul Marinos',
+                'rohan-kapur': 'Rohan Kapur',
+                'sabria-islam': 'Sabria Islam',
+                'srinivas-harish': 'Srinivas Harish',
+                'unmesh-achar': 'Unmesh Achar',
+                'yanze-wu': 'Yanze Wu',
+                'yufei-huang': 'Yufei Huang'
+            };
+
+            const contributorName = contributorNames[contributorId];
+
+            // Find all annotations by this contributor
+            const allAnnotations = document.querySelectorAll('.bib-annotation');
+            const contributorAnnotations = [];
+            const processedEntries = new Set();
+
+            allAnnotations.forEach(annotation => {
+                const authorDiv = annotation.querySelector('.annotation-author');
+                if (authorDiv && authorDiv.textContent.includes(contributorName)) {
+                    const bibEntry = annotation.closest('.bib-entry');
+                    if (bibEntry) {
+                        const citationText = bibEntry.querySelector('.bib-citation')?.textContent || '';
+                        const entryKey = citationText.substring(0, 100);
+
+                        if (!processedEntries.has(entryKey)) {
+                            processedEntries.add(entryKey);
+
+                            // Clone the entry
+                            const clonedEntry = bibEntry.cloneNode(true);
+
+                            // Keep the entire annotation thread intact for context
+                            // (If contributor participated, show full discussion including replies/responses)
+
+                            // Make IDs unique by prefixing with contributor ID
+                            const annotationContainer = clonedEntry.querySelector('.bib-annotation-container');
+                            if (annotationContainer && annotationContainer.id) {
+                                const originalId = annotationContainer.id;
+                                const newId = `${contributorId}-${originalId}`;
+                                annotationContainer.id = newId;
+
+                                // Hide initially
+                                annotationContainer.style.display = 'none';
+                            }
+
+                            // Ensure collapse indicator is not expanded
+                            const indicator = clonedEntry.querySelector('.collapse-indicator');
+                            if (indicator) {
+                                indicator.classList.remove('expanded');
+                            }
+
+                            contributorAnnotations.push({
+                                entry: clonedEntry,
+                                citation: clonedEntry.querySelector('.bib-citation')
+                            });
+                        }
+                    }
+                }
+            });
+
+            // Create or update contributor page
+            let contributorPage = document.getElementById(`contributor-${contributorId}`);
+            if (!contributorPage) {
+                contributorPage = document.createElement('div');
+                contributorPage.id = `contributor-${contributorId}`;
+                contributorPage.style.display = 'none';
+                document.querySelector('.topic-pages').appendChild(contributorPage);
+            }
+
+            // Clear existing content
+            contributorPage.innerHTML = '';
+
+            // Create page structure
+            const pageHeader = document.createElement('div');
+            pageHeader.className = 'topic-page-header';
+            pageHeader.innerHTML = `
+                <h1>${contributorName}</h1>
+                <p>Contributions to the AI in Education VIP Research Exchange (${contributorAnnotations.length} ${contributorAnnotations.length === 1 ? 'annotation' : 'annotations'})</p>
+            `;
+
+            const topicContent = document.createElement('div');
+            topicContent.className = 'topic-content';
+
+            const bibliographyContainer = document.createElement('div');
+            bibliographyContainer.className = 'bibliography-container';
+
+            // Append each entry
+            contributorAnnotations.forEach(item => {
+                const entry = item.entry;
+
+                // Make sure citation has pointer cursor
+                const citation = entry.querySelector('.bib-citation');
+                if (citation) {
+                    citation.style.cursor = 'pointer';
+                }
+
+                bibliographyContainer.appendChild(entry);
+            });
+
+            // Use event delegation for click handling within this contributor page
+            bibliographyContainer.addEventListener('click', function(event) {
+                // Find if click was on or within a citation
+                const citation = event.target.closest('.bib-citation');
+
+                if (citation) {
+                    // Don't toggle if clicking on links
+                    if (event.target.closest('a')) {
+                        return;
+                    }
+
+                    // Find the annotation container for this citation
+                    const bibEntry = citation.closest('.bib-entry');
+                    if (bibEntry) {
+                        const annotationContainer = bibEntry.querySelector('.bib-annotation-container');
+                        if (annotationContainer && annotationContainer.id) {
+                            // Toggle within this contributor page
+                            const isCurrentlyVisible = annotationContainer.style.display === 'block';
+
+                            // Close all annotations in this contributor page
+                            contributorPage.querySelectorAll('.bib-annotation-container').forEach(container => {
+                                container.style.display = 'none';
+                            });
+                            contributorPage.querySelectorAll('.collapse-indicator').forEach(indicator => {
+                                indicator.classList.remove('expanded');
+                            });
+
+                            // Open this annotation if it wasn't already open
+                            if (!isCurrentlyVisible) {
+                                annotationContainer.style.display = 'block';
+                                annotationContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                                // Find and rotate the indicator for this entry
+                                const indicator = bibEntry.querySelector('.collapse-indicator');
+                                if (indicator) {
+                                    indicator.classList.add('expanded');
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            topicContent.appendChild(bibliographyContainer);
+            contributorPage.appendChild(pageHeader);
+            contributorPage.appendChild(topicContent);
+
+            // Show the page
+            navigationState = {
+                currentView: 'contributor',
+                contributorId: contributorId,
+                topicId: null,
+                subtopicId: null,
+                subsubtopicId: null,
+                pathwayName: null,
+                filterTag: null
+            };
+
+            document.body.classList.add('show-topics');
+            document.body.classList.add('show-breadcrumbs');
+
+            document.querySelectorAll('.topic-pages > div').forEach(div => {
+                div.style.display = 'none';
+            });
+
+            contributorPage.style.display = 'block';
+
+            document.querySelector('.landing-page').style.display = 'none';
+            document.querySelector('.topic-pages').style.display = 'block';
+
+            const headerTitle = document.querySelector('.header-title');
+            headerTitle.textContent = 'AI in Education VIP Research Exchange';
+            headerTitle.classList.add('visible');
+
+            // Update browser URL using History API
+            if (!skipHistory) {
+                const url = `${window.location.pathname}?contributor=${contributorId}`;
+                history.pushState(navigationState, contributorName, url);
             }
 
             updateBreadcrumbs();
