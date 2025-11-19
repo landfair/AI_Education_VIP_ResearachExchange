@@ -1485,6 +1485,29 @@
                 </div>
                 <div class="topic-content">
                     <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="detection,false-positives,assessment,watermarking">
+                            <div class="bib-citation"
+                                data-source-url="https://onlinelibrary.wiley.com/doi/epdf/10.1002/tl.20624"
+                                data-source-title="Generative AI detection in higher education assessments">
+                                Ardito, C. G. (2025). Generative AI detection in higher education assessments. <em>New Directions for Teaching and Learning</em>, <em>2025</em>, 11–28.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="ardito2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper explores the pitfalls of AI Detection software and offers remedies to the problem. It explains that AI Detection is both fragile and misaligned with how education is today. It states that detection with these softwares is unreliable, as students are able to avoid it by paraphrasing AI generated work, while non-fluent English writers are being flagged as their writing uses common English sentences. These inconsistencies make it almost impossible to prove whether AI is used or not, and often lead to false positives, and leave students anxious about their writing and left to deal with proving themselves to their professors that AI was not used. The author also disproves watermarking, a technique experts have suggested to help prove AI was used in writing by having GenAI tools leave a hidden signature in their writing. An example of a signature could be by first dividing a dictionary of words into 2 sets, and then alternating between the two when generating text. AI detection tools would then search for this signature and give a score based on that. However, watermarking isn't immune to paraphrasing, and additionally, there are already models released without watermarking, and implementing it would just lead to a new market of non-watermarked models, essentially making it hard to regulate.
+<br><br>
+This paper recommends shifting school work to in-person centered assessments, presentations, and having on-going check-ins for writing. This could limit the use of AI and lead to students writing on their own. Another approach to this issue, the paper suggests having transparent disclosures on the proper uses of AI. Having these set rules will help properly integrate AI into learning. As the paper mentions, AI mirrors the invention of the calculator, as like AI, it was at first looked down upon and considered cheating and banned in schools. However, a gradual shift in perception occurred where calculators were later accepted in schools and they began regulating its use and now see it as a tool to make mathematics more efficient. I think once we are past this period of AI slander and begin to see its potentials, creating clear and transparent guidelines for its use will bring down the uses for cheating and bring down our reliance on unreliable AI Detection tools.
+                                        <div class="annotation-author">Rohan Kapur 11/13/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="bib-entry" data-tags="detection,impostor-bias">
                             <div class="bib-citation"
                                 data-source-url="https://scholar.google.com/"
@@ -1533,27 +1556,6 @@
                             </div>
                         </div>
 
-                        <div class="bib-entry" data-tags="detection,ALBERT,transformer">
-                            <div class="bib-citation"
-                                data-source-url="https://arxiv.org/"
-                                data-source-title="ALBERT: A Lite BERT for Self-supervised Learning of Language Representations">
-                                Lan Z. et al. "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations" <em>ArXiv</em>. 2019.
-                                <span class="collapse-indicator"></span>
-                            </div>
-                            <div class="bib-annotation-container" id="lan2019-annotation">
-                                <div class="bib-annotation">
-                                    <div class="annotation-text">
-                                        Transformer models like BERT and RoBERTa, used for AI text detection, achieve SOTA results by stacking dozens of "attention" layers together. However, prior work (ALBERT) has shown significant redundancy across these layers. Many parameters do not contribute meaningfully to representation or expressivity of the model. Furthermore, information flows strictly forward with no mechanism for later layers to talk to earlier layers or revisit information from earlier representations. The team should aim to fix this "weakness" with an improved architecture.
-                                        <div class="annotation-author">Srinivas Harish 9/19/2025</div>
-                                    </div>
-                                </div>
-                                <div class="annotation-actions">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="add-perspective-btn">Add Your Perspective</button>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="bib-entry" data-tags="detection,false-positives">
                             <div class="bib-citation"
                                 data-source-url="https://www.sciencedirect.com/"
@@ -1566,27 +1568,6 @@
                                     <div class="annotation-text">
                                         The study investigates false positives (human-written text incorrectly flagged as AI-generated) and false negatives (AI-generated text missed by detectors) in AI Detection, with a particular focus on its impact on academic research and education, where integrity is crucial. Running tests on the abstract and literature parts of research papers before 2022 (before the release of ChatGPT), researchers found that the literature section of papers was more likely to be flagged as AI-generated compared to abstracts. This shows that the "formulaic" style of literature reviews resembles AI writing more closely. Beyond the results of the experiment, this paper argues that the current definitions of plagiarism and authorship are outdated in the AI era, calling for combining plagiarism detection with AI-detection tools.
                                         <div class="annotation-author">Nasrin Alanna Aidi 9/25/2025</div>
-                                    </div>
-                                </div>
-                                <div class="annotation-actions">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="add-perspective-btn">Add Your Perspective</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bib-entry" data-tags="detection,bias,fairness">
-                            <div class="bib-citation"
-                                data-source-url="https://peerj.com/"
-                                data-source-title="The accuracy-bias trade-offs in AI text detection tools">
-                                Pratama, A. R. "The accuracy-bias trade-offs in AI text detection tools and their impact on fairness in scholarly publication." <em>PeerJ Comput. Sci.</em> 2025, e2953.
-                                <span class="collapse-indicator"></span>
-                            </div>
-                            <div class="bib-annotation-container" id="pratama2025-annotation">
-                                <div class="bib-annotation">
-                                    <div class="annotation-text">
-                                        This study evaluates three AI text detection tools (GPTZero, ZeroGPT, and DetectGPT) and finds a significant trade-off between accuracy and bias. The tools flag text from non-native English speakers and certain academic disciplines as AI-generated, raising concerns about fairness in scholarly publication. All tools struggled with AI-assisted text and showed systemic bias. Abstracts from social sciences and those written by non-native English speakers had a significantly higher false positive rate, meaning that they were more likely to be incorrectly identified as AI-generated.
-                                        <div class="annotation-author">Josephine Li 10/09/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -1623,6 +1604,75 @@
                             </div>
                         </div>
 
+                        <div class="bib-entry" data-tags="detection,ALBERT,transformer">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/"
+                                data-source-title="ALBERT: A Lite BERT for Self-supervised Learning of Language Representations">
+                                Lan Z. et al. "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations" <em>ArXiv</em>. 2019.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="lan2019-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        Transformer models like BERT and RoBERTa, used for AI text detection, achieve SOTA results by stacking dozens of "attention" layers together. However, prior work (ALBERT) has shown significant redundancy across these layers. Many parameters do not contribute meaningfully to representation or expressivity of the model. Furthermore, information flows strictly forward with no mechanism for later layers to talk to earlier layers or revisit information from earlier representations. The team should aim to fix this "weakness" with an improved architecture.
+                                        <div class="annotation-author">Srinivas Harish 9/19/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,bias,fairness">
+                            <div class="bib-citation"
+                                data-source-url="https://peerj.com/"
+                                data-source-title="The accuracy-bias trade-offs in AI text detection tools">
+                                Pratama, A. R. "The accuracy-bias trade-offs in AI text detection tools and their impact on fairness in scholarly publication." <em>PeerJ Comput. Sci.</em> 2025, e2953.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="pratama2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study evaluates three AI text detection tools (GPTZero, ZeroGPT, and DetectGPT) and finds a significant trade-off between accuracy and bias. The tools flag text from non-native English speakers and certain academic disciplines as AI-generated, raising concerns about fairness in scholarly publication. All tools struggled with AI-assisted text and showed systemic bias. Abstracts from social sciences and those written by non-native English speakers had a significantly higher false positive rate, meaning that they were more likely to be incorrectly identified as AI-generated.
+                                        <div class="annotation-author">Josephine Li 10/09/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,evasion,SICO,prompt-engineering">
+                            <div class="bib-citation"
+                                data-source-url="https://arxiv.org/html/2305.10847v5/#S4"
+                                data-source-title="Large language models can be guided to evade AI-generated text detection">
+                                Lu, N., Liu, S., He, R., Ong, Y.-S., Wang, Q., & Tang, K. (2023). Large language models can be guided to evade AI-generated text detection [Preprint]. <em>arXiv</em>. https://doi.org/10.48550/arXiv.2305.10847
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="lu2023-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The paper introduces a concept named SICO (Substitution-based In-Context example Optimization). It is a novel and cost-efficient method for constructing prompts that guide large language models (LLMs) to evade AI-generated text detectors. The method automatically optimizes a few human-written examples to be less "AI-like", which are then used as in-context demonstrations for the LLM.
+<br><br>
+The research's strength is in demonstrating a significant vulnerability in existing detection systems. The study shows that prompts generated by SICO enabled GPT-3.5 to successfully bypass six different detectors, significantly outperforming baseline paraphrasing methods. A comprehensive human evaluation further confirmed that the SICO-generated text maintained human-level readability and task completion rates.
+<br><br>
+This work is valuable because it highlights that evasion can be achieved through simple prompt-guiding rather than external tools, and it provides a new, effective benchmark (SICO) for evaluating the robustness of future detectors.
+<br><br>
+It also connects well with several past papers I've found that looks into prompt engineering and using that to bypass AI-detection tools (through targeting perplexity and burstiness).
+                                        <div class="annotation-author">Josephine Li 11/13/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="bib-entry" data-tags="detection,DetectGPT">
                             <div class="bib-citation"
                                 data-source-url="https://arxiv.org/"
@@ -1635,6 +1685,27 @@
                                     <div class="annotation-text">
                                         This paper proposes DetectGPT, a detector that flags AI-generated text by checking whether a passage sits in a negative curvature region of a language model's log-probability function. Unlike classifier-based detectors, DetectGPT needs no extra training data—it uses only the target model's log-probs plus small perturbations from a secondary model. In evaluations (e.g., fake-news detection with GPT-NeoX-20B), the method improves zero-shot AUROC over prior baselines and provides a model-agnostic way to test text authenticity.
                                         <div class="annotation-author">Yanze Wu 10/15/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="detection,bias,fairness">
+                            <div class="bib-citation"
+                                data-source-url="https://peerj.com/"
+                                data-source-title="The accuracy-bias trade-offs in AI text detection tools">
+                                Pratama, A. R. "The accuracy-bias trade-offs in AI text detection tools and their impact on fairness in scholarly publication." <em>PeerJ Comput. Sci.</em> 2025, e2953.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="pratama2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study evaluates three AI text detection tools (GPTZero, ZeroGPT, and DetectGPT) and finds a significant trade-off between accuracy and bias. The tools flag text from non-native English speakers and certain academic disciplines as AI-generated, raising concerns about fairness in scholarly publication. All tools struggled with AI-assisted text and showed systemic bias. Abstracts from social sciences and those written by non-native English speakers had a significantly higher false positive rate, meaning that they were more likely to be incorrectly identified as AI-generated.
+                                        <div class="annotation-author">Josephine Li 10/09/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -1677,56 +1748,6 @@
                                     <div class="annotation-text">
                                         This article rigorously evaluates three AI text detectors (Watermarking, ZeroGPT, and GPTZero) on their ability to distinguish human-written from AI-generated essays. Results show that paraphrasing attacks, including prompts designed to mimic "college student" style or intentionally increase perplexity, can dramatically raise the false negative rates of all detectors, making AI-generated writing much more likely to evade detection. For instance, ZeroGPT's false negative rate rose to nearly 90% with targeted paraphrasing. The paper warns educators against relying solely on AI detectors for plagiarism judgments, highlighting the ease with which detection can be bypassed and the risk of harm from false accusations.
                                         <div class="annotation-author">Josephine Li 10/22/2025</div>
-                                    </div>
-                                </div>
-                                <div class="annotation-actions">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="add-perspective-btn">Add Your Perspective</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bib-entry" data-tags="detection,evasion,SICO,prompt-engineering">
-                            <div class="bib-citation"
-                                data-source-url="https://arxiv.org/html/2305.10847v5/#S4"
-                                data-source-title="Large language models can be guided to evade AI-generated text detection">
-                                Lu, N., Liu, S., He, R., Ong, Y.-S., Wang, Q., & Tang, K. (2023). Large language models can be guided to evade AI-generated text detection [Preprint]. <em>arXiv</em>. https://doi.org/10.48550/arXiv.2305.10847
-                                <span class="collapse-indicator"></span>
-                            </div>
-                            <div class="bib-annotation-container" id="lu2023-annotation">
-                                <div class="bib-annotation">
-                                    <div class="annotation-text">
-                                        The paper introduces a concept named SICO (Substitution-based In-Context example Optimization). It is a novel and cost-efficient method for constructing prompts that guide large language models (LLMs) to evade AI-generated text detectors. The method automatically optimizes a few human-written examples to be less "AI-like", which are then used as in-context demonstrations for the LLM.
-<br><br>
-The research's strength is in demonstrating a significant vulnerability in existing detection systems. The study shows that prompts generated by SICO enabled GPT-3.5 to successfully bypass six different detectors, significantly outperforming baseline paraphrasing methods. A comprehensive human evaluation further confirmed that the SICO-generated text maintained human-level readability and task completion rates.
-<br><br>
-This work is valuable because it highlights that evasion can be achieved through simple prompt-guiding rather than external tools, and it provides a new, effective benchmark (SICO) for evaluating the robustness of future detectors.
-<br><br>
-It also connects well with several past papers I've found that looks into prompt engineering and using that to bypass AI-detection tools (through targeting perplexity and burstiness).
-                                        <div class="annotation-author">Josephine Li 11/13/2025</div>
-                                    </div>
-                                </div>
-                                <div class="annotation-actions">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="add-perspective-btn">Add Your Perspective</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bib-entry" data-tags="detection,false-positives,assessment,watermarking">
-                            <div class="bib-citation"
-                                data-source-url="https://onlinelibrary.wiley.com/doi/epdf/10.1002/tl.20624"
-                                data-source-title="Generative AI detection in higher education assessments">
-                                Ardito, C. G. (2025). Generative AI detection in higher education assessments. <em>New Directions for Teaching and Learning</em>, <em>2025</em>, 11–28.
-                                <span class="collapse-indicator"></span>
-                            </div>
-                            <div class="bib-annotation-container" id="ardito2025-annotation">
-                                <div class="bib-annotation">
-                                    <div class="annotation-text">
-                                        This paper explores the pitfalls of AI Detection software and offers remedies to the problem. It explains that AI Detection is both fragile and misaligned with how education is today. It states that detection with these softwares is unreliable, as students are able to avoid it by paraphrasing AI generated work, while non-fluent English writers are being flagged as their writing uses common English sentences. These inconsistencies make it almost impossible to prove whether AI is used or not, and often lead to false positives, and leave students anxious about their writing and left to deal with proving themselves to their professors that AI was not used. The author also disproves watermarking, a technique experts have suggested to help prove AI was used in writing by having GenAI tools leave a hidden signature in their writing. An example of a signature could be by first dividing a dictionary of words into 2 sets, and then alternating between the two when generating text. AI detection tools would then search for this signature and give a score based on that. However, watermarking isn't immune to paraphrasing, and additionally, there are already models released without watermarking, and implementing it would just lead to a new market of non-watermarked models, essentially making it hard to regulate.
-<br><br>
-This paper recommends shifting school work to in-person centered assessments, presentations, and having on-going check-ins for writing. This could limit the use of AI and lead to students writing on their own. Another approach to this issue, the paper suggests having transparent disclosures on the proper uses of AI. Having these set rules will help properly integrate AI into learning. As the paper mentions, AI mirrors the invention of the calculator, as like AI, it was at first looked down upon and considered cheating and banned in schools. However, a gradual shift in perception occurred where calculators were later accepted in schools and they began regulating its use and now see it as a tool to make mathematics more efficient. I think once we are past this period of AI slander and begin to see its potentials, creating clear and transparent guidelines for its use will bring down the uses for cheating and bring down our reliance on unreliable AI Detection tools.
-                                        <div class="annotation-author">Rohan Kapur 11/13/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -1889,6 +1910,27 @@ I found that the specific breakdown of responsibility for both educators and stu
                 </div>
                 <div class="topic-content">
                     <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="usability,assessment,measurement">
+                            <div class="bib-citation"
+                                data-source-url="https://www.ejmste.com/"
+                                data-source-title="Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment">
+                                Owan, V. J., Abang, K. B., Idika, D. O., Etta, E. O., Bassey, B. A. "Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment." <em>EURASIA Journal of Mathematics, Science and Technology Education</em>. 2023, em2307.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="owan2023-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study evaluates how artificial intelligence tools are being integrated into educational measurement and assessment which revolutionizes the traditional practices. AI supports personalized learning, intelligent tutoring and automated grading which improves the speed and feedback quality. The authors noted down that the predictive analytics and natural language processing tools further gives individualized support and expand the assessment possibilities. Importantly, while AI streamlines many tasks, they emphasize the need for ethical safeguards, transparency and ongoing teacher involvement to counter the risks around privacy, fairness and overdependency on technology. The authors recommend Teacher training and a blend of human and AI analysis are recommended for best practices.
+                                        <div class="annotation-author">Unmesh Achar 10/15/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="bib-entry" data-tags="usability,feedback,writing">
                             <div class="bib-citation"
                                 data-source-url="https://www.sciencedirect.com/"
@@ -1926,18 +1968,41 @@ The conclusions the authors gave were that ChatGPT cannot be used as a sole feed
                             </div>
                         </div>
 
-                        <div class="bib-entry" data-tags="usability,assessment,measurement">
+                        <div class="bib-entry" data-tags="usability,HCI,human-AI-interaction,machine-agency">
                             <div class="bib-citation"
-                                data-source-url="https://www.ejmste.com/"
-                                data-source-title="Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment">
-                                Owan, V. J., Abang, K. B., Idika, D. O., Etta, E. O., Bassey, B. A. "Exploring the Potential of Artificial Intelligence Tools in Educational Measurement and Assessment." <em>EURASIA Journal of Mathematics, Science and Technology Education</em>. 2023, em2307.
+                                data-source-url="https://doi.org/10.1093/jcmc/zmz026"
+                                data-source-title="Rise of Machine Agency: A Framework for Studying the Psychology of Human-AI Interaction (HAII)">
+                                Sundar, S. S. (2020). Rise of Machine Agency: A Framework for Studying the Psychology of Human-AI Interaction (HAII). <em>Journal of Computer-Mediated Communication</em>, 25(1), 74-88. https://doi.org/10.1093/jcmc/zmz026
                                 <span class="collapse-indicator"></span>
                             </div>
-                            <div class="bib-annotation-container" id="owan2023-annotation">
+                            <div class="bib-annotation-container" id="sundar2020-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
-                                        This study evaluates how artificial intelligence tools are being integrated into educational measurement and assessment which revolutionizes the traditional practices. AI supports personalized learning, intelligent tutoring and automated grading which improves the speed and feedback quality. The authors noted down that the predictive analytics and natural language processing tools further gives individualized support and expand the assessment possibilities. Importantly, while AI streamlines many tasks, they emphasize the need for ethical safeguards, transparency and ongoing teacher involvement to counter the risks around privacy, fairness and overdependency on technology. The authors recommend Teacher training and a blend of human and AI analysis are recommended for best practices.
-                                        <div class="annotation-author">Unmesh Achar 10/15/2025</div>
+                                        This article focuses on the shift in communication scholarship from "communication via" technology to "communicating with" technology, marking the transition to Human-AI Interaction (HAII). Media technologies have evolved from passive channels to active, intelligent agents with autonomous decision-making capabilities. The paper examines the fundamental tension between machine agency (AI's ability to personalize, recommend, and curate content independently) and human agency (users' desire for control and meaningful participation). It proposes adapting the Theory of Interactive Media Effects (TIME) to study HAII through two mechanisms: the "cue route" (how users perceive AI as a symbol—machine heuristics, transparency, interface cues) and the "action route" (how users engage with AI through collaboration, customization, and control exchanges).
+<br><br>
+The article critiques how increasing machine agency threatens human autonomy through privacy erosion, algorithmic opacity, automation bias (overtrusting machines), and algorithm aversion (rejecting algorithms even when optimal). Users often feel helpless against incomprehensible algorithms, experiencing "algorithmic anxiety" (Airbnb hosts) or unawareness of curation (Facebook feeds). To address this, the author advocates for human-AI collaboration: seeking user assent before automated decisions, increasing algorithmic transparency, enabling users to train and direct algorithms ("ground-truthing"), and pursuing mutual augmentation where humans and AI extend each other's capabilities. Trust built through deeper engagement (action route) proves more robust than perception alone (cue route), ultimately calling for co-creation that respects human agency while leveraging machine capabilities.
+                                        <div class="annotation-author">Joseph Jiminian 10/16/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="usability,evaluation,AI-assistants,data-science,automation">
+                            <div class="bib-citation"
+                                data-source-url="https://openreview.net/forum?id=MB0TCLfLn1"
+                                data-source-title="Measuring Data Science Automation: A Survey of Evaluation Tools for AI Assistants and Agents">
+                                Testini, I., Pacchiardi, L., & Hernandez-Orallo, J. (2025). Measuring Data Science Automation: A Survey of Evaluation Tools for AI Assistants and Agents. <em>Transactions on Machine Learning Research</em>. https://openreview.net/forum?id=MB0TCLfLn1
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="testini2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This survey paper examines the landscape of evaluation methods and tools for large-language-model-based assistants and agents (especially in data-science contexts). Rather than detecting generation per se, it focuses on how we evaluate, benchmark, and characterise AI assistant performance (e.g., suggestion of methods, code generation, interpretation), including human-AI collaboration, levels of autonomy, and the tasks involved. It finds (1) a heavy focus on a small subset of goal-oriented activities, (2) limited study of intermediate human-AI collaboration modes, and (3) limited attention on automation via task transformation rather than substitution.
+                                        <div class="annotation-author">Yanze Wu 10/15/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -2143,18 +2208,18 @@ The article critiques how increasing machine agency threatens human autonomy thr
                 </div>
                 <div class="topic-content">
                     <div class="bibliography-container">
-                        <div class="bib-entry" data-tags="learning-outcomes,physics,problem-solving">
+                        <div class="bib-entry" data-tags="learning-outcomes,mathematical-reasoning,LLM">
                             <div class="bib-citation"
-                                data-source-url="https://www.compadre.org/per/items/detail.cfm?ID=16445"
-                                data-source-title="Help or Hype? Students' Engagement and Perception of Using AI to Solve Physics Problems">
-                                Qurat-ul-Ann Mirza, N. Sanjay Rebello. "Help or Hype? Students' Engagement and Perception of Using AI to Solve Physics Problems." <em>Physics Education Research Conference (PERC)</em>. 2025.
+                                data-source-url="https://arxiv.org/abs/2402.00157"
+                                data-source-title="Large Language Models for Mathematical Reasoning: Progresses and Challenges">
+                                Ahn, J., Verma, R., Lou, R., Liu, D., Zhang, R., & Yin, W. (2024). Large Language Models for Mathematical Reasoning: Progresses and Challenges. In <em>Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: Student Research Workshop</em> (pp. 1-8). Association for Computational Linguistics.
                                 <span class="collapse-indicator"></span>
                             </div>
-                            <div class="bib-annotation-container" id="mirza2025-annotation">
+                            <div class="bib-annotation-container" id="ahn2024-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
-                                        This study explores how students use ChatGPT during a physics problem-solving task embedded in a formal assessment. The findings indicated that students who engaged with ChatGPT generally performed better than those who did not. In particular, students who provided more complete and contextual prompts experienced greater benefits. There was also the presence of incorrect AI-generated responses, which calls for evaluating AI output. These results suggest that while AI can be a valuable aid in problem solving, its effectiveness depends significantly on how students use it, reinforcing the need to incorporate structured AI literacy into STEM education.
-                                        <div class="annotation-author">Dan Ahimbisibwe 10/08/2025</div>
+                                        This article not only examines the progress of LLM's in mathematical reasoning but also its implications in regards to education. Specifically looking at Math Word Problems (MWP). These problems may include tables and/or geometric figures. The article examines how tokenization, pre-training, prompting techniques, interpolation and extrapolation, scaling laws, Chain of Thought (COT), and In-Context Learning (ICL) impact the reasoning of LLM's. These factors play a direct role in how well a model does with MWP's. The article then evaluates the advantages and disadvantages of LLM's in math education. One disadvantage is that LLM's may not suit a student's learning style, especially if they learn from hands-on activities or visual aids. Though, LLM's also introduce a 'conversational style' in problem-solving which is important in mathematics and can offer further insight into subjects like Calculus. This research is unique in its assessment of LLM's in math education while also offering insight into LLM performance with MWP's. Something I'm curious about after reading this article is how well various models perform on more theoretical math courses like Discrete Math or Analysis. The MWP's assessed have concrete solutions involving equations or numbers, but in more advanced math courses answers can just be words and symbols.
+                                        <div class="annotation-author">Karen Maza Delgado 11/11/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -2254,68 +2319,18 @@ As the authors point out, it's interesting that the satisfaction scores were low
                             </div>
                         </div>
 
-                        <div class="bib-entry" data-tags="learning-outcomes,mathematical-reasoning,LLM">
+                        <div class="bib-entry" data-tags="learning-outcomes,physics,problem-solving">
                             <div class="bib-citation"
-                                data-source-url="https://arxiv.org/abs/2402.00157"
-                                data-source-title="Large Language Models for Mathematical Reasoning: Progresses and Challenges">
-                                Ahn, J., Verma, R., Lou, R., Liu, D., Zhang, R., & Yin, W. (2024). Large Language Models for Mathematical Reasoning: Progresses and Challenges. In <em>Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: Student Research Workshop</em> (pp. 1-8). Association for Computational Linguistics.
+                                data-source-url="https://www.compadre.org/per/items/detail.cfm?ID=16445"
+                                data-source-title="Help or Hype? Students' Engagement and Perception of Using AI to Solve Physics Problems">
+                                Qurat-ul-Ann Mirza, N. Sanjay Rebello. "Help or Hype? Students' Engagement and Perception of Using AI to Solve Physics Problems." <em>Physics Education Research Conference (PERC)</em>. 2025.
                                 <span class="collapse-indicator"></span>
                             </div>
-                            <div class="bib-annotation-container" id="ahn2024-annotation">
+                            <div class="bib-annotation-container" id="mirza2025-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
-                                        This article not only examines the progress of LLM's in mathematical reasoning but also its implications in regards to education. Specifically looking at Math Word Problems (MWP). These problems may include tables and/or geometric figures. The article examines how tokenization, pre-training, prompting techniques, interpolation and extrapolation, scaling laws, Chain of Thought (COT), and In-Context Learning (ICL) impact the reasoning of LLM's. These factors play a direct role in how well a model does with MWP's. The article then evaluates the advantages and disadvantages of LLM's in math education. One disadvantage is that LLM's may not suit a student's learning style, especially if they learn from hands-on activities or visual aids. Though, LLM's also introduce a 'conversational style' in problem-solving which is important in mathematics and can offer further insight into subjects like Calculus. This research is unique in its assessment of LLM's in math education while also offering insight into LLM performance with MWP's. Something I'm curious about after reading this article is how well various models perform on more theoretical math courses like Discrete Math or Analysis. The MWP's assessed have concrete solutions involving equations or numbers, but in more advanced math courses answers can just be words and symbols.
-                                        <div class="annotation-author">Karen Maza Delgado 11/11/2025</div>
-                                    </div>
-                                </div>
-                                <div class="annotation-actions">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="add-perspective-btn">Add Your Perspective</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bib-entry" data-tags="learning-outcomes,AI-integration,student-perceptions">
-                            <div class="bib-citation"
-                                data-source-url="https://doi.org/10.3390/educsci15030343"
-                                data-source-title="The impact of artificial intelligence (AI) on students' academic development">
-                                Luckin, R. (2025). Nurturing human intelligence in the age of AI: Rethinking education for the future. <em>Development and Learning in Organizations: An International Journal</em>, <em>39</em>(1), 1-4.
-                                <span class="collapse-indicator"></span>
-                            </div>
-                            <div class="bib-annotation-container" id="luckin2025-annotation">
-                                <div class="bib-annotation">
-                                    <div class="annotation-text">
-                                        Artificial intelligence (AI) is rapidly transforming education by personalizing learning, supporting teachers, and automating administrative tasks. While AI tools can adapt lessons to fit individual student needs and give immediate feedback, they also free up teachers to focus more on creative teaching and student guidance, helping to build deeper relationships and individual support.
-<br><br>
-However, the paper stresses that education shouldn't just be about memorizing facts or passing standardized tests. Instead, schools need to cultivate "Learning Mastery"—helping students understand how they learn best, think critically, set goals, and reflect on their progress. Alongside this, "Knowledge Mastery" means achieving a deep, conceptual understanding of subjects, not merely recalling information, so students can transfer their knowledge to real-world challenges.
-<br><br>
-The article emphasizes the importance of ethical AI deployment, warning against issues like bias, privacy risks, and inequality. It calls for collaboration between educators, policymakers, and technologists to ensure AI benefits all students. Teachers need professional development focused on both using AI and nurturing the unique human qualities—creativity, empathy, independent thinking—that future societies and workplaces will need. In conclusion, schools must combine the best aspects of AI and human intelligence to prepare students for lifelong learning and success in an AI-driven world.
-                                        <div class="annotation-author">Debika Dharma Lingam 11/13/2025</div>
-                                    </div>
-                                </div>
-                                <div class="annotation-actions">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="add-perspective-btn">Add Your Perspective</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bib-entry" data-tags="learning-outcomes,student-perceptions,higher-education">
-                            <div class="bib-citation"
-                                data-source-url="https://doi.org/10.3390/educsci15030343"
-                                data-source-title="The impact of artificial intelligence (AI) on students' academic development">
-                                Vieriu, A. M., & Petrea, G. (2025). The impact of artificial intelligence (AI) on students' academic development. <em>Education Sciences</em>, <em>15</em>(3), 343.
-                                <span class="collapse-indicator"></span>
-                            </div>
-                            <div class="bib-annotation-container" id="vieriu2025-annotation">
-                                <div class="bib-annotation">
-                                    <div class="annotation-text">
-                                        This study was conducted on 85 students at the National University of Science and Technology POLITEHNICA Bucharest, Romania, focusing on second-year Aerospace and Medical Engineering students with direct experience in AI-integrated learning environments. The study uses purposive sampling and a structured questionnaire with both closed and open-ended questions to evaluate AI usage, perceptions, and its impact on learning. Data was collected through a structured questionnaire comprising 11 items: seven closed-ended questions assessing perceptions, usage, and the effectiveness of AI tools; and four open-ended questions exploring experiences, expectations, and concerns.
-<br><br>
-It finds that 95.6% of students use AI in academic activities through virtual assistants (88.2%) and educational platforms (42.4%). Most of the participants use these tools weekly or daily, making AI an integral part of the educational process for tasks like homework, projects, and knowledge enhancement. While 80% of respondents agree that AI enhances their educational experience and 82.4% believe it improves academic performance, some express uncertainty or skepticism about its ultimate effects, including concerns about reducing critical thinking and accuracy issues. When asked for suggestions on improvement, most students suggest proper integration of AI in education, focusing on guided use that doesn't limit critical thinking. Overall, the majority of participants highlight both the positive influence on collaboration and learning efficiency, as well as challenges such as the need for reliable information and ethical use.
-<br><br>
-This paper gives valuable insight into the real-time experiences and perceptions of students who have direct exposure to AI-integrated learning environments, rather than relying solely on expert or educator perspectives. By using mixed-methods analysis across both closed and open-ended survey questions, it provides a nuanced account of how students engage with artificial intelligence for academic activities, covering not just usage statistics but also the emotional, ethical, and cognitive challenges and benefits they encounter. The study emphasizes student-driven recommendations for balanced and effective AI integration, including calls for enhanced training, reliability, and critical engagement. This makes it a key resource for educators and policymakers aiming to understand and responsibly advance AI adoption in education, learning from the people who would be most affected by these policies.
-                                        <div class="annotation-author">Nasrin Alanna Aidi 11/13/2025</div>
+                                        This study explores how students use ChatGPT during a physics problem-solving task embedded in a formal assessment. The findings indicated that students who engaged with ChatGPT generally performed better than those who did not. In particular, students who provided more complete and contextual prompts experienced greater benefits. There was also the presence of incorrect AI-generated responses, which calls for evaluating AI output. These results suggest that while AI can be a valuable aid in problem solving, its effectiveness depends significantly on how students use it, reinforcing the need to incorporate structured AI literacy into STEM education.
+                                        <div class="annotation-author">Dan Ahimbisibwe 10/08/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -2341,6 +2356,31 @@ I started liking the concept of the learning module (7) on prompt engineering - 
 <br><br>
 CONCLUSION: Overall great opening to the conversation and foundation to being thinking of how to structure learning about AI - OPPORTUNITY to skew and expand upon it even more toward education and creating - - aka how can you teach about the learning and creating process with AI 😁?
                                         <div class="annotation-author">Cate Hackett 11/5/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bib-entry" data-tags="learning-outcomes,student-perceptions,higher-education">
+                            <div class="bib-citation"
+                                data-source-url="https://doi.org/10.3390/educsci15030343"
+                                data-source-title="The impact of artificial intelligence (AI) on students' academic development">
+                                Vieriu, A. M., & Petrea, G. (2025). The impact of artificial intelligence (AI) on students' academic development. <em>Education Sciences</em>, <em>15</em>(3), 343.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="vieriu2025-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This study was conducted on 85 students at the National University of Science and Technology POLITEHNICA Bucharest, Romania, focusing on second-year Aerospace and Medical Engineering students with direct experience in AI-integrated learning environments. The study uses purposive sampling and a structured questionnaire with both closed and open-ended questions to evaluate AI usage, perceptions, and its impact on learning. Data was collected through a structured questionnaire comprising 11 items: seven closed-ended questions assessing perceptions, usage, and the effectiveness of AI tools; and four open-ended questions exploring experiences, expectations, and concerns.
+<br><br>
+It finds that 95.6% of students use AI in academic activities through virtual assistants (88.2%) and educational platforms (42.4%). Most of the participants use these tools weekly or daily, making AI an integral part of the educational process for tasks like homework, projects, and knowledge enhancement. While 80% of respondents agree that AI enhances their educational experience and 82.4% believe it improves academic performance, some express uncertainty or skepticism about its ultimate effects, including concerns about reducing critical thinking and accuracy issues. When asked for suggestions on improvement, most students suggest proper integration of AI in education, focusing on guided use that doesn't limit critical thinking. Overall, the majority of participants highlight both the positive influence on collaboration and learning efficiency, as well as challenges such as the need for reliable information and ethical use.
+<br><br>
+This paper gives valuable insight into the real-time experiences and perceptions of students who have direct exposure to AI-integrated learning environments, rather than relying solely on expert or educator perspectives. By using mixed-methods analysis across both closed and open-ended survey questions, it provides a nuanced account of how students engage with artificial intelligence for academic activities, covering not just usage statistics but also the emotional, ethical, and cognitive challenges and benefits they encounter. The study emphasizes student-driven recommendations for balanced and effective AI integration, including calls for enhanced training, reliability, and critical engagement. This makes it a key resource for educators and policymakers aiming to understand and responsibly advance AI adoption in education, learning from the people who would be most affected by these policies.
+                                        <div class="annotation-author">Nasrin Alanna Aidi 11/13/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -2729,6 +2769,29 @@ CONCLUSION: Overall great opening to the conversation and foundation to being th
                 </div>
                 <div class="topic-content">
                     <div class="bibliography-container">
+                        <div class="bib-entry" data-tags="academic-integrity,detection,false-positives,assessment">
+                            <div class="bib-citation"
+                                data-source-url="https://onlinelibrary.wiley.com/doi/epdf/10.1002/tl.20624"
+                                data-source-title="Generative AI detection in higher education assessments">
+                                Ardito, C. G. (2025). Generative AI detection in higher education assessments. <em>New Directions for Teaching and Learning</em>, <em>2025</em>, 11–28.
+                                <span class="collapse-indicator"></span>
+                            </div>
+                            <div class="bib-annotation-container" id="ardito2025-academic-annotation">
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        This paper explores the pitfalls of AI Detection software and offers remedies to the problem. It explains that AI Detection is both fragile and misaligned with how education is today. It states that detection with these softwares is unreliable, as students are able to avoid it by paraphrasing AI generated work, while non-fluent English writers are being flagged as their writing uses common English sentences. These inconsistencies make it almost impossible to prove whether AI is used or not, and often lead to false positives, and leave students anxious about their writing and left to deal with proving themselves to their professors that AI was not used. The author also disproves watermarking, a technique experts have suggested to help prove AI was used in writing by having GenAI tools leave a hidden signature in their writing. An example of a signature could be by first dividing a dictionary of words into 2 sets, and then alternating between the two when generating text. AI detection tools would then search for this signature and give a score based on that. However, watermarking isn't immune to paraphrasing, and additionally, there are already models released without watermarking, and implementing it would just lead to a new market of non-watermarked models, essentially making it hard to regulate.
+<br><br>
+This paper recommends shifting school work to in-person centered assessments, presentations, and having on-going check-ins for writing. This could limit the use of AI and lead to students writing on their own. Another approach to this issue, the paper suggests having transparent disclosures on the proper uses of AI. Having these set rules will help properly integrate AI into learning. As the paper mentions, AI mirrors the invention of the calculator, as like AI, it was at first looked down upon and considered cheating and banned in schools. However, a gradual shift in perception occurred where calculators were later accepted in schools and they began regulating its use and now see it as a tool to make mathematics more efficient. I think once we are past this period of AI slander and begin to see its potentials, creating clear and transparent guidelines for its use will bring down the uses for cheating and bring down our reliance on unreliable AI Detection tools.
+                                        <div class="annotation-author">Rohan Kapur 11/13/2025</div>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
+                                    <button class="add-perspective-btn">Add Your Perspective</button>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="bib-entry" data-tags="impact-assessment,partnerships">
                             <div class="bib-citation"
                                 data-source-url="https://doi.org/10.1007/s40979-023-00146-z"
@@ -2741,34 +2804,6 @@ CONCLUSION: Overall great opening to the conversation and foundation to being th
                                     <div class="annotation-text">
                                         Eaton proposes a "postplagiarism" framework for academic integrity in the AI era, arguing that traditional notions of plagiarism are insufficient for addressing AI-assisted work. The paper calls for new ethical frameworks that focus on learning outcomes rather than detection of AI use.
                                         <div class="annotation-author">Alexander Landfair, January 2025</div>
-                                    </div>
-                                </div>
-                                <div class="annotation-actions">
-                                    <button class="bib-button" onclick="viewSource(this)">View Source</button>
-                                    <button class="add-perspective-btn">Add Your Perspective</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bib-entry" data-tags="academic-integrity,higher-education,dishonesty,cognitive-effects">
-                            <div class="bib-citation"
-                                data-source-url="https://doi.org/10.54663/2182-9306.v11.n1.2025.pp156-175"
-                                data-source-title="Use of Generative Artificial Intelligence tools in higher education environments">
-                                Seco, D.; Grösser, S.; Pedrosa, A.M. "Use of Generative Artificial Intelligence tools in higher education environments." <em>Multidisciplinary Journal for Education, Social and Technological Sciences</em>. 2025, pages 156-175.
-                                <span class="collapse-indicator"></span>
-                            </div>
-                            <div class="bib-annotation-container" id="seco2025-annotation">
-                                <div class="bib-annotation">
-                                    <div class="annotation-text">
-                                        This paper examines the integration of Gen AI into a university setting by analyzing its current applications and collecting perspectives from stakeholders like students and professors. The study finds that while AI is becoming increasingly common, its use remains somewhat limited. Students view AI as "valuable resource for personalized learning", while educators are focused on adapting their teaching methods to maintain quality in this new technological landscape. The research mentions a central tension between the significant potential of AI and its balance against major ethical concerns and risks. Key challenges include a rise in academic dishonesty, as AI provides new ways to cheat and plagiarize, and the risk of over-reliance on these tools, which can lead to negative cognitive effects like procrastination, memory decline, and decreased academic performance. The authors conclude that for AI to be integrated successfully, educators must evolve their assessment strategies to address these challenges, ensuring a student-centered approach that balances the technology's benefits and risks.
-                                        The concerns raised by Seco et al. parallel the arguments from the Veritasium video and the issues of bias detailed by Baker & Hawn (2022). While the former two focus on how AI threatens the process of learning by eliminating cognitive effort and undermining academic integrity, Baker & Hawn reveal how AI can corrupt the equity of learning outcomes. Together, they expose a potential double bind for students, especially those from marginalized groups. A student might use an AI tool that allows them to bypass the "desirable difficulties" essential for deep system 2 thinking, and lead to academic dishonesty. Then, the same AI system could evaluate their work through a biased lens, systematically disadvantaging them based on their race, gender, or socioeconomic background. This creates a scenario where AI not only fails to support genuine learning but also actively perpetuates systemic inequality. Thus, the solution should be two-pronged, where we need the pedagogical shifts that Seco et al. and the Veritasium video imply, such as redesigning assessments to focus on process, but we also desperately need the technical and policy-level interventions that Baker & Hawn advocate for to ensure the tools themselves are built on principles of fairness and equity.
-                                        <div class="annotation-author">Josephine Li 10/01/2025</div>
-                                    </div>
-                                </div>
-                                <div class="bib-annotation">
-                                    <div class="annotation-text">
-                                        The paper's insights align with urging institutions and professors to balance rapid adaptation of generative AI. Not only it offers personalized learning but also deep understanding of concepts that's crucial for employability. Seco et al also recommends student centered approaches for conducting assessments to foster deep reflective thinking. The authors emphasize a central tension: AI enhances flexibility and accessibility but also introduces serious concerns, including the risk of academic dishonesty, overreliance, and negative cognitive impacts. The paper concludes that universities must strategically balance innovation with integrity, guiding the sector toward inclusive, process-oriented, and human-centered education in the AI era.
-                                        <div class="annotation-author">Debika Dharma Lingam 10/9/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
@@ -2805,20 +2840,25 @@ It also connects well with several past papers I've found that looks into prompt
                             </div>
                         </div>
 
-                        <div class="bib-entry" data-tags="academic-integrity,detection,false-positives,assessment">
+                        <div class="bib-entry" data-tags="academic-integrity,higher-education,dishonesty,cognitive-effects">
                             <div class="bib-citation"
-                                data-source-url="https://onlinelibrary.wiley.com/doi/epdf/10.1002/tl.20624"
-                                data-source-title="Generative AI detection in higher education assessments">
-                                Ardito, C. G. (2025). Generative AI detection in higher education assessments. <em>New Directions for Teaching and Learning</em>, <em>2025</em>, 11–28.
+                                data-source-url="https://doi.org/10.54663/2182-9306.v11.n1.2025.pp156-175"
+                                data-source-title="Use of Generative Artificial Intelligence tools in higher education environments">
+                                Seco, D.; Grösser, S.; Pedrosa, A.M. "Use of Generative Artificial Intelligence tools in higher education environments." <em>Multidisciplinary Journal for Education, Social and Technological Sciences</em>. 2025, pages 156-175.
                                 <span class="collapse-indicator"></span>
                             </div>
-                            <div class="bib-annotation-container" id="ardito2025-academic-annotation">
+                            <div class="bib-annotation-container" id="seco2025-annotation">
                                 <div class="bib-annotation">
                                     <div class="annotation-text">
-                                        This paper explores the pitfalls of AI Detection software and offers remedies to the problem. It explains that AI Detection is both fragile and misaligned with how education is today. It states that detection with these softwares is unreliable, as students are able to avoid it by paraphrasing AI generated work, while non-fluent English writers are being flagged as their writing uses common English sentences. These inconsistencies make it almost impossible to prove whether AI is used or not, and often lead to false positives, and leave students anxious about their writing and left to deal with proving themselves to their professors that AI was not used. The author also disproves watermarking, a technique experts have suggested to help prove AI was used in writing by having GenAI tools leave a hidden signature in their writing. An example of a signature could be by first dividing a dictionary of words into 2 sets, and then alternating between the two when generating text. AI detection tools would then search for this signature and give a score based on that. However, watermarking isn't immune to paraphrasing, and additionally, there are already models released without watermarking, and implementing it would just lead to a new market of non-watermarked models, essentially making it hard to regulate.
-<br><br>
-This paper recommends shifting school work to in-person centered assessments, presentations, and having on-going check-ins for writing. This could limit the use of AI and lead to students writing on their own. Another approach to this issue, the paper suggests having transparent disclosures on the proper uses of AI. Having these set rules will help properly integrate AI into learning. As the paper mentions, AI mirrors the invention of the calculator, as like AI, it was at first looked down upon and considered cheating and banned in schools. However, a gradual shift in perception occurred where calculators were later accepted in schools and they began regulating its use and now see it as a tool to make mathematics more efficient. I think once we are past this period of AI slander and begin to see its potentials, creating clear and transparent guidelines for its use will bring down the uses for cheating and bring down our reliance on unreliable AI Detection tools.
-                                        <div class="annotation-author">Rohan Kapur 11/13/2025</div>
+                                        This paper examines the integration of Gen AI into a university setting by analyzing its current applications and collecting perspectives from stakeholders like students and professors. The study finds that while AI is becoming increasingly common, its use remains somewhat limited. Students view AI as "valuable resource for personalized learning", while educators are focused on adapting their teaching methods to maintain quality in this new technological landscape. The research mentions a central tension between the significant potential of AI and its balance against major ethical concerns and risks. Key challenges include a rise in academic dishonesty, as AI provides new ways to cheat and plagiarize, and the risk of over-reliance on these tools, which can lead to negative cognitive effects like procrastination, memory decline, and decreased academic performance. The authors conclude that for AI to be integrated successfully, educators must evolve their assessment strategies to address these challenges, ensuring a student-centered approach that balances the technology's benefits and risks.
+                                        The concerns raised by Seco et al. parallel the arguments from the Veritasium video and the issues of bias detailed by Baker & Hawn (2022). While the former two focus on how AI threatens the process of learning by eliminating cognitive effort and undermining academic integrity, Baker & Hawn reveal how AI can corrupt the equity of learning outcomes. Together, they expose a potential double bind for students, especially those from marginalized groups. A student might use an AI tool that allows them to bypass the "desirable difficulties" essential for deep system 2 thinking, and lead to academic dishonesty. Then, the same AI system could evaluate their work through a biased lens, systematically disadvantaging them based on their race, gender, or socioeconomic background. This creates a scenario where AI not only fails to support genuine learning but also actively perpetuates systemic inequality. Thus, the solution should be two-pronged, where we need the pedagogical shifts that Seco et al. and the Veritasium video imply, such as redesigning assessments to focus on process, but we also desperately need the technical and policy-level interventions that Baker & Hawn advocate for to ensure the tools themselves are built on principles of fairness and equity.
+                                        <div class="annotation-author">Josephine Li 10/01/2025</div>
+                                    </div>
+                                </div>
+                                <div class="bib-annotation">
+                                    <div class="annotation-text">
+                                        The paper's insights align with urging institutions and professors to balance rapid adaptation of generative AI. Not only it offers personalized learning but also deep understanding of concepts that's crucial for employability. Seco et al also recommends student centered approaches for conducting assessments to foster deep reflective thinking. The authors emphasize a central tension: AI enhances flexibility and accessibility but also introduces serious concerns, including the risk of academic dishonesty, overreliance, and negative cognitive impacts. The paper concludes that universities must strategically balance innovation with integrity, guiding the sector toward inclusive, process-oriented, and human-centered education in the AI era.
+                                        <div class="annotation-author">Debika Dharma Lingam 10/9/2025</div>
                                     </div>
                                 </div>
                                 <div class="annotation-actions">
