@@ -95,6 +95,247 @@
             color: white;
         }
 
+        .header-menu {
+            position: relative;
+        }
+
+        .menu-trigger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            font-size: 1.5rem;
+            color: #57068c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s ease;
+        }
+
+        .menu-trigger:hover {
+            background-color: #f0e6ff;
+        }
+
+        .header-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            min-width: 180px;
+            display: none;
+            z-index: 10000;
+            margin-top: 8px;
+        }
+
+        .header-dropdown.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: #2d2d2d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .dropdown-item:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dropdown-item:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0e6ff;
+            color: #57068c;
+        }
+
+        .dropdown-item i {
+            width: 16px;
+            color: #57068c;
+        }
+
+        /* Star button for entries */
+        .star-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #ccc;
+            padding: 4px;
+            transition: all 0.2s ease;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .star-btn:hover {
+            color: #f4c430;
+            transform: scale(1.1);
+        }
+
+        .star-btn.starred {
+            color: #f4c430;
+        }
+
+        .bib-entry {
+            position: relative;
+        }
+
+        /* Reading List Modal */
+        .reading-list-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .reading-list-modal.show {
+            display: flex;
+        }
+
+        .reading-list-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .reading-list-header {
+            padding: 20px 24px;
+            border-bottom: 2px solid #57068c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+
+        .reading-list-header h2 {
+            color: #57068c;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .reading-list-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .reading-list-close:hover {
+            background: #f0e6ff;
+            color: #57068c;
+        }
+
+        .reading-list-body {
+            padding: 20px 24px;
+        }
+
+        .reading-list-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .reading-list-item {
+            padding: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .reading-list-item:hover {
+            border-color: #57068c;
+            box-shadow: 0 2px 8px rgba(87, 6, 140, 0.1);
+        }
+
+        .reading-list-item-title {
+            font-weight: 600;
+            color: #2d2d2d;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .reading-list-item-citation {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .reading-list-item-actions {
+            margin-top: 12px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .reading-list-item-btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .reading-list-view-btn {
+            background: #57068c;
+            color: white;
+            border: none;
+        }
+
+        .reading-list-view-btn:hover {
+            background: #6600a8;
+        }
+
+        .reading-list-remove-btn {
+            background: white;
+            color: #dc3545;
+            border: 1px solid #dc3545;
+        }
+
+        .reading-list-remove-btn:hover {
+            background: #dc3545;
+            color: white;
+        }
+
         .breadcrumb-subheader {
             position: fixed;
             top: 70px;
@@ -1137,12 +1378,38 @@
                 <input type="search" placeholder="Search..." class="search-field" id="header-search">
                 <div class="search-results-container" id="header-search-results"></div>
             </div>
-            <button class="report-bug-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjcCOxnbbpWjvfhBAvo_5EXCoa7DY5ePUzjYa1UgXcqjy9hQ/viewform?usp=sharing', '_blank')">
-                <i class="fas fa-bug"></i> Report Bug
-            </button>
-            <button class="contribute-btn">Contribute</button>
+            <div class="header-menu">
+                <button class="menu-trigger" onclick="toggleHeaderMenu()" aria-label="Menu">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="header-dropdown" id="header-dropdown">
+                    <button class="dropdown-item" onclick="document.querySelector('.contribute-btn-hidden').click(); toggleHeaderMenu();">
+                        <i class="fas fa-plus-circle"></i> Contribute
+                    </button>
+                    <button class="dropdown-item" onclick="openReadingList(); toggleHeaderMenu();">
+                        <i class="fas fa-star"></i> Reading List
+                    </button>
+                    <button class="dropdown-item" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjcCOxnbbpWjvfhBAvo_5EXCoa7DY5ePUzjYa1UgXcqjy9hQ/viewform?usp=sharing', '_blank'); toggleHeaderMenu();">
+                        <i class="fas fa-bug"></i> Report Bug
+                    </button>
+                </div>
+            </div>
+            <button class="contribute-btn contribute-btn-hidden" style="display: none;">Contribute</button>
         </div>
     </header>
+
+    <!-- Reading List Modal -->
+    <div class="reading-list-modal" id="reading-list-modal">
+        <div class="reading-list-content">
+            <div class="reading-list-header">
+                <h2><i class="fas fa-star"></i> Reading List</h2>
+                <button class="reading-list-close" onclick="closeReadingList()">&times;</button>
+            </div>
+            <div class="reading-list-body" id="reading-list-body">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <div class="breadcrumb-subheader">
         <div class="breadcrumbs">
@@ -4382,6 +4649,152 @@ This paper recommends shifting school work to in-person centered assessments, pr
             'yanze-wu': 'Yanze Wu',
             'yufei-huang': 'Yufei Huang'
         };
+
+        // Header dropdown menu toggle
+        function toggleHeaderMenu() {
+            const dropdown = document.getElementById('header-dropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('header-dropdown');
+            const menuTrigger = document.querySelector('.menu-trigger');
+            if (dropdown && !dropdown.contains(event.target) && !menuTrigger.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Reading List functionality
+        function getReadingList() {
+            const stored = localStorage.getItem('readingList');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function saveReadingList(list) {
+            localStorage.setItem('readingList', JSON.stringify(list));
+        }
+
+        function toggleStar(button, entryId, title, citation, url) {
+            const readingList = getReadingList();
+            const index = readingList.findIndex(item => item.id === entryId);
+
+            if (index > -1) {
+                // Remove from list
+                readingList.splice(index, 1);
+                button.classList.remove('starred');
+                button.innerHTML = '<i class="far fa-star"></i>';
+            } else {
+                // Add to list
+                readingList.push({
+                    id: entryId,
+                    title: title,
+                    citation: citation,
+                    url: url
+                });
+                button.classList.add('starred');
+                button.innerHTML = '<i class="fas fa-star"></i>';
+            }
+
+            saveReadingList(readingList);
+        }
+
+        function openReadingList() {
+            const modal = document.getElementById('reading-list-modal');
+            const body = document.getElementById('reading-list-body');
+            const readingList = getReadingList();
+
+            if (readingList.length === 0) {
+                body.innerHTML = '<div class="reading-list-empty"><i class="far fa-star" style="font-size: 2rem; margin-bottom: 10px; display: block;"></i>No items in your reading list yet.<br>Click the star on any entry to add it.</div>';
+            } else {
+                body.innerHTML = readingList.map(item => `
+                    <div class="reading-list-item" data-entry-id="${item.id}">
+                        <div class="reading-list-item-title">${item.title}</div>
+                        <div class="reading-list-item-citation">${item.citation}</div>
+                        <div class="reading-list-item-actions">
+                            ${item.url ? `<button class="reading-list-item-btn reading-list-view-btn" onclick="window.open('${item.url}', '_blank')">View Source</button>` : ''}
+                            <button class="reading-list-item-btn reading-list-remove-btn" onclick="removeFromReadingList('${item.id}')">Remove</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            modal.classList.add('show');
+        }
+
+        function closeReadingList() {
+            document.getElementById('reading-list-modal').classList.remove('show');
+        }
+
+        function removeFromReadingList(entryId) {
+            const readingList = getReadingList();
+            const index = readingList.findIndex(item => item.id === entryId);
+
+            if (index > -1) {
+                readingList.splice(index, 1);
+                saveReadingList(readingList);
+
+                // Update star button on page
+                const starBtn = document.querySelector(`[data-entry-id="${entryId}"]`);
+                if (starBtn) {
+                    starBtn.classList.remove('starred');
+                    starBtn.innerHTML = '<i class="far fa-star"></i>';
+                }
+
+                // Refresh reading list modal
+                openReadingList();
+            }
+        }
+
+        function initializeStars() {
+            const readingList = getReadingList();
+            const entries = document.querySelectorAll('.bib-entry');
+
+            entries.forEach((entry, index) => {
+                // Skip if star already exists
+                if (entry.querySelector('.star-btn')) return;
+
+                const citation = entry.querySelector('.bib-citation');
+                if (!citation) return;
+
+                const title = citation.getAttribute('data-source-title') || 'Untitled';
+                const url = citation.getAttribute('data-source-url') || '';
+                const citationText = citation.textContent.trim().split('\n')[0].substring(0, 200);
+                const entryId = citation.getAttribute('id') || `entry-${index}`;
+
+                // Create star button
+                const starBtn = document.createElement('button');
+                starBtn.className = 'star-btn';
+                starBtn.setAttribute('data-entry-id', entryId);
+                starBtn.setAttribute('aria-label', 'Add to reading list');
+
+                // Check if already starred
+                const isStarred = readingList.some(item => item.id === entryId);
+                if (isStarred) {
+                    starBtn.classList.add('starred');
+                    starBtn.innerHTML = '<i class="fas fa-star"></i>';
+                } else {
+                    starBtn.innerHTML = '<i class="far fa-star"></i>';
+                }
+
+                starBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    toggleStar(starBtn, entryId, title, citationText, url);
+                };
+
+                entry.appendChild(starBtn);
+            });
+        }
+
+        // Close reading list modal when clicking outside
+        document.getElementById('reading-list-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeReadingList();
+            }
+        });
+
+        // Initialize stars when DOM is ready
+        document.addEventListener('DOMContentLoaded', initializeStars);
 
         function populateTeamMembersList() {
             // Uses global contributorNames
