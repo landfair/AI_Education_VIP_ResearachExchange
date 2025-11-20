@@ -5450,10 +5450,29 @@ This paper recommends shifting school work to in-person centered assessments, pr
             Object.keys(sectionGroups).forEach(sectionKey => {
                 const section = sectionGroups[sectionKey];
 
-                // Create section header
+                // Create section header with parent topic
                 const sectionHeader = document.createElement('h2');
-                sectionHeader.textContent = section.name;
                 sectionHeader.style.cssText = 'color: #57068c; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #f0e6f6;';
+
+                // Get parent topic name
+                const parentTopicId = subtopicToTopic[sectionKey];
+                let parentTopicName = '';
+                if (parentTopicId) {
+                    const parentEl = document.getElementById(parentTopicId);
+                    if (parentEl) {
+                        const parentHeader = parentEl.querySelector('.topic-page-header h1');
+                        if (parentHeader) {
+                            parentTopicName = parentHeader.textContent;
+                        }
+                    }
+                }
+
+                if (parentTopicName && parentTopicName !== section.name) {
+                    sectionHeader.innerHTML = `<strong>${parentTopicName}</strong> <span style="font-weight: normal;">→ ${section.name}</span>`;
+                } else {
+                    sectionHeader.textContent = section.name;
+                }
+
                 bibliographyContainer.appendChild(sectionHeader);
 
                 // Append entries for this section
